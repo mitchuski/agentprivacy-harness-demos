@@ -1,9 +1,9 @@
 {
- "root_kappa": "sha256:4149e9a17e2f45039774ceb368d5f547e82d17d96cc929a39447a34cf34fc3d0",
+ "root_kappa": "sha256:142a5807ed844fde759d8bcd4702cc27651eb975523c56155a7490ed193e2fd1",
  "status": "kappa-compatible (unverified)",
  "lane": "harness/serv-runs",
  "minted_on": "2026-10-07",
- "merkle_root_sha256": "e924b6930f0af6e9559b5c46c8c522b0dcca07cdeee7f2b8520f91fa41ff57cf",
+ "merkle_root_sha256": "e906dc72a125207086682f505f66b3f49d741f714822b9c1715ef954a4cad958",
  "merkle_leaves": 17,
  "counts": {
   "objects": 2,
@@ -11,7 +11,7 @@
   "edges": 9
  },
  "names": {
-  "source:run_roots.json": "sha256:9da6a8b4aeafa3a14d3dbc9725cc2b4a16aab63b6705949a8f354e136592b8e5",
+  "source:run_roots.json": "sha256:f10dba9c291e64058f8674eb5a4e319f8296ec13c98b5794e146528707784767",
   "source:results.json": "sha256:d4703d21a103e90076a3cfddfedc0dab67bfa3e09d7479e39dc17996df68d2bf",
   "source:pricing.json": "sha256:0fb24368fd510c8d319779c4b2ad511d370b29ccb4d104a010316dc9a946cc1f",
   "source:matrix-clean.json": "sha256:6477d4c08fbc3fe62c21feb6ae2816c3c8b0bf4b5de2bdcd7b86f2e0eca6b398",
@@ -19,7 +19,7 @@
   "source:matrix-r5.json": "sha256:4d39457e067130ec9a9d0bac6a72dc2bfb70f8b9f245f16b85570060b8ddf455",
   "source:proposals.clean.json": "sha256:a1227fbefbbd1bd132ddbf55f09a7244c3c6e90ab8e340a949904a9d12c0d5a1",
   "source:proposals.injected.json": "sha256:64e1e119d0381667f3168c3187dee14f18264ba41c16f3c4e10bbd861ef55b13",
-  "sources": "sha256:c55734af14bb89111896eda0d5ce164d855a7180612cebacdb1f3565db88c810"
+  "sources": "sha256:2b7ae4712b9d3d1e94493550ea43effaf8313c8a8fbc97914ee55ff71e00781c"
  },
  "upstream": {
   "kappa-registry": "2af8656",

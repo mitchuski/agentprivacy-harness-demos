@@ -1,10 +1,10 @@
 # harness/serv-runs sources - minted 2026-10-07 - status: kappa-compatible (unverified)
 
-Evidence root: sha256:4149e9a17e2f45039774ceb368d5f547e82d17d96cc929a39447a34cf34fc3d0
+Evidence root: sha256:142a5807ed844fde759d8bcd4702cc27651eb975523c56155a7490ed193e2fd1
 
 | source | kappa | bytes | origin |
 |---|---|---|---|
-| run_roots.json | `sha256:9da6a8b4aeafa3a14d3dbc9725cc2b4a16aab63b6705949a8f354e136592b8e5` | 6487 | ~/agentprivacy-harness-demos/data/run_roots.json |
+| run_roots.json | `sha256:f10dba9c291e64058f8674eb5a4e319f8296ec13c98b5794e146528707784767` | 6278 | ~/agentprivacy-harness-demos/data/run_roots.json |
 | results.json | `sha256:d4703d21a103e90076a3cfddfedc0dab67bfa3e09d7479e39dc17996df68d2bf` | 55449 | ~/agentprivacy-harness-demos/data/results.json |
 | pricing.json | `sha256:0fb24368fd510c8d319779c4b2ad511d370b29ccb4d104a010316dc9a946cc1f` | 5058 | ~/agentprivacy-harness-demos/data/pricing.json |
 | matrix-clean.json | `sha256:6477d4c08fbc3fe62c21feb6ae2816c3c8b0bf4b5de2bdcd7b86f2e0eca6b398` | 618 | ~/agentprivacy-harness-demos/data/matrix-clean.json |
