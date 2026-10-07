@@ -1,0 +1,59 @@
+{
+ "status": "kappa-compatible (unverified)",
+ "root": "sha256:7b5fcde256be4c1666170a4300e13d237d734f0d440fbc9b0507634501bee82e",
+ "objects": {
+  "sha256:07787ef5a1459180afaba6d3fdf695fafe1344c46a33c97f788f2517b043578e": {
+   "0": "agentprivacy-evidence/sources/1",
+   "1": "harness/challenge-lanes",
+   "2": [
+    [
+     "CHALLENGE_LANES.md",
+     "sha256:1155041e7dff4346390878c81d55f144ab7775b43d37e70a8023b1e730d21d8d",
+     18184,
+     "~/dual-agent-harness/CHALLENGE_LANES.md"
+    ]
+   ]
+  },
+  "sha256:7b5fcde256be4c1666170a4300e13d237d734f0d440fbc9b0507634501bee82e": {
+   "0": "agentprivacy-evidence/run-root/1",
+   "1": "harness/challenge-lanes",
+   "2": "2026-10-07",
+   "3": [
+    [
+     "source:CHALLENGE_LANES.md",
+     "sha256:1155041e7dff4346390878c81d55f144ab7775b43d37e70a8023b1e730d21d8d"
+    ],
+    [
+     "sources",
+     "sha256:07787ef5a1459180afaba6d3fdf695fafe1344c46a33c97f788f2517b043578e"
+    ]
+   ],
+   "4": "569fb3ff2200c9a2819905a0f1a8ffeeeb8b5545e6c2b11c654677594cb46cc8",
+   "5": "kappa-compatible (unverified)",
+   "6": "unsigned:harness-demos",
+   "7": {
+    "kappa-registry": "2af8656",
+    "bc-dcbor-rust": "2e5b901 (branch feat/dcbor-derive)"
+   }
+  }
+ },
+ "blobs": {
+  "sha256:1155041e7dff4346390878c81d55f144ab7775b43d37e70a8023b1e730d21d8d": 18184
+ },
+ "edges": [
+  {
+   "kappa": "sha256:bd6d24a6aa55359ff47a25e962b1b6bf893a4bcbcdddfbe43046554eb95a8cb2",
+   "source": "sha256:07787ef5a1459180afaba6d3fdf695fafe1344c46a33c97f788f2517b043578e",
+   "target": "sha256:1155041e7dff4346390878c81d55f144ab7775b43d37e70a8023b1e730d21d8d",
+   "relation": "composed-of",
+   "asserter": "unsigned:harness-demos"
+  },
+  {
+   "kappa": "sha256:56cf2d606d7f545616ab56488063bdc9cd95f7d398f101509b84ed73824915fc",
+   "source": "sha256:7b5fcde256be4c1666170a4300e13d237d734f0d440fbc9b0507634501bee82e",
+   "target": "sha256:07787ef5a1459180afaba6d3fdf695fafe1344c46a33c97f788f2517b043578e",
+   "relation": "composed-of",
+   "asserter": "unsigned:harness-demos"
+  }
+ ]
+}

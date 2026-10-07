@@ -1,0 +1,403 @@
+# R32 log: measured trail-search (advice) cost for the dedicated 32-step SHA-256 collision
+
+hashsmash_mage instance, agentprivacy dual-agent harness, measure/build seat. Authorised CPU run (WSL), 2026-10-05.
+Nothing submitted, pushed or posted; nothing written under `hashsmash/`.
+
+## 2026-10-05 setup
+- Authors' repo cloned: `~/hashsmash_mage/r32/sha_2_attack` (Peace9911/sha_2_attack @ 6a9f35f). It ships the
+  31-step SHA-256 search (`find_dc_model_31_256.py`, `correct_dc_model_31_256.py`) and the unit-function library;
+  no 35-step configuration (confirmed: file list).
+- apt: cryptominisat / libcryptominisat5-dev 5.11.21+dfsg1-3build1 (same CMS version as #134), cmake 4.2.3, boost, flex, bison.
+- STP built from source, tag `2.3.4` (binary reports "2.3.3", sha d70085462f07c8a5a2f1225f727cda3ef505b141),
+  `-DUSE_CRYPTOMINISAT`, minisat (stp/minisat) built alongside. Installed at `~/hashsmash_mage/r32/inst`.
+  (cmake 4 needs `-DCMAKE_POLICY_VERSION_MINIMUM=3.5`.)
+- Machine: i5-14400F, WSL2 Ubuntu 26.04, 14 logical CPUs visible, 25 GB RAM.
+
+## 2026-10-05 18:57 calibration of the search model
+- `model35.py` re-parametrises the authors' FunctionModel (find_dc_model_31_256.py) for the 35-step pattern
+  [4,5,6,7,8,12,13,20,22], steps 4..22 (start 4, end 23), W0..W34; authors' unit_function_256.py unmodified;
+  31-step-specific hard-coded weights removed; op2=1 for steps >= end-4, op5=1 for steps >= end-8 (same rule as the
+  authors' 31-step settings).
+- Calibration (`run35.py cal`): all published Fig. 6 signed rows asserted (A,E steps 0..22, W 0..34) -> SAT,
+  29.3 CPU-s, 2.06 GB peak RSS. The parametrised model admits the published characteristic.
+- Fig. 6 weights from the transcription: (tw, tE, tA, tE4) = (22, 6, 21, 76).
+
+## 2026-10-05 18:58 trail-search pipeline launched (detached)
+- `pipeline.sh`: s1 (min sum H(dW), W0..W34) -> s2 (tw fixed; min tE=sum H(dE14..18)) -> s3 (min tA) -> s4 (min tE4).
+  Each phase lowers a `<=` threshold to (found weight - 1) until UNSAT. STP 2.3.4 + CMS 5.11.21, 12 threads,
+  4 h wall cap per call. Every call under `/usr/bin/time -v` -> `~/hashsmash_mage/r32/ledger.jsonl`.
+
+## 2026-10-05 19:00 independent checks of the advice
+- `verify_pair.py`: published 35-step pair (S, Table 3) collides at 35 steps under the organizer's reference
+  `digest(.,'sha256',35)`; its 32-step digests differ (control). Fig. 6 transcription vs the pair: 119 signed
+  symbols and 360 single-bit conditions, 0 mismatches. Advice values A4..A13, E8..E13, W12, W13 recomputed (equal
+  to #26's). E16[29] = E17[29] = 1 on the pair.
+
+## 2026-10-05 19:10 independent re-implementation of the 32-step attack (attack32.c, own code from #26's spec)
+- Exact structural counts reproduced: L4 131,072; L7 524,288; combinations 10,240; (combination,E4) pairs 155,008;
+  P4 list 196,608 (393,472 iterations); |TAB2| = 1,396,774,912 = 2^30.3795 (count pass 82 s on 4 threads).
+- Self-test: the published tuple is in TAB2, its (W14,W15) is in P4, it passes Step 2 with its 35-step CV1, and of
+  its 196,608 Step-3 candidates exactly 1 (the published one) passes stages 16..22 and W23..W31.
+- q / Step-3 measurement launched: 4 parts (combination index mod 4), 2^32 fresh C_32 first blocks per part,
+  seeds 2026001..2026004 (disjoint from #26's), Step 3 on every valid tuple.
+
+## 2026-10-05 19:35 first results
+- q part 0 (seed 2026001, 2^32 C_32 first blocks, 4 threads, 22.6 min wall, 3,825 CPU-s, 5.1 GB peak):
+  346,111,249 matches, 6,259 valid tuples (#26 predicted 6,269.6 for this part). Step-2 pass fractions
+  0.5000 / 0.1250 / 0.1249 / 0.4997 / 0.2962 / 0.1243 / 0.1259. Step 3 over 1,230,569,472 candidates:
+  cumulative 2^-3.000 (st16), 2^-14.99 (st17), 2^-21.14 (st18), 2^-28.2 (st19, 4), st20 1, st21 0.
+- Trail search Step 1: descent 60 -> 22 in 18 SAT calls (9,614 CPU-s, 1,186 s wall, 1.32 GB peak).
+  Optimum candidate tw = 22 = published. The UNSAT call at <= 21 is running (2.4 CPU-h after 16 min wall).
+
+## 2026-10-05 19:56 Step 1 of the trail search COMPLETE (optimality proved)
+- 18 SAT calls (descent 60 -> 22) + 1 UNSAT call at <= 21: s1_le21 UNSAT in 2,276.8 s wall, 20,035.5 CPU-s,
+  1.50 GB peak. Step 1 total 19 calls, 29,650 CPU-s (8.24 CPU-h). Minimum tw = 22 = published Fig. 6 value.
+- An abandonment watcher (`abandon.sh`, 90 min wall) was armed on s1_le21 but the call finished on its own (38 min).
+- Pipeline moved on to Step 2 (s2_le160) automatically.
+- Single-thread timing of a Step-1 input (le60): 171 CPU-s. Instruction-count calibration (`calib_ir.sh`: native
+  run vs valgrind callgrind with --dump-instr) launched in background, 1 core, to measure instructions retired per
+  solver CPU-second and the share of multiply/divide instructions.
+
+## 2026-10-05 20:40 q / Step-3 re-measurement COMPLETE (own code, own seeds)
+- 4 parts x 2^32 C_32 first blocks (seeds 2026001..4): valid tuples 6,259 / 5,250 / 6,352 / 8,075 = 25,936.
+- q (sum of per-part rates) = 6.0387e-6 = 2^-17.3373, rel. sd 0.62%, 99% one-sided LCB 2^-17.3583, UCB 2^-17.3166.
+  (#26: pooled 2^-17.3337, LCB 2^-17.3476, analytic 2^-17.3254 -- consistent.)
+- Matches per whole-table trial 0.32520 vs N/2^32 = 0.32521.
+- Step-2 pass fractions: (a) 0.5000 (b) 0.1250 (c) 0.1250 (d) 0.4999 (e) 0.3065 (f) 0.1249 (g) 0.1241.
+- Trials with >= 2 valid tuples in one part: 4, 0, 2, 3 (9 in 2^34 part-trials).
+- Step 3 over 5,099,225,088 = 2^32.248 candidates: cumulative st16 2^-3.000 (637,405,245), st17 2^-15.000 (155,619),
+  st18 2^-21.031 (2,379), st19 2^-27.79 (22), st20 2^-29.93 (5), st21 2^-32.25 (1), st22 0.
+- Trail-search Step 2 first call (s2_le160, unconstrained tE) still running after 45 min wall.
+
+## 2026-10-05 20:46 Step 2 relaxation abandoned; fixed-nablaW chain launched
+- The pipeline's s2 constrained only sum H(nabla W) = 22 and left the signed W pattern free. S's Step 2 instead fixes
+  nabla W to the Step-1 output. The relaxed first call (s2_le160) ran 3,022 s wall / 27,613 CPU-s / 5.51 GB peak
+  without an answer and was ABANDONED (charged in full). Its /usr/bin/time wrapper was killed by mistake first, so its
+  CPU/RSS were read from /proc just before the solver was stopped (`ledger_manual.jsonl`; the ledger's ERROR row
+  with cpu 0 for s2_le160 is superseded by it).
+- Our Step-1 optimum (weight 22) is a different signed pattern from Fig. 6 (bit positions shifted). Steps 2-4
+  are now run with nabla W fixed to the published Fig. 6 W rows (`run35.py p2/p3/p4`), i.e. conditioned on the
+  Step-1 outcome that S used. 12 threads, 2 h wall cap per call (abandonment rule; S's earlier work uses 72 h).
+- q measurement done -> `post_q.sh` (table statistics + Step-1 starting-solution SAT) launched; instruction-count
+  calibration (`calib_ir.sh`, conflict-bounded, 20,000 conflicts, single thread) running under callgrind.
+
+## 2026-10-05 21:05 table statistics, starting-solution SAT, instruction calibration
+- Table statistics (`attack32s P r 0 1 0 1`, all records): analytic q prediction (method of #26 Sect. 7.2) reproduced
+  exactly: 609,229,824 tuples pass the step-6 test, sum P_t = 214,235,406.9, q_pred = 2^-17.3254. Bucket layout
+  2^27 by top 27 bits of A[-1]: mean 10.41, MAX OCCUPANCY 936 (heavy tail: A[-1] values are clustered).
+  Per-part sum of squared multiplicities of exact A[-1] values: 1,169,160,422 / 884,733,618 / 1,560,462,408 /
+  2,143,999,860 (max multiplicity 70 / 52 / 72 / 64).
+- Attack Step 1 (starting solution) by SAT: `run35.py start` = authors' model with all Fig. 6 signed rows and the
+  authors' exact value model (sha2_value) on steps 4..13, STP+CMS 4 threads: SAT in 268 s wall, 534.1 CPU-s,
+  2.08 GB peak. `verify_start.py`: the returned A0..A13, E0..E13, W4..W13 satisfy the step equations of steps 4..13
+  for BOTH computations (10/10 unprimed, 10/10 primed = XOR-conformant). (25 printed sufficient 0/1 conditions do
+  not hold; they were not asserted.) This replaces S's unitless 2^34.3 with a measured cost.
+- Instruction calibration (`calib_ir.sh`): Step-1 input (le45), single thread, --max-num-confl 20000 (deterministic):
+  native CPU 40.42 / 41.07 / 41.10 s (min 40.42); callgrind Ir = 44,197,378,388, outputs identical to native.
+  -> 1.09e9 instructions per solver CPU-second (2^30.03) under the same machine load as the charged runs.
+  Opcode mix (`opmix.py`, per-instruction counts joined with objdump): integer divide 0.305%, floating point 0.085%,
+  integer multiply 0.026%, unmapped (object '???') 7.24%, everything else (mov/cmp/jcc/push/pop/add/...) 92.3%.
+  Objects: libstp 58%, libc 21% (malloc/free), libcryptominisat5 9.6%.
+- Step 2 (nabla W fixed) descent so far: 160 -> 40 -> 39 -> 33 -> 25 ... (each call 3-7 min wall).
+
+## 2026-10-05 21:58 Step 2 descent rate; switch to concurrent Steps 2-4
+- Fixed-nabla-W Step 2 (12 threads): 160 -> 41(?) -> 40 -> 39 -> 33 -> 25 -> 24 -> 23 -> 22 -> 21 -> 20 ..., each
+  call 3-15 min wall and about 1,000-9,500 CPU-s. Near the optimum the solutions sit at the threshold, so the
+  descent goes one weight per call.
+- To finish within the authorised window, and to use the CPU better than one 12-thread portfolio:
+  `respawn.sh` waits for the current p2 call to end, stops the 12-thread chain (the stub call it had just started
+  is recorded in `ledger_manual.jsonl`), and starts three concurrent jobs with a 2 h wall cap per call:
+  - p2 resumed at 6 threads (`R32_RESUME=1` keeps the best weight already found);
+  - p3 at 4 threads, conditioned on tE = 6;
+  - p4 at 4 threads, conditioned on tE = 6 and tA = 21.
+  The published intermediate optima are used only as the conditions S's Steps 3/4 would receive. If p2/p3 end
+  elsewhere, p3/p4 are re-run with the values actually found. All calls are charged.
+
+## 2026-10-05 23:08 descents switched to bisection
+- The one-weight-per-call descents are too slow for the window. Step 2 was at 16 (target region 6), with about
+  6,000-8,000 CPU-s per call at 6 threads. Step 3 went 200 -> 112 -> 72 -> 71 and then about one weight per call at
+  ~10,000 CPU-s (target region 21).
+- `to_bisect.sh`: the current p2 call (le15, 2,962 CPU-s) and p3 call (le70, 561 CPU-s) were stopped and are charged
+  (ledger rows with result ERROR = abandoned for the schedule change). Both resumed under `R32_BISECT=1`: the
+  threshold is the midpoint between a lower bound lo (moved to k+1 by UNSAT, or by a timeout, which marks the optimum
+  unproven) and the best weight found. This is the same minimisation with fewer calls.
+- p4's first call (<= 400, 4 threads) keeps running; p4 switches to bisection when it returns.
+- Running totals at the switch: 38 calls, 129,914 CPU-s.
+
+## 2026-10-05 23:30 STATUS (for the coordinator)
+- Done:
+  - Step 1: proven optimum 22, equal to the published value (29,650 CPU-s).
+  - Step 2 with nabla W fixed: best 7; UNSAT proven at <= 5 and <= 3; the <= 6 call is running.
+  - Starting solution: 534 CPU-s, exact.
+  - q / Step-3 re-measurement and the instruction calibration are complete.
+- Running (bisection):
+  - Step 2 at <= 6;
+  - Step 3: best 35 so far (published 21);
+  - Step 4: first call returned 157 (published 76).
+- CPU-s so far: 155,191 across 46 solver calls (43.1 CPU-h), including the abandoned relaxation and the stopped
+  calls. All of it is charged.
+- Charged so far (x32 margin, kappa = 2^24): E = 2^45.6, total about 2^46.5. Projection at finish: ME about
+  250-350k CPU-s, giving a total of about 47.0-47.5.
+- ETA: Steps 2-4 by about 03:00-06:00 on 2026-10-06 (2 h cap per call). Step 2 is close; Steps 3-4 need about 5-8
+  bisection calls each. The package is drafted from section files, plus `assemble.py` and the note. To do after the
+  search: shrink the proof to <= 28 KB, verify the yudduy witness, reconcile with their 2^61.9 constructor count,
+  run the WSL check and the Docker gate (no experiments).
+- New priority taken: a finished, defensible measurement over exact optima. Any step unproven at its cap is charged
+  as spent and stated.
+
+## 2026-10-05 23:35 third-party 32-step witness (yudduy, PR #227 = submission 8f95560) verified locally
+- We fetched the certificate bytes from PR #227 (head 689cb95e) into the scratchpad only. They are not copied into
+  our package and are not used as our certificate.
+- Organizer `digest(., 'sha256', r)` on the two 128-byte messages:
+  - r = 32: both f8a3db111360e5ed2e63041ecfa82b01c95a25882910bc0f21671949296a4e77, a COLLISION;
+  - r = 31, 35, 64: the digests differ.
+  - M0 is shared; M1 differs in W4..W8, W12, W13 with exactly the Fig. 6 XOR masks.
+- With message-b as the unprimed side and CV1 = C_32(IV, M0) = e890c4ba 6bce94e6 47a0b812 c5ef36b2 ec7b7814 91cf09df
+  a9717904 494bc86f: every signed row A, E (-4..22) and W (0..31) equals Fig. 6 (0 mismatches). It is a real 32-step
+  instance of exactly this truncated characteristic, with a C_32 first block.
+  (`r32_search/yudduy_check/{vw.py,conf.py}`)
+- Their terminal counts give independent rates:
+  - 14,643,237 admitted tuples from 2,405,181,685,760 first blocks = 6.088e-6 = 2^-17.326, against our q = 2^-17.337;
+  - 1 collision in 2,799,733,071,213 = 2^41.35 tuple-tail pairs. Under p = 2^-46 the chance of a success by then
+    is about 0.04; under 2^-44 about 0.16.
+  - So their single success is consistent with p >= 2^-46. It is one event, not a rate.
+- Their 2^61.9 is a prospective cap (8,192 matcher attempts x 2^36 first-block slots, plus 2^31 tuple records x all
+  tails, plus a rerun allowance, with per-slot op caps of 2^24 and 2^16). It is not an expected or observed cost.
+  Their observed run (2^41.1 first blocks, 2^41.35 tail pairs) sits below our T = 2^45 trials. Our T comes from
+  P >= 0.43 at q_LCB and p = 2^-46.
+- Their score of 64.3 is dominated by a 2^64 allowance: the paper's 2^48.335 attack total, rounded to 2^49 and
+  inflated by C. It contains no measurement of the route search, which is what this package supplies.
+
+## 2026-10-05 23:34 Step 2 COMPLETE: tE = 6 (SAT at <= 6), UNSAT at <= 5 and <= 3 -> optimum 6 proved, = published.
+- The condition tE = 6 used by the concurrent Steps 3/4 is therefore the value our Step 2 actually returned.
+- Step 3: best 35 so far, UNSAT at <= 17 (lo = 18). Step 4: first call returned 157.
+
+## 2026-10-06 00:58 Step 3 COMPLETE (conditioned on tE = 6): tA optimum 19 proven
+- Bisection: <= 35 SAT, <= 17 UNSAT, <= 26 SAT, <= 21 SAT (12,426 CPU-s), <= 19 SAT, <= 18 UNSAT. Total p3: 10 calls,
+  35,603 CPU-s.
+- The signed-difference model's proven optimum (19) is BELOW S's published tA = 21. This matches #31's report that
+  relaxed models reach (6, 19, ...) with characteristics that are contradictory under an exact model. S's published
+  characteristic is therefore not the plain Step-3 optimum; S's procedure evidently rejected lower-weight
+  (contradictory) candidates. Our Step 4 runs with S's published threshold tA <= 21, which admits S's characteristic.
+- Step 4: first call <= 400 returned 157; the bisection call at <= 78 has been running about 1.8 h of its 2 h cap.
+- Totals: 52 calls, 176,359 CPU-s.
+- Plan: let Step 4 run until about 04:00, then stop and charge whatever has been spent (coordinator priority:
+  a finished measurement).
+
+## 2026-10-06 04:11 Step 4 STOPPED; search FINAL
+- Step 4 (conditioned on tE = 6, tA <= 21): <= 400 SAT (157); stopped at the switch; <= 78 TIMEOUT (2 h, 28,257 CPU-s);
+  <= 117 SAT (112); <= 95 stopped at 6,645 s wall (26,349 CPU-s, charged); a stub call stopped within 1 s (from /proc).
+  Best tE4 = 112, unproven (published 76). p4 total 85,531 CPU-s.
+- FINAL search ledger: 56 solver calls (plus the 2 calibration calls), 247,790 CPU-s = 68.8 CPU-h including the
+  starting solution (534 CPU-s). Peak RSS 5.25 GiB (5,642,330,112 bytes: the abandoned relaxation).
+  Optima: Step 1 tw = 22 (proved, = S); Step 2 tE = 6 (proved, = S); Step 3 tA = 19 (proved; S kept 21);
+  Step 4 tE4 = 112 (unproven at stop; S 76).
+- Charged (margin 32, kappa = 2^24/CPU-s): E = 32 x 247,256 x 2^24 = 2^46.92 (search) + D = 2^38.06 (start).
+  At the measured instruction rate (lambda = 1, no margin) the same CPU time would be 2^47.95 instr / 2224 = 2^36.8;
+  the charge is deliberately 2^10.1 above that (margin 32 x 34 ops per instruction).
+
+## 2026-10-06 04:30 PACKAGE FINAL
+- `package_r32/` contains only claim.json, proof.md (27,089 bytes, ASCII) and certificates/manifest.json (empty).
+  Build helpers moved to `work/sha256/r32_build/` (assemble.py, section templates).
+- Claim: time_log2 47.4 (computed 2^47.331), preprocessing_log2 47.0 (= C 2^36.5 + D 2^38.06 + E 2^46.916, computed
+  2^46.920, itemised in proof Section 8), memory 35 (computed 2^34.73, including the solver peak of 5.25 GiB),
+  advice 13, success 0.42 (computed 0.4326).
+  - On the coordinator's 2^36 figure: at the measured instruction rate with lambda = 1 and no margin, the search would
+    be 2^36.8 units. We charge 32 x 34 ops/instruction above that, on purpose (#134 precedent, H-kappa).
+  - Sensitivity in the proof: kappa 2^23 / margin 32 gives 46.65; margin 8 gives 46.13.
+- Gates:
+  - WSL `local_tracks.py check sha256-r32-exploratory`: mechanically_valid, ready, 0 certificates.
+  - No experiments declared, so the Docker gate does not apply.
+  - Field audit: claim.json fields match the proof; evidence_ids resolve to the intended sections; no private paths.
+- Note: `work/sha256/submission-note-r32.md` (13.2 KB, starts "Effort: high", harness paragraph, no Model/Harness
+  lines).
+
+## 2026-10-06 05:00 PACKAGE v2 (coordinator decision after ASSAY_A/B)
+- Changes:
+  - The x32 margin is replaced by the itemised `route-search-allowance` = 2^28 CPU-s at kappa = 2^24, giving E = 2^52.
+    Itemisation: 247,285 measured; Step-4 completion estimated at 0.2M-4M; x8 selection loop; x8 threads, schedule,
+    exploratory models and abandoned attempts. Declared plausible, not established. F1 (the <= 78 timeout although
+    Fig. 6 satisfies it) is stated.
+  - Starting solution re-run (`start2`) with S's printed single-bit conditions asserted: SAT, 374.7 CPU-s, exact,
+    0 violated conditions. D = 32 x 908.8 x 2^24 = 2^38.83, anchored above S's 2^34.3.
+  - T = 2^46: P = 0.678, claimed 0.65; at p = 2^-47, P = 0.432.
+  - `search-peak-memory` (supporting) pre-declares the search peak, 5.25 GiB < 2^33.
+  - Heuristic IDs used verbatim in proof §10. Stage-16 per-P4 precompute described (F6). Typos fixed (2^2^, section
+    reference, GB -> GiB). Credit: hybridnoise #31, yudduy #227, dariolina #224.
+  - ePrint 2026/1080 PDF: HTTP 403 again. The abstract has no runtime, and the proof says so.
+- Claim: time 52.1 (2^52.028), preprocessing 52.1 (2^52.000), memory 35 (2^34.732), advice 13, success 0.65
+  (0.678). proof.md 28,589 B.
+- Gates:
+  - WSL check: mechanically_valid / ready / 0 certificates.
+  - Grep audit: claim = proof = note fields; evidence_ids re-mapped; no private paths.
+  - No experiments.
+- Builders are in `work/sha256/r32_build/`. The package dir holds only claim.json, proof.md and certificates/.
+
+## 2026-10-06 10:10 Step-4 COMPLETION RUN started (coordinator: 1ded36a8 passed at 52.1; tighten to a measured total)
+- Budget: about 24 h wall, all 14 threads. Portfolio, both conditioned on S's nabla W, tE = 6, tA <= 21, 8 h cap per
+  call, every call charged:
+  - (a) linear descent from <= 111, 6 threads (`state_p4a.json`, log p4a.log);
+  - (b) one direct call at <= 76 (S's published tE4), 8 threads (`state_p4b.json`, log p4b.log).
+  Both stop at a weight <= 76 (`R32_STOP_AT=76`). Ledger tags are p4_leK for both; the threads field tells them apart
+  (6 vs 8).
+- Next: once a characteristic with weight <= 76 is in hand, check it under the exact value model (non-contradiction),
+  compare it with Fig. 6, then rebuild with the measured total and an itemised margin.
+
+## 2026-10-06 11:40 Step-4 completion: both portfolio calls (a) <= 111 and (b) <= 76 still running (about 1.5 h in), no result yet.
+
+## 2026-10-06 (evening) Step 4 COMPLETE; PACKAGE v3 built
+- Step-4 completion portfolio (conditioned on tE = 6, tA <= 21, 8 h caps):
+  - p4_le76 (8 threads): SAT, 174,444.74 CPU-s, 21,933 s wall, peak 4.47 GB;
+  - p4_le111 (6 threads): TIMEOUT, 172,128.78 CPU-s.
+  The returned characteristic has weights (22, 6, 21, 76), and EVERY signed row A0..22, E0..22, W0..34 equals Fig. 6
+  (`found76.json`). The completed search constructs exactly the attack's advice. Fig. 6 is non-contradictory (S's
+  pair and the #227 pair conform), and q and p were measured for exactly this characteristic.
+- Measured search total: 59 calls, 593,858.32 CPU-s (start runs separate: 908.79 CPU-s). Peak RSS 5.25 GiB.
+- v3 (`package_r32_v3/`, note `submission-note-r32-v3.md`):
+  - kappa = 2^23 (credited to #367 Th0rgal; re-justified: 17 ops per instruction allowed, 6.6 needed);
+  - T = 2^45 (credited to #377 jackzampolin), P = 0.4326;
+  - margin x8, itemised;
+  - E = 2^45.180, D = 2^35.83;
+  - total 2^46.254, claim 46.3; preprocessing 2^45.185, claim 45.2; memory 35; advice 13; success 0.42.
+- Heuristic `route-search-allowance` replaced by `route-search-measured`; no new derived heuristics.
+- Provenance chain stated factually (#296 us -> #367 -> #377 -> this).
+- Coauthors: @yudduy @jagnani73 @winglock @hybridnoise @Th0rgal @jackzampolin.
+- Gates: WSL check mechanically_valid / ready / 0 certificates. proof.md 28,597 B, ASCII. Field audit consistent
+  across claim, proof and note. The package dir is clean.
+
+## 2026-10-06 (late) PACKAGE v4 (coordinator decision after ASSAY_A/B v3: margin x32)
+- `package_r32_v4/` (claim.json, proof.md 28,613 B ASCII, certificates/) + `submission-note-r32-v4.md` (7.2 KB).
+- Claim: time 47.6 (2^47.532), preprocessing 47.2 (2^47.181), memory 35 (2^34.732), advice 13, success 0.42
+  (0.4326, T = 2^45). E = 32 x 593,858.32 x 2^23 = 2^47.180; D = 8 x 908.79 x 2^23 = 2^35.83 (stated as x8
+  everywhere; the v3 "32 x 908.8" line is fixed).
+- The x32 margin is a blind-rediscovery factor of about 8 (6.3-8.4 M_E, ledger-priced at 230,400 CPU-s per 8 h x
+  8-thread call; the blind <= 111 arm timed out with no progress) times a residual 4 (x2 variance, x2 exploratory
+  models and nabla-W choice). No new derived model.
+- claim.json `route-search-measured` limitations now state: conditioned on S's nabla W; aimed at tA <= 21 and
+  tE4 <= 76; 76 not proved optimal; the x32 is what covers this. evidence_ids add the Result paragraph and the
+  ledger table (search-peak-memory).
+- kappa: the unmapped 7.24% are PLT stubs, so slack is 2.57x (1.36 bits).
+- Provenance: #235 = our own earlier r32 submission (d7820959, closed), which #367 and #377 cite correctly. Chain
+  stated as #235/#296 -> #367 -> #377 -> this, neutrally. dariolina #224 credit dropped. Memory: 4.26 GiB
+  (4,470,264 KiB) everywhere.
+- Gates: WSL check mechanically_valid / ready / 0 certificates. Grep audit: fields, margin factor and totals agree
+  across claim, proof and note. The package dir is clean.
+- Coauthors: @yudduy @jagnani73 @winglock @hybridnoise @Th0rgal @jackzampolin.
+
+## 2026-10-07 PACKAGE v5 (v4 = 1ac3bbb5, PR #393, came back not_evaluable on evidence_relevant only)
+- `package_r32_v5/` built from the coordinator-corrected v4 files; claim unchanged at 47.6 / 47.2 / 35 / 13 / 0.42.
+- Certificate `sha256-r32-route-corroboration-yudduy-227` (#227 pair, credited, corroboration only). Organizer
+  digest at r32 is equal (f8a3db11...4e77); WSL check certificates_verified 1.
+- Experiment `fig6-conformance-replay` (python-message-pairs-v1, full-collision). It replays the pair and reports
+  0 mismatches over 86 Fig. 6 rows. Docker gate: completed, 256/256 successes, 0.3-0.5 s per container. Report at
+  `work/sha256/docker_report_sha256-r32.json`.
+- Proof edits:
+  - certificate and experiment wired into section 0, section 3 and step3-46-conditions evidence;
+  - calibration repeated 3x natively;
+  - q LCB construction stated (normal approximation, 25,936 events);
+  - Step-3 tail stated as plausible, not established;
+  - trims bring proof.md to 28,639 B ASCII;
+  - evidence_ids re-mapped.
+- Provenance and coauthor text kept as corrected (#296 -> #367 -> #377 -> this; no #235).
+- Note: `submission-note-r32-v5.md`.
+
+## 2026-10-07 11:30 v6 work started (coordinator: retake the lead below 47.15)
+- Board: jungjipdo 49f8f6d at 47.15 (our ledger, kappa 2^22.527 from our callgrind rate x class mix 6.64 x spread
+  1.85); Th0rgal f310d44 at 47.275 (7-lane 36-bit SWAR C_32 evaluation, T = 2^44.803, success 0.39006); Meganpark
+  47.29.
+- WSL has no hardware PMU (perf_event_open: ENOENT), so calibration uses callgrind.
+- Per-phase kappa calibration launched (`kcal/`): representative real charged models ph_s1 (s1_le22), ph_p2
+  (p2_le6), ph_p3 (p3_le21), ph_p4 (p4_le76), single thread, 20,000 conflicts (deterministic). Each gets idle native
+  x3, a native run under a busy-loop load, a 4-thread native p4 x3, and callgrind (Ir plus per-instruction counts).
+  Then `kcal2.sh`: saturated runs (12 copies + 2 fillers = 14 busy logical CPUs, the charged condition), 3 rounds per
+  phase.
+- First idle data: s1 10.5 s, p2 51.4 s, p3 52.6 s. The idle rate is clearly higher than the loaded 2^30.03 measured
+  in the original calibration.
+- Per-form instruction costing (`opcost.py`) gives m = 5.08 ops per instruction on the original calibration instance:
+  objdump forms; memory operands priced by address terms; PLT stubs (100% of the 7.24% unresolved, at 0/4 offsets in
+  16-byte slots) priced 4; div 512, float 512, mul 320, SIMD 64.
+
+## 2026-10-07 ~13:00 BLOCKED: WSL wedged
+- The four parallel callgrinds of the 19 MB models (plus Docker Desktop starting for the gate) pushed vmmemWSL to a
+  20 GB working set. Since then every wsl.exe call hangs (`--list`, `--shutdown`, `-d Ubuntu`).
+  `Restart-Service WSLService` and killing vmmemWSL are denied without admin. Docker Desktop was stopped.
+- The coordinator was asked for an admin `wsl --shutdown` / WSLService restart. A background poller is watching for
+  recovery.
+- Done on Windows meanwhile:
+  - per-form costing (`opcost.py`): m = 5.08 on the original calibration instance; the PLT-stub pattern was confirmed
+    (3,200,394,667 of 3,200,394,738 unresolved instructions are 0/4 pairs);
+  - idle rates measured before the hang: s1 10.2-10.5 s, p2 51.3-51.4 s, p3 51.8-52.6 s, p4 52.9 s, c45 10.3 s.
+    c45 (44.197e9 Ir) gives an idle rate of 2^32.0, against 2^30.03 under load: a factor 3.9;
+  - SWAR 7-lane evaluator with an exact counter: 2,496 ops per batch, bit-exact against scalar on random batches;
+  - v6 experiments: the replay now also checks the 360 single-bit conditions (0 violations); `swar7-c32-self-check`
+    passes 256/256 locally in 0.2 s;
+  - v6 proof template (Lemma S, CP q bound, SWAR section A, kappa section placeholder) and `assemble_v6.py`.
+
+## 2026-10-07 13:30 calibration RESULTS (all completed before the wedge; files intact)
+- callgrind (single thread, 20,000 conflicts, output identical to native):
+  - instructions: s1 4.479e10, p2 1.803e11, p3 1.819e11, p4 1.823e11;
+  - per-form m: 5.030 / 5.146 / 5.123 / 5.142 ops per instruction.
+- Native CPU-s for the same replays:
+  - idle x3: s1 10.2-11.0, p2 51.3-54.6, p3 51.8-54.9, p4 52.9-54.8;
+  - busy-loop load (13 spinners): 16.6 / 88.8 / 90.7 / 89.4;
+  - saturated (12 copies + 2 solver fillers, 3 rounds, 36 copies per phase), min/median/max: s1 27.6/28.7/35.2,
+    p2 143.2/145.0/157.0, p3 128.0/136.6/166.8, p4 136.7/142.8/158.0.
+  - Rates: idle max 2^31.7-32.0; saturated max 2^30.23-30.60; saturated median 2^30.21-30.54.
+  - 4-thread p4 native: 61.0-62.6 CPU-s.
+- kappa = sat-max rate x m x S / 2224. With S = 2: s1 2^22.81, p2 2^22.47, p3 2^22.64, p4 2^22.56; weighted
+  E = 2^46.741.
+- Provisional v6: SWAR first blocks (2,496 ops per 7-lane batch), T = 7 x ceil(2^44.86/7), P = 0.4020 (claim 0.40),
+  A+B 2^43.509, D 2^35.64, total 2^46.89 (claim 46.90), preprocessing 46.75.
+- WSL restarted 13:23 by the coordinator. Detached jobs now die when wsl.exe exits (the systemd user session
+  fails), so long jobs run in the foreground under a background wsl.exe.
+- Running: callgrind of the 4-thread p4 replay, to derive S from a measured multithread rate.
+
+## 2026-10-07 ~13:50 kappa calibration STOPPED; blind route search STARTED (coordinator change of plan)
+- Calibration record: per-phase measurements above are kept as artefacts. The final 4-thread callgrind (cg_t4) was
+  killed by the coordinator and is recorded as ABANDONED calibration (it did not run inside the charged search).
+- Unconditioned route search (`route.py`, ledger `ledger_route.jsonl`, every call charged):
+  - inputs: S's nabla W rows, conditioned on and priced as advice (they are already part of the attack's advice;
+    our own Step-1 pattern would give a different attack needing new TAB2/q/p measurements); tE = 6 (our Step 2,
+    proved optimal);
+  - Step 3: our proved optimum tA = 19, then the honest upward procedure. For each tA level L = 19, 20, 21, ...,
+    Step 4 runs blind and the best characteristic is checked under the exact value model (sha2_value, steps 4..22),
+    continuing upward while the check fails;
+  - Step 4 ladder: start <= 400, then k = best - d with d = (best - lo) / 8 initially; d halves on a timeout;
+    UNSAT raises lo; it stops on a proved optimum or 3 consecutive timeouts at d = 1. 45-min caps, 7 threads, a
+    fresh seed per call (seeded shuffle of the constraint order). Only bounds this run established are used: no
+    76 target.
+- Two lanes, foreground under background wsl.exe (2 STP processes x 7 threads = 14): lane 1 runs L = 19 then 20;
+  lane 2 runs L = 21. The order of levels in the procedure is 19, 20, 21; both lanes are charged in full until the
+  procedure decides.
+- Stop rule: the first exact-valid characteristic of attack quality. If it equals Fig. 6, q and p are already
+  measured; otherwise report.
+- Wall-time estimate: per level, 6-15 ladder calls at <= 45 min plus an exact check <= 2 h, so 6-14 h per level;
+  roughly 12-30 h in total with 2 lanes. Divergence check at about 24 h.
+
+## 2026-10-07 14:36 route search, first hour: 7 calls, 36,112 CPU-s. L19 ladder: best tE4 82, lo 76 (UNSAT <= 75 and <= 66). L21: first call (<= 400) timed out at 45 min (18,578 CPU-s), so it retries with fresh seeds. Peak RSS 3.62 GiB, load about 14.
+
+## 2026-10-07 15:35 route search: level tA <= 19 COMPLETE
+- L19 ladder (9 calls): best tE4 = 81, proved optimal (UNSAT at <= 80; also UNSAT at <= 75 and <= 66).
+- Exact value-model check of this characteristic (sha2_value on steps 4..22, all rows asserted): SAT in 974.5 CPU-s.
+  The L19 characteristic (tw 22, tE 6, tA 19, tE4 81) is therefore NON-CONTRADICTORY, but it is not Fig. 6
+  (equals_fig6 false).
+- Its attack quality (q, p) is unknown without rebuilding TAB2/P4 and the starting solution for it. tE4 = 81 > 76
+  means more dense-part conditions than Fig. 6.
+- The procedure continues as a rediscoverer minimising tE4 across tA levels: lane 1 now runs L20; lane 2 runs L21
+  (best 129 after 3 calls; the first two <= 400 calls timed out).
+- Totals: 13 route calls, 83,276 CPU-s. Ledgers exported to work/sha256/ledger_export/.
+
+## 2026-10-07 (evening) kappa evidence ledger slots prepared (no kappa cited; P1 pending)
+- Read kappa_evidence_mage README/SCHEMA/PROVERB/verify_r32 (read-only; that directory is not edited).
+- `r32_build/make_kappa_experiment.py`: generates the third experiment `ledger_kappa_check.py` from a minted
+  bundle. The program embeds the dCBOR encoder verbatim and the call/ledger/summary/run-root objects, and
+  re-derives call, ledger, summary and root kappas plus totals. Dry run on the existing P0 bundle (59 calls):
+  all checks pass, 593,858.32 CPU-s, peak 5,510,088 KiB, 24 KB of source.
+- To run after the search ends: final ledger export -> mint (Mitch's kappa session) -> P1 -> generate the
+  experiment -> Docker gate.
+
+## 2026-10-07 16:55 route search: 16 calls, 135,332 CPU-s
+- L19 done (tE4 81 proved; exact-valid; not Fig. 6).
+- L20: first call SAT at 110.
+- L21: best 129; the <= 113 and <= 121 calls timed out (45 min each); the ladder step is narrowing.
+- Ledgers exported.

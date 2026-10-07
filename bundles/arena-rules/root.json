@@ -1,0 +1,21 @@
+{
+ "root_kappa": "sha256:7b5fcde256be4c1666170a4300e13d237d734f0d440fbc9b0507634501bee82e",
+ "status": "kappa-compatible (unverified)",
+ "lane": "harness/challenge-lanes",
+ "minted_on": "2026-10-07",
+ "merkle_root_sha256": "569fb3ff2200c9a2819905a0f1a8ffeeeb8b5545e6c2b11c654677594cb46cc8",
+ "merkle_leaves": 3,
+ "counts": {
+  "objects": 2,
+  "blobs": 1,
+  "edges": 2
+ },
+ "names": {
+  "source:CHALLENGE_LANES.md": "sha256:1155041e7dff4346390878c81d55f144ab7775b43d37e70a8023b1e730d21d8d",
+  "sources": "sha256:07787ef5a1459180afaba6d3fdf695fafe1344c46a33c97f788f2517b043578e"
+ },
+ "upstream": {
+  "kappa-registry": "2af8656",
+  "bc-dcbor-rust": "2e5b901 (branch feat/dcbor-derive)"
+ }
+}

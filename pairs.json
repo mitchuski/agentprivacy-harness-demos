@@ -6,6 +6,30 @@
  },
  "pairs": [
   {
+   "reader": "readers/arena-rules.html",
+   "reader_kappa": "sha256:3acedd7ba5cf6a6923cc207c0e7e22297fa69895bd86bab0016ca8c8d50f50a0",
+   "evidence_root": "sha256:7b5fcde256be4c1666170a4300e13d237d734f0d440fbc9b0507634501bee82e",
+   "lane": "harness/challenge-lanes",
+   "bundle_lane": "harness/challenge-lanes",
+   "generator": "generators/gen_arena_rules.mjs",
+   "generator_kappa": "sha256:f7602e6230cb7208d0da62466de0590bc3173f84dca6469f32c745533695493c",
+   "transform_kappa": "sha256:6e9f86ae0ce9513b3d568d3db8d437444f511dfdc95eab800469fa53faf53eac",
+   "date": "2026-10-07",
+   "status": "kappa-compatible (unverified)"
+  },
+  {
+   "reader": "readers/credit-provenance.html",
+   "reader_kappa": "sha256:f1f2dc05a20dce7b651b7f68853f28e71181b9a04fc9f19a866206197615d7da",
+   "evidence_root": "sha256:2a9fae2f7a2214c36abffe4f2ccb159126ec278dbaae13cfc2b13b847d34ab3c",
+   "lane": "credit/sig-hashsmash",
+   "bundle_lane": "credit/sig-hashsmash",
+   "generator": "generators/gen_credit_graph.mjs",
+   "generator_kappa": "sha256:24a569c22d4909fa5accb5ef13ddcd64027897cba02c45258a7df1fd02e61d66",
+   "transform_kappa": "sha256:64d21c98fd45349e9ebf75021c5b6038d09a6d7583456621270370be320b1ddb",
+   "date": "2026-10-07",
+   "status": "kappa-compatible (unverified)"
+  },
+  {
    "reader": "readers/r32-route-search.html",
    "reader_kappa": "sha256:40d957c8391b97a7cef1132be6c1ac9c6d14f4f2223fc79e6f8b1f2aff914cf3",
    "evidence_root": "sha256:3c20049e55109c2940161747b48dff5318f25c6ea74fc7f9283b6ef5b0c0f825",
@@ -14,6 +38,18 @@
    "generator": "generators/gen_evidence_graph.mjs",
    "generator_kappa": "sha256:d1c4b8e2145188dcb28a30b021030826ce6a24703ae03ee28b41e7763c61ab22",
    "transform_kappa": "sha256:37d8702da04f08f7cae91e7dcc1942359bf8359d3ac89183bcb64c980ba63100",
+   "date": "2026-10-07",
+   "status": "kappa-compatible (unverified)"
+  },
+  {
+   "reader": "readers/research-ledger.html",
+   "reader_kappa": "sha256:06eb60f1ceafd95a7207a2d5f14e289abddf9d61bbdeb672250e9ab24cc08a96",
+   "evidence_root": "sha256:370262c4ab6b347dcc9b9589920f179e84514cafdd4a8633f9dbc6d32c5a575c",
+   "lane": "ledger/sig-better_codes",
+   "bundle_lane": "ledger/sig-better_codes",
+   "generator": "generators/gen_research_ledger.mjs",
+   "generator_kappa": "sha256:132883dc6086986b81ed9b1106ff4532928ed87f217e34105f5d535417238024",
+   "transform_kappa": "sha256:caa33ae3887f56e653b7483d403cc008751975bacc8720ce72d7c789a7cc72fd",
    "date": "2026-10-07",
    "status": "kappa-compatible (unverified)"
   },

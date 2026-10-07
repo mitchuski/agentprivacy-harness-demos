@@ -1,0 +1,22 @@
+{
+ "root_kappa": "sha256:370262c4ab6b347dcc9b9589920f179e84514cafdd4a8633f9dbc6d32c5a575c",
+ "status": "kappa-compatible (unverified)",
+ "lane": "ledger/sig-better_codes",
+ "minted_on": "2026-10-07",
+ "merkle_root_sha256": "884123cad36d3da2fd9a1800d450fa7e20811e2936ed509b944d09842c938e6b",
+ "merkle_leaves": 5,
+ "counts": {
+  "objects": 2,
+  "blobs": 2,
+  "edges": 3
+ },
+ "names": {
+  "source:HANDOFF_2026-10-07.md": "sha256:0547fa97e1b46841af97bd1d9602e4ca92ce2e10a9f3807fafafc69f175fdc7e",
+  "source:KILLED_LEVERS.md": "sha256:2a1af7f0290b28a5a5784e0c50ffba7b24c21d28cede3843c01a7a2a0cd9da7d",
+  "sources": "sha256:6015b7a3aef1c6a386b0957ffcfc96aa3f9b69a83aeb106653ca4c9d170d2293"
+ },
+ "upstream": {
+  "kappa-registry": "2af8656",
+  "bc-dcbor-rust": "2e5b901 (branch feat/dcbor-derive)"
+ }
+}

@@ -1,0 +1,198 @@
+# KILLED_LEVERS.md
+
+A lever is killed here with its **re-open condition**. A kill without one is a
+mood, not a finding (GR-6). Ordered newest first.
+
+---
+
+## K-r16.1-A8 — an index-8 exact-pin functional on the h=1024 rung, degree ≤ 3 (analogue-exhaustive, real-p-priced)
+
+**Killed** r16.1, 2026-09-13. **Seat** soulbis (Opus) at probe 5; critic: structural.
+
+**The claim.** A functional `Φ` of `U` on the power-map locator (evaluations `V_U(w)`, polynomials
+of degree ≤ 3 in one such value, ratio pairs, `F_{q^2}` norms) with joint confinement index
+`e ≥ 8` in `K^*`, i.e. third-root image ≤ 531391578, lifting the h=1024 rung (121857 / 11546)
+over `bar`.
+
+**The kill.** `e | p−1 = 2^24·127`, so the admissible indices are 1, 2, 4, 8, …; measured `e = 1`
+for every functional off the product key and its perfect powers — exhaustively at
+`q = 193 / 769 / 12289 / 520193` (every evaluation point; every quadratic at 193/769/12289; every
+cubic at 193/769) and on 454,209 screened functionals at the real `p`; the count at `e = 1` is
+`floor(C(255,136)/(256·(p−1)·p^5)) = 68579341057697257`, short of `bar` by 2.0035 bits; `e = 4`
+would still miss (image 532676608 = budget + 1,285,030); only `e ≥ 8` clears (548634728461578056).
+Reproduced by the prover's own instrument (no shared code), canary first at every prime.
+**Boundary (honest):** exhaustive at degree ≤ 3 on the analogues and at degree 1 at the real `p`;
+degree ≥ 2 at the real `p` is priced negative, not proved (D2 keeps that qualifier).
+
+**Re-open condition.** An explicit functional `Φ` of `U` (degree ≥ 4 or arity ≥ 2) with a PROVEN
+image ≤ 531391578 in `K^*` — a subgroup of index divisible by 8 or by 127 provably containing
+`Φ(V_U(w))/Φ(V_{U′}(w))` for all `U, U′` — whose joint index against the 0-root and the five
+prescribed coefficients still multiplies (no Goursat loss), exhibited first at a prime with
+`8 | q−1` and shown to persist from `q = 769` to `q = 520193` rather than vanish with `q` as the
+289 `e = 2` cubics and 8 `e = 6` even quartics at `q = 193` do. The prover's `e = 6` even-quartic
+class `Y^4 + cY^2 + d` at `q = 193` is the only candidate of that shape on record and is not yet
+exhausted at `q = 769` (591,361 quartics; sampled). Evidence: `runs/r16.1/r16.1.1/propose-index8-analogue-scan/`,
+`runs/r16.1/r16.1.1/p1-index8-analogue-scan-clean-miss/`.
+
+---
+
+## K-r16.1-D1 — a degree-1 exact pin of `V_U(w*)` on the h=1024 rung (theorem + exhaustive real-prime sweep)
+
+**Killed** r16.1, 2026-09-13. **Seat** soulbis (Opus) at probe 5 (and probe 9 on a proposer slip);
+critic: structural.
+
+**The claim.** A third root `w* ∈ K \ {0}` whose value `V_U(w*)` is confined jointly with the
+product key `V_U(0) ∈ μ_256` to a subgroup of index ≥ 8 (`e = m·c`, `m = [K^* : Γ(w*)]`,
+`c` = the Goursat common quotient), making the third root cost ≤ 531391578 instead of `p−1`.
+
+**The kill.** The joint index is exactly 1 for every `w ∈ K \ {0}` at degree 1: the Goursat
+reduction `e = m·c`, then an exhaustive sweep over all 2,130,706,433 points of `K` at
+`H = 256` (also 512 and 1024) with survivors `U2 = {0}`, `T2 = none` — reproduced by the prover's
+own QR-table sweep (27.7 s build + 76.9 s sweep) and by a brute-force arbiter over every
+character pair of `μ_H × K^*` (0 counterexamples at `q = 113/193/769/12289`, controls to the
+digit). Hence the third root costs `p−1` and the count is 68579341057697257 < `bar` by 2.003485
+bits. Also on record: the proposal's Lean entry lemma `orbit_count` as written
+(`(p^5·256·I)·2^59 < choose 255 136`) is FALSE for `I = 266338304` (largest admissible `I` under
+`2^59` is 253482032); the correct constant is `2^58` (largest `I` 506964064, and `2^58 > bar`).
+
+**Re-open condition.** (i) a multi-point additive functional `Σ c_i V_U(w_i)` with a proven image
+≤ 531391578 at the real `p` (currently only birthday-sampled on 10^6 subsets, consistent with
+image `p`); or (ii) a `w*` in `F = K^6 \ K` with a proven small image whose prescription costs
+fewer than 29 bits of keyspace (`push_r4.residual_open`: closed by 16 analogues, not exhaustion);
+or (iii) a key ledger for the rung that does not charge the third root as a generic `K`-root at
+all — none priced by any r15/r16 lens. Evidence: `runs/r16.1/r16.1.1/propose-index8-exact-pin-theory/`
+(`twist_d1.c`, `ledger.mjs`), `runs/r16.1/r16.1.1/p2-index8-exact-pin-closure-d1/`.
+
+---
+
+## K-r15.1-SA — seven agreements on the h=512 OrbitPencil shape (off-lattice agreement gain)
+
+**Killed** r15.1, 2026-09-13. **Seat** soulbis (Opus) at probe 5; critic: structural.
+
+**The claim.** Cut a sub-family of the live max-key fibre (`G = ceil(C(511,272)/(512·p^14)) =
+4009245024241067461`) sharing seven further agreement points, retaining `>= 6.8586661 %`,
+to reach index 122362 / 11612.
+
+**The kill.** On the 512-fibred shape agreement moves in whole fibres: `f1 + γ_U·f2 − c_U =
+RF(x)·V_U(x^512)/(z(z−α))` on the whole domain, so a point agrees iff `RF(x) = 0` or
+`V_U(x^512) = 0`, and `m ≡ 131071 (mod 512)` is forced. 139782 ≡ 131071 + 7 is off-lattice by
+construction; the +7 and the +512 are the same event (core `>= 518 > 511`). Any cutting
+invariant must have `<= 14` values (`ceil(G/14) > bar`, `ceil(G/15) < bar`); every named
+mechanism is 27.12–57.93 bits short (15th K-pin 1881650594; `β = α^p` cap 2130706433;
+lattice a=273 J=15 1647305831; μ_2/4/8/16 32186199/7074371/5569676/8286954; shared off-domain
+F-root 1). `f2_far` ledger: core 1023 with 14 pins = 132095 > 131583 breaks; the 15th pin is
+mandatory; live rung 511 + 512·256 = 131583, zero slack.
+
+**Re-open condition.** A functional of `U` on the h=512 shape whose image has `<= 14` values
+(a coset of the order-2/4/8 subgroup of `K^*`, `p−1 = 2^24·127`) AND whose vanishing or
+membership forces one agreement point off the 512-lattice, with an exact image-size proof in
+characteristic `p`. Evidence: `runs/r15.1/r15.1.1/p1-seven-agreements-lattice-closure-h512/`.
+
+---
+
+## K-r15.1-DF — the Dickson `x + 1/x` fibration (scope: this lens only)
+
+**Killed** r15.1, 2026-09-13. **Seat** soulbis (Opus) at probe 5; critic: structural.
+
+**The claim.** Replace the power map by the pair-closed Dickson fibration at h=512 with J=6
+pins plus the palindromic double root at `u = 1`, hoping the square-class discount `(p−1)/2`
+buys the 2.0035 bits at 121857.
+
+**The kill.** `W_U(0) = 1` identically (every factor has constant term 1): no cheap group
+0-root at all. The only sub-`p` pin is the double root at `u = 1` in the coset `2·Sq` of size
+`(p−1)/2`; count `floor(C(255,136)/(p^6·(p−1)/2)) = 16479333838`, **23.99 bits short**
+(24.99 at the standard rate; only a root charged nothing would clear, +5.9965). Lens scan over
+`h ∈ {128..8192}`, both singleton and core conventions, every selection size, every index in
+`(80811, 122362]`: nothing clears, best −24.8991. Small analogue `q = 193/769`: the only
+confined Dickson pin is `w = 1` at image exactly `(q−1)/2`. The proposer's count was 0.91 bits
+generous (`C(255,136)` for `C(254,135)`) — direction favours the kill. Universality ("only
+`x^h` and Dickson descend") rests on Ritt, char 0, untrusted — **not** filed as proven.
+
+**Re-open condition.** (a) a fibration of `μ_n` of degree `<= h` other than `x^h` and Dickson
+with an exact char-`p` descent proof carrying a group root of image `<= H`; or (b) a pin on any
+locator with image `<= (p−1)/8`, verified first on the `q = 193/769` analogue; or (c) a
+two-fibre core buying the second rational root for free (D7; condition prices −0.91 / −2.91
+bits, not total margins). Evidence: `runs/r15.1/r15.1.1/p2-dickson-fibration-priced-kill/`.
+
+---
+
+## K-r15.1-AA — an accounting wider than one instance (averaging, pairs)
+
+**Killed** r15.1, 2026-09-13. **Seat** soulbis (Opus) at probe 5; critic: structural
+(definition-shaped).
+
+**The claim.** Recover the 2.0035 bits at 121857 by averaging over pencil sources, counting
+colliding pairs, or any `winningSetDensity` entry point wider than one instance.
+
+**The kill.** `winningSetDensity` is an `iSup` over single `ViolatingInstance`s
+(`SoundnessBounds.lean:1146-1148` at clone 207eb22); every ArkLib lower bound (`:1193`, `:1224`,
+`KnowledgeSoundness:396`) terminates in `winningSetRatio_le_winningSetDensity` on ONE
+instance; `Λ`, `epsPg`, `epsCa` are likewise sups over one centre / one WordStack. For a
+pencil-shaped source the winning set IS one key fibre, so the pigeonhole yields only
+`max >= mean = ceil(C(255,136)/(256·p^6)) = 68579341025511059 = 2^55.928624`; `bar/mean =
+4.009672` — **exactly the 2.0035 bits.** The second-moment escape needs `Var/mean^2 >=
+3.009672`, and productKey uniformity is closed (Ramanujan, `2^-127.14`, push_r4).
+
+**Re-open condition.** An upstream ArkLib change (new clone commit) that lower-bounds
+`winningSetDensity` by an average or a pair count; or an explicit key fibre of the h=1024
+J=6 a=136 joint key of size `>= 274980728111395088` exhibited directly (equivalently
+`Var/mean^2 >= 3.009672` for that key map). Evidence:
+`runs/r15.1/r15.1.1/p3-alt-accounting-closure-sup-over-single-instance/`.
+
+---
+
+## K-r15.1-LA — "the shortfall is an accounting artefact"
+
+**Killed** r15.1, 2026-09-13. **Seat** soulbis (Opus) at probe 5; critic: structural (an
+audit that answered itself).
+
+**The kill.** Every line item of `runs/confine2/budget.mjs` re-derived from first principles by
+proposer, prover and critic agrees to the digit: `bar = floor(p^6/2^128) = 274980728111395087`
+(identical over `|F|` and `|F|−1`); family `C(255,136) = 2^249.860732`; key `256·p^6 =
+2^193.932108` vs max admissible `2^191.928624`; mean fibre 68579341025511059; 0-root `H`;
+prescribed K-coefficient `p`; generic K-root `p−1`; no joint key at R=2. The shortfall lives in
+the mean-vs-max fibre gap. The audit's one new number: **third-root budget at R=3 J=5 =
+`floor(C(255,136)/(bar·256·p^5)) = 531391578 = 2^28.9852`** — a K-root of image `(p−1)/8 =
+266338304` clears (+0.9965); image `(p−1)/4 = 532676608` misses by exactly 1285030 (−0.0035);
+generic `p−1` misses by 2.0035. Mislabel corrected on fold: key-REMOVED fibres are
+963405103875 / 8239666916 (net −21.99 / −22.99 bits unchanged).
+
+**Re-open condition.** A line item whose independent recomputation differs from
+`budget.mjs`, or a change of profile — neither exists. The razor itself re-opens only through
+K-r15.1-DF (b) / D2. Evidence: `runs/r15.1/r15.1.1/p4-ledger-exact-to-the-digit/`.
+
+---
+
+## L4 — interleaving squaring (`Lambda >= L^2`)
+
+**Killed** r0, 2026-08-20, before any Lean was written.
+**Seat** critic-poros (conjecture-stage Gap).
+
+**The claim.** `Lambda` is the list size of the *2-wise interleaved* code, so feeding it
+the received pair `(w, w)` should let `L` codewords sharing an agreement set `T` generate
+all `L^2` pairs `(g_i, g_j)`. The requirement would soften from `L > 2^58` to `L > 2^29`.
+
+**The kill.** `g1, g2` agreeing with `w` on `T` implies `g1 - g2` vanishes on `T`. But
+`deg(g1 - g2) < m = 131072` and `|T| = (1 - delta) * n >= m` for every `delta <= 1/2`.
+A nonzero polynomial of degree `< m` has fewer than `m` roots, so `g1 = g2`. The shared
+agreement set forces `L = 1`. No squaring exists anywhere in the regime of interest.
+
+**Re-open condition.** Only if the target radius moves strictly **above** `1/2`, where
+`|T| < m` and the interpolation problem is underdetermined again. That direction raises
+the score and is worthless here, so in practice: **permanent for this track.**
+
+**What it cost / what it saved.** Minutes to refute. Days had it been discovered inside a
+Lean formalisation. This is the exemplar for why this instance keeps a Gap at the
+conjecture stage even though its prover is an exhaustive kernel.
+
+---
+
+## L0 — "any index below 131072 is progress"
+
+**Killed** r0, 2026-08-20. **Seat** measure-eos.
+
+Indices `131065..131071` all score exactly 12800, identical to the shipped baseline,
+because the minimal legal score is `ceil` of a centibit quantity. The first index that
+moves the score at all is **131064**.
+
+**Re-open condition.** None. It is arithmetic, decided exactly by `verify/ladder.mjs`.

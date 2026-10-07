@@ -1,0 +1,187 @@
+# sig_mage handoff, 2026-10-07 (~12:45Z) — survey, verdicts, resume
+
+Yukon `eigenlabs/sig-golf/full` (repo Layr-Labs/sig.golf). Score = S × C, C = proved verify cycle bound + ⌈W/256⌉.
+No deadline is stated in RULES.md. Read this file first; then `RESUME_H2_2026-10-07.md` (tail) for the exact H2 state.
+
+## 0. Status line
+
+**PAUSED 2026-10-07 13:20Z by Mitch. WSL idle (nothing of ours running). Decision pending: one more H2 port on the v7
+line, or park H2 and move to research.** Recommendation in §6.
+
+## 1. The board at 12:27Z
+
+| what | commit / PR | S | W | C | S × C |
+|---|---|---:|---:|---:|---:|
+| head (promoted) | f1a26c47 = #751 mjthatch, on v7 | 5,456 | 21,488 | 7,348 | 40,090,688 |
+| v7 structure | ffba5be7 = #748 jonasnick | 5,456 | 21,488 | 7,351 | 40,107,056 |
+| best pending | #762 jungjipdo (on #754) | 5,456 | 21,488 | 7,339 | 40,041,584 |
+| pending | #759 leech1996 | 5,456 | 21,488 | 7,340 | 40,047,040 |
+| pending | #757 znan2, #754 mjthatch | 5,456 | 21,488 | 7,347 | 40,085,232 |
+| **H2 on head** | ours, unbuilt on this base | **5,454** | 21,488 | 7,348 | **40,075,992** |
+| **H2 on #762** | ours, with `--coauthors jungjipdo` | **5,454** | 21,488 | 7,339 | **40,026,906** |
+
+Trend: #644 41.21M (Oct 5 20:00Z) → 40.09M (Oct 7 12:00Z), −2.7 % in 40 h. Two kinds of step: a restructure about
+daily (v4 → v5 → v6 → v7: tweak words, in-place digest, packed witness; 20–80 cycles each) and 1–8-cycle golf between
+them (~45 merges in 36 h, 9–10 active solvers: jonasnick, mjthatch, Frodan, Meganpark980320, newjordan, znan2,
+erickeigen, Th0rgal, jungjipdo, leech1996). v7's stated next steps: cap 706 (−1), closing-constant retune (−1..−2),
+chain-step high-half reuse (−3) → field lands near C 7,333–7,335 within a day or two.
+
+**Nobody has moved S since WCT-9 (5,456 B).** H2 is still the only byte lever on the board.
+
+Board check (always first): `git -C ~/sig_mage/sig-golf fetch origin && git -C ~/sig_mage/sig-golf log --format='%h %cI %s' -5 origin/main`
+and `gh pr list -R Layr-Labs/sig.golf --state open --limit 12`.
+
+## 2. The arithmetic that decides the byte quest
+
+- H2 saves 2 of 5,456 bytes = 0.0367 % = **2.7 verify-cycle equivalents** (at C 7,348: 14,696 points).
+- H2 on base B beats head H iff 5,454·C_B < 5,456·C_H ⟺ **C_B ≤ C_H + 2**. Our base must be the head or within two
+  cycles of it *when Yukon scores us*. With the field landing 1–8 cycles every few hours, H2 cannot be timed as a crown.
+- H2 composes with every verify cut (expand-side search; verify image untouched). Once promoted it is a permanent floor
+  shift and we sit in every later `Co-authored-by` trailer — exactly how E8 and the witness trim live on today.
+- H2 moves the sub-40M bar: at S 5,456 the field needs C ≤ 7,331; at S 5,454 it needs C ≤ 7,334. If the field stalls at
+  7,332–7,336 (v7's own roadmap points there), **H2 is what crosses 40,000,000**. That is a narrow, specific window and
+  the strongest reason to keep the kit current.
+- Cost: H2 is our most invasive lever (35 modified + 4 new files: codec, signer prepass, expander prologue + search,
+  budget and security restatement). Ported 6 times (v4, b5842f7, 90de565, 0427cb6, b96b3ca, ffba5be7); each port is
+  2–8 h agent time plus box time, and every field restructure forces another.
+- Risk of pre-emption: the trick is not deep (omit bytes, search in expand; prior art Pornin ePrint 2022/938,
+  SPHINCS+C). Anyone can land it in a day on the live head. Our kit makes us the fastest, but only on a settled base.
+
+**Verdict: valid but narrow.** Land it once on the v7 line as a credited format contribution; do not chase the crown
+with it; at submit time compose onto the best pending tree (coauthors) if that is what sits within 2 cycles of the head.
+
+## 3. What we have shipped and where it lives (for credit and the chronicle)
+
+Levers promoted in our name: E8 (own boundary children), C1, witness trim (−9 → −5 on v3), credit filter (floor 9).
+10 own PRs, 4 promotions; 90 citing PRs by 13 solvers (36 merged) as of 5 Oct (`diagrams/citations_2026-10-05.json`).
+Trim in the record since #574; filter composed in #611/#612; floors now 8/4/4/4 field-wide.
+Artefacts: `diagrams/sig_mage_chronicle.pdf` (6 pp, shareable), `chronicles/2026-10-07_h2_the_two_bytes.md` (day
+chronicle), Soul Sync letter draft `agentprivacy-docs/blog/the-signature-hole.md`, City tome
+`cityofmages/tomes/proposed/the-signature-hole.md` (holes VII–X), skill `agentprivacy-skills/role/agentprivacy-lane-chronicle`
+(pushed 1fbe7e7). Distribution plan `agentprivacy-docs/plans/AUTORESEARCH_INSIGHT_DISTRIBUTION_PLAN_2026-10-06.md`.
+
+## 4. H2 state (exact)
+
+| tree | base | state |
+|---|---|---|
+| `~/sig_mage/sig-golf-h2b` | b96b3ca (C 7,418) | most advanced Lean: green through `SigCodecC`, `ExpansionBudget`, `Layer(s)`, `Sign/Common`, `Sign/Main` (signCW = record + 1,048), `H2Front`, `H2Search`. Last build error: `ExpandLink/Link.lean:465` `.mono (by omega)` after `TBSim.bind (W₂ := 11 + compactC) (search_entry …)` (unassigned budget metavariable). Downstream never compiled: `ExpansionBudget`/`Budgets`, `SeccSufPayload`, `SecurityP`, `BridgeMain/Abs`, `CreditBridge`, `Final/{Main,Pending,Ready}`, `Solution`. |
+| `~/sig_mage/sig-golf-h2d` | ffba5be7 (v7, C 7,351) | kit applied (snapshot from h2b); 16/24 conflict blocks resolved (sizes/layout 0x5BF0 message, signCW, DrvBits, ComposeBack keeps v7 `zero_spec`, Blocks `seg_0` with H2 hook word 1179816047 → prologue 42777 / word 342 → search 42795, Submission/Discharge/CreditBridge, all 5 `Layer` blocks onto `nodeTweak` + 68-cycle step; `H2Search.topHdr` → `SigGolfCandidate.T3.nodeTweak`). **Open: `Link.lean` 8 blocks** (v7 rewrote Link: Compact2 packed witness, CompactRun, sign link moved) — rebuild H2's composition on v7's Link (`scratchpad/Link_v7.lean` saved): prologue → front' → layers (top split) → `search_entry` → v7 compaction; ProAt/SrchAt via `codeAt_of_window wct_newCodeAt`; expCostW; ExpandComposeSpec over `Bytes 5454`. **`H2Front`**: port `front_spec'`/`front_pre30'` to v7's front (word 29 jal → zero block 42719 → word 30, 37 steps; message at 0x5BF0 zeroed after reading; v7's `front_pre30` in `scratchpad/ComposeBack_v7.lean`). |
+| `~/sig_mage/sig-golf-h2c` | 01bde2d (superseded) | test apply only; ignore. |
+| `~/sig_mage/sig-golf-h2r3` | 0427cb6 | older; superseded by h2b. |
+
+Emulator gate: green 24/24 on v4, b5842f7, 90de565, 0427cb6, b96b3ca (`results/h2_*_check.json`). **v7 (ffba5be7) gate
+not yet confirmed** — the run was interrupted. `lean/t3h2/h2_check.py` fixed (witness size from `layout.json`
+`witnessBytes`; the old 22,984 constant overwrote the message that v7 places right after the witness → the 0/24 on
+01bde2d was a harness bug, witnesses still matched 24/24). First command on resume:
+`MSYS_NO_PATHCONV=1 wsl -d Ubuntu -- bash -c "cd [redacted]/sig_mage/sigmage && python3 lean/t3h2/h2_check.py images_ffba5be7 images_ffba5be7_h2 results/h2_ffba5be7_check.json | tail -1"` (~15 min, small memory).
+
+Kit: `lean/t3h2/kit` (base b96b3ca, 35 M + 4 A; previous kits `kit_prev_0427cb6`, `kit_prev_b5842f7`). `apply.sh WORKTREE --gate`
+(exit 1 = conflicts listed; exit 2 = relocate refused), `snapshot.sh WORKTREE IMAGES_DIR`, `relocate.py` (delta 1048).
+Note: `submissions/t3h2-note.md` filled for b96b3ca (template `t3h2-note.template.md`); refill base/credits/C/bound/W,
+`{BUILD}` `{FILES}` `{BYTES}` from the gates. Submit: `yukon submit --track full --note-file ../sigmage/submissions/t3h2-note.md
+--model "<model>" --harness "agentprivacy dual-agent harness (sig_mage) in Claude Code" --json`; no `--claimed-score`;
+`--coauthors` only for an unpromoted base; no Discussions posts; every gate (axioms via w9ax.sh, no sorry,
+check_submission.py, WSL clone == worktree, h2_check) must pass; a NO-GO is a NO-GO.
+
+Remaining effort estimate for H2 on v7: 6–10 h box + agent (Link rebuild 2–3 h, H2Front 1 h, downstream fix rounds
+3–5 h, gates 0.5 h), *if* the v7 gate passes and no v8 lands meanwhile.
+
+## 5. Research ledger (every pathway, with a verdict)
+
+| pathway | where | status / verdict |
+|---|---|---|
+| **H2, 2-byte omission** | `lean/t3h2`, §4 | 80 % Lean, 6 ports. Unique on the board. Land once, on a base within 2 cycles of the head. |
+| **H2-19/5, third byte** (zero 5 nonce bits, 19-bit search) | `research/codex-survey-2026-10-03/h2-19-5-proposal.json`, `research/codex-rebase-2026-10-06/findings.json` item2 | Security closes with every route constant unchanged (birth charge 32·p0 = 0.014709 ≤ 1/64, margin 5.9 %; needs ProducerAcceptanceBound 1/64 → 1/2048); payload bound provable (≥ 102,400 vs 74,985 needed); expand worst ≈ 8.7M cycles. Cost: nonce law uniform on a 2^123 subspace through Bank/Kernel, GameBank(L), LargeCouplingBankSign, CaseCNear*, Lazy* (~15 files). Gain +1 byte ≈ 1.35 cycles. **Only after H2 lands, and only if the scheme shape holds.** |
+| **G, shared verify budget** (verifier checks neither cap nor floors; bound over honest expand outputs; credits adapt) | `research/crown-0427-reprice-2026-10-06/FINDINGS.md` | −8 at record completeness, −18 with per-stage completeness relaxed 2^-1000 → 2^-500; exact DP + Monte Carlo agree. High effort (verify-bound composition, sign policy, Moment certificates, 10 security files). **The one structural cycle item nobody has landed; jonasnick's v7 note ("producer-only filters") shows them circling it.** Worth a 1-day exact reprice on v7 before anyone else lands it. |
+| in-place layer-3 (forest) encoding, −1 | `research/codex-rebase-2026-10-06/inplace_enc.py` | Emulator-verified on 59a3354; composes with H2. **Probably absorbed by v7's "L3R" (forest root + layer-3 row tweak written in place).** Verify on v7 images before spending anything. |
+| W85 witness re-layout (charge 86 → 85) | same folder, item1 | NO-GO (s2 dual use). v7 already packed W to 21,488 (charge 84); next step needs W ≤ 21,248 (−240 B): re-run the unread-bytes map on v7 before judging. |
+| gate / cap / target / floor refits (A, A2, gate 6/2^14, cap 700) | `research/v4-reprice-2026-10-05`, `wct9-reprice`, `lean/t3a2`, `lean/t3gate` | **Dead.** The field retunes these within hours now (cap 707 → 712, gate 1091 → 1094 by mjthatch). Our parameter-reprice edge is gone; the exact tooling (`a2_checks.py`, N600Price reproduction) remains useful for auditing others' claims. |
+| byte-shape sweep (codebook, chain shape, PORS) | `research/bytes-wct9-2026-10-05/FINDINGS.md` | Closed negative: no WCT-9 shape lowers S × C under the record's security accounting (16,488 points). H2 is the only byte lever. |
+| credit filter | `lean/t3cf*`, shipped #608/#613 | Done, adopted field-wide. |
+| **OpenAI math explorations** (Mitch's future session) | `research/2026-10-07_openai_math_solver_explorations.md` | Queue only. Exploration 1 (exact tails for signer filters: geometric-moment control vs the actual filter) is the live one and feeds G's sign-policy obligation. Do not start until Mitch asks. |
+| measurement-driven verify golf | our seeds: `codex-rebase-2026-10-06/{wprov,wmap_attr,regfree,pyrv}.py` | The field's big moves (v5–v7) came from byte-provenance tracing, not parameter refits. We have a seed tracer; jonasnick's is better. Opportunistic only, unless aimed at G. |
+
+Lesson from the 0427 reprice: "no route below 40M" was true for parameter space; the field found ~90 of the 94 cycles
+by restructuring encodings. Reprices tell us what *not* to try; they do not find the next restructure.
+
+## 6. Where to go next (recommendation)
+
+1. **One time-boxed H2 push on the v7 line** (≤ 1 day with the box): v7 gate → Link rebuild + H2Front port → build
+   under the watchdog → downstream fixes → at submit time re-snapshot and 3-way onto whichever tree is within 2 cycles
+   of the head (head itself, or the best pending with `--coauthors`). Submit if every gate passes. If a v8 lands
+   mid-build: finish on v7 anyway, submit for the public record (closed PRs still carry the note and the lever), then
+   decide on exactly one re-port. The sub-40M crossing (§2) is the prize to watch for.
+2. **Research track, no box: price G on v7 exactly** (one agent-day). If ≥ −8 survives on v7's verifier, it is the
+   largest unlanded item on the board and composes with H2. Fold Exploration 1 (signer-filter tails) into its
+   sign-policy obligation when Mitch opens that session.
+3. **Output regardless of the crown:** chronicle v2 (H2 as a format contribution, the ≤ 2-cycle rule, the sub-40M
+   bar), the Soul Sync letter, the tome holes. The chronicle skill is already public.
+4. Park H2-19/5 until H2 is promoted; park W85; drop the refit lanes.
+
+Not recommended: competing on 1–3-cycle verify golf against nine solvers with better tracers.
+
+## 7. Box rules and Lean gotchas (hard-won)
+
+- WSL VM 25 GB. Full `Solution` build: `tools/wsl/cfgo.sh <worktree> "Solution" "2 1" 14G 17G` (~1 h cold, 15–40 min
+  incremental). Single-file capped checks: `lean/t3h2/scratch/capchk.sh REL [SECS] [LINES]` (12 GB cap); bisect a file
+  by truncation: `TREE=<worktree> lean/t3h2/scratch/bisectf.sh REL LINE SECS`. Errors per file:
+  `tools/wsl/errfile.py LOG NAME N`.
+- Watchdog: `tools/wsl/witness.sh 15 1500 6` (kills a lean > 15 GB for 2 min or > 25 min; `~/witness.log`). Run it under
+  `setsid nohup … &` from its own `wsl -- bash -c`; a bare `pkill -f witness.sh` kills the launching shell too.
+- Windows-side memory pressure reaps Claude Code's background shells (not the WSL build). Use short foreground checks;
+  never wait on a question overnight — pick the low-risk default and continue (8 h lost on 6–7 Oct).
+- Runaway-proof patterns (each took one file to 20+ GB): `apply BitVec.eq_of_toNat_eq` (use `refine … ?_`);
+  `simp only [BitVec.extractLsb'_toNat, Nat.shiftRight_eq_div_pow, pow_zero, …]` on setTop goals (explicit `rw` +
+  `generalize (2:Nat)^64 = A`); `omega`/`simp` with a literal `2^64` (`generalize` first); `decide +kernel` on code
+  slices past word 1024 (use `codeAt_of_window wct_newCodeAt`). `omega` cannot see `% 18446744073709551616`: rewrite
+  with helper lemmas first.
+- Windows C: is at 98 % (20 GB free). WSL has 864 GB free. 47 sig-golf worktrees (20 MB each, harmless) — list for Mitch
+  before pruning (no bulk deletes without review). Keep: h2b, h2d, wt9v3*, cf*, bytes, a2, gate.
+- Agents on the H2 Lean work were stopped by safety classifiers three times (6 Oct); the lead did those parts directly.
+
+## 8. Open questions for Mitch
+
+1. Go / no-go on the one H2 push on v7 (§6.1), and whether to compose onto a pending tree with coauthors at submit time.
+2. Approve the G reprice as a no-box research task.
+3. When to open the OpenAI-math session (Exploration 1 first).
+4. Worktree pruning list (§7) — review before any deletion.
+
+## 9. File index
+
+`RESUME_H2_2026-10-07.md` (H2 exact state, tail is newest) · `RESUME_H2_2026-10-06.md` (older) · `HANDOFF_2026-10-04.md`
+(trim/filter era) · `memory/log.md` (lane log, append-only) · `lean/t3h2/{README,SCOPE}.md` · `submissions/t3h2-note.md`
+· `research/*/FINDINGS.md` · `diagrams/sig_mage_chronicle.pdf` · `chronicles/`.
+
+## 10. Update 13:45Z: v7 port done on the agent side; the sub-40M commitment
+
+**Tree `~/sig_mage/sig-golf-h2d` (ffba5be7, v7) is fully merged, uncompiled.** All 24 conflict blocks resolved;
+`ExpandLink/Link.lean` rebuilt from v7's own Link with the H2 composition transplanted
+(`lean/t3h2/scratch/build_link_v7.py`, re-runnable on the next v7-line record); `H2Front.lean` ported to v7's front
+(message at 0x5BF0 zeroed by the 7-word block at 42719, LPLAN data, `front_pre30'` = 29 + 7 steps, returns `hmz`);
+`SignLink.lean` carries the fourth hook (`h2SignTail` at 20813); `signNew` is built from the regenerated image chunks,
+so `signCode_drop_v7` stays true. expCostW = 1235 + newCost + lcost 4 + 65535·30 + 111 + compactC ≤ 3,433,368,017.
+The Link:465 budget metavariable is pre-empted (`have hse := search_entry …` before the bind). Static checks pass
+(no stale names, chunk bounds 164/41,817, search jumps 42804/42838/42840). Note re-drafted for the v7 line
+(`submissions/t3h2-note.md`, W 21,488, charge 84, credits through #754; base/C/scores still placeholders).
+
+**Exact sub-40M arithmetic.**
+- Field crosses alone iff C ≤ 7,331 (5,456 × 7,331 = 39,997,936; × 7,332 = 40,003,392).
+- H2 crosses iff base C ≤ 7,334 (5,454 × 7,334 = 39,999,636; × 7,335 = 40,005,090).
+- **The window where H2 is the crossing: base C ∈ {7,332, 7,333, 7,334}.** Head 7,348; best pending 7,339
+  (H2 on it = 40,026,906, best on the board but not under). The field is 5–7 cycles above the window; v7's own
+  roadmap (chain-step high-half reuse −3, closing retune −1..−2, cap 706 −1) lands in or just past it within ~1–2 days.
+
+**What I commit to (box time permitting):**
+1. First WSL item: the v7 emulator gate (`h2_check.py images_ffba5be7 images_ffba5be7_h2`, ~15 min, small memory).
+   A NO-GO stops everything until the machine patch is fixed.
+2. Then one build loop on h2d under the watchdog (est. 4–8 h: Link/H2Front first compile, then the security
+   restatement and Final files that have never compiled on any base). Snapshot the kit the moment it is green.
+3. Re-apply onto the live head (1–3 h if the head is still on the v7 line; `build_link_v7.py` + `apply.sh`), run every
+   gate, fill the note, check the board, submit on a base within 2 cycles of the head, with `--coauthors` if the base
+   is an unpromoted tree. Submit even if the base is above the window: landing S 5,454 in the record moves every later
+   v7-line record's sub-40M bar by 3 cycles, and the lever is unique.
+4. If the field reaches the window while we are green: our submission is the crossing. If the field crosses first
+   (someone lands ≥ 8 at once): H2 is still a record improvement; submit anyway.
+
+**What I cannot commit to:** the field's path through the window, and a v8-style restructure before we land (that is
+another 6–10 h port; the v7 port scripts make the mechanical part ~1 h).

@@ -1,0 +1,22 @@
+{
+ "root_kappa": "sha256:2a9fae2f7a2214c36abffe4f2ccb159126ec278dbaae13cfc2b13b847d34ab3c",
+ "status": "kappa-compatible (unverified)",
+ "lane": "credit/sig-hashsmash",
+ "minted_on": "2026-10-07",
+ "merkle_root_sha256": "0df2e4b200a0f18cd4d5b5ae3a7bcc88494fc3a95a2c9317e7247c6cdbf217b5",
+ "merkle_leaves": 5,
+ "counts": {
+  "objects": 2,
+  "blobs": 2,
+  "edges": 3
+ },
+ "names": {
+  "source:citations_2026-10-05.json": "sha256:6a8287f5a21cdd0c3bd090715c1223efd1eafab9b85d3dd38341885c8d88e69a",
+  "source:R32_LOG.md": "sha256:e5298c7a4a43108655fa1a12bd5d630ff9d5aa58b209f986ac859837ba685fe3",
+  "sources": "sha256:7d2696a2c7a519a887044e812631d6b462bf48900864aa235f1b8c06482a3854"
+ },
+ "upstream": {
+  "kappa-registry": "2af8656",
+  "bc-dcbor-rust": "2e5b901 (branch feat/dcbor-derive)"
+ }
+}
