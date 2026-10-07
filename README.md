@@ -23,6 +23,9 @@ page can point at a run a reader re-derives rather than at a screenshot.
 | `generators/` | the scripts that produced them (zero dependencies, Node 18+); they read `data/` and a harness checkout |
 | `data/` | the extracted results and matrices the generators consume (`results.json`, `pricing.json`, `matrix-*.json`, `proposals.*.json`, `letter.md`) |
 | `notes/` | the written notes (`OPENSERV_NOTE_AND_RESULTS.md`, generated from the records on 2026-09-13) |
+| `bundles/` | sources bundles: prose sources (rules, ledgers, citation files) as κ'd blobs under one root, minted by `tools/mint_sources.mjs` (`--redact` strips user paths and hosts first) |
+| `pairs.json`, `pairs/` | the registry of pairs: reader κ bound to evidence root and generator κ as a `transform/1` object (`tools/pair.mjs`) |
+| `PLAN.md` | the ranked plan for the next readers and the rule that each is shown as it lands |
 
 ## Regenerate
 
@@ -36,6 +39,19 @@ node generators/gen_onepager.mjs        # -> readers/harness-findings.html
 node generators/gen_note_doc.mjs        # -> notes/OPENSERV_NOTE_AND_RESULTS.md
 node generators/gen_reader.mjs          # -> readers/zk-forge-reader.html (needs SCRATCH=<dir> with that session's zk candidates; not archived here)
 ```
+
+## The κ-paired readers (2026-10-07)
+
+| reader | from | evidence root |
+|---|---|---|
+| `readers/r32-route-search.html` | hashsmash r32 bundle (59 calls) | `sha256:3c20049e…` |
+| `readers/sig-h2-gate.html` | sig_mage H2 gate bundle (record b96b3ca) | `sha256:8c5209a6…` |
+| `readers/arena-rules.html` | CHALLENGE_LANES.md as a blob | `sha256:7b5fcde2…` |
+| `readers/credit-provenance.html` | citations json + R32_LOG.md as blobs | `sha256:2a9fae2f…` |
+| `readers/research-ledger.html` | HANDOFF (redacted copy) + KILLED_LEVERS as blobs | `sha256:370262c4…` |
+
+Full κ in `pairs.json`. Every κ is "kappa-compatible (unverified)" until the registry cross-check.
+Generators read the κ'd blobs inside the bundle, never a loose copy of the source.
 
 ## Provenance
 
