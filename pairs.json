@@ -90,6 +90,30 @@
    "status": "kappa-compatible (unverified)"
   },
   {
+   "reader": "readers/judge-rehearsal.html",
+   "reader_kappa": "sha256:dda1342ae137e72735bf116fbb6f825ff4378dc0027b419aabbbf195f5b1291a",
+   "evidence_root": "sha256:1802ab211d062e076b00d43c19912e5145437d2ed4760fe36c0935a2096cf320",
+   "lane": "hashsmash/judge-record",
+   "bundle_lane": "hashsmash/judge-record",
+   "generator": "generators/gen_judge.mjs",
+   "generator_kappa": "sha256:b8d360c9f56e9bdbf96f76f09edb126609210873a0d20ee091a5d93b27c1a267",
+   "transform_kappa": "sha256:85de886d38bc974be6c55ea819a9a36db5d25df89ce099c0a08f33c46b48454a",
+   "date": "2026-10-07",
+   "status": "kappa-compatible (unverified)"
+  },
+  {
+   "reader": "readers/kappa-calibration.html",
+   "reader_kappa": "sha256:16acca3f902a3658e2d7149fe1623e981d6f4f6efb54c007fce8ec5de17d80ce",
+   "evidence_root": "sha256:ab3171d3f1e5beaf85e49e6f47af9300392ea24800008a9be74a0fafbfa6cb8f",
+   "lane": "hashsmash/kappa-calibration",
+   "bundle_lane": "hashsmash/kappa-calibration",
+   "generator": "generators/gen_calibration.mjs",
+   "generator_kappa": "sha256:1f5798f08f3d8710c1374ff4e66f4aaea0875751fcd149cd40c25bad5799cb6f",
+   "transform_kappa": "sha256:a28a90b41fbe8ca69770e96204d8255f0fff2371e0a5c27a572a0bb0103f2d0e",
+   "date": "2026-10-07",
+   "status": "kappa-compatible (unverified)"
+  },
+  {
    "reader": "readers/r32-route-search.html",
    "reader_kappa": "sha256:40d957c8391b97a7cef1132be6c1ac9c6d14f4f2223fc79e6f8b1f2aff914cf3",
    "evidence_root": "sha256:3c20049e55109c2940161747b48dff5318f25c6ea74fc7f9283b6ef5b0c0f825",

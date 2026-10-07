@@ -1,0 +1,1306 @@
+{
+ "status": "kappa-compatible (unverified)",
+ "root": "sha256:1802ab211d062e076b00d43c19912e5145437d2ed4760fe36c0935a2096cf320",
+ "objects": {
+  "sha256:e8dd057e522653e739c8216e5a1c0771e05f48e5214c216ce627e0aae426562c": {
+   "0": "agentprivacy-evidence/record/1",
+   "1": 0,
+   "2": "dossier",
+   "3": {
+    "name": "pr125",
+    "source": "other",
+    "track": "sha256-r31-exploratory",
+    "model": "gpt-5.6-sol",
+    "mode": "committee",
+    "lanes": {
+     "exploratory": {
+      "status": "plausible_not_refuted",
+      "eligible": true,
+      "reasons": [
+       "lane_cost/F-HISTORICAL-MEMORY-EVIDENCE",
+       "lane_cost/F-HISTORICAL-TIME-EVIDENCE",
+       "lane_cost/data_preprocessing_advice",
+       "lane_cost/heuristic/H-HISTORICAL-MEMORY: plausible",
+       "lane_cost/heuristic/H-HISTORICAL-TIME: plausible",
+       "lane_cost/memory_bound"
+      ]
+     },
+     "rigorous": {
+      "status": "not_qualified",
+      "eligible": false,
+      "reasons": [
+       "lane_cost/F-HISTORICAL-MEMORY-EVIDENCE",
+       "lane_cost/F-HISTORICAL-TIME-EVIDENCE",
+       "lane_cost/data_preprocessing_advice",
+       "lane_cost/heuristic/H-HISTORICAL-MEMORY: plausible",
+       "lane_cost/heuristic/H-HISTORICAL-TIME: plausible",
+       "lane_cost/memory_bound"
+      ]
+     }
+    },
+    "claim": {
+     "time_log2": 41.500001,
+     "preprocessing_log2": 41.5,
+     "memory_log2_bytes": 40,
+     "success_probability": 1,
+     "nonuniform_advice_log2_bytes": 9
+    },
+    "heuristics": {
+     "lane_cost/heuristic/H-HISTORICAL-MEMORY": "plausible",
+     "lane_cost/heuristic/H-HISTORICAL-TIME": "plausible",
+     "lane_cryptanalysis/heuristic/H-HISTORICAL-MEMORY": "plausible",
+     "lane_cryptanalysis/heuristic/H-HISTORICAL-TIME": "plausible",
+     "lane_evaluability/heuristic/H-HISTORICAL-MEMORY": "plausible",
+     "lane_evaluability/heuristic/H-HISTORICAL-TIME": "plausible",
+     "lane_experiments/heuristic/H-HISTORICAL-MEMORY": "plausible",
+     "lane_experiments/heuristic/H-HISTORICAL-TIME": "plausible"
+    },
+    "n_heuristics": 8,
+    "n_unsupported": 0,
+    "n_plausible": 8,
+    "statuses": [
+     "plausible"
+    ],
+    "infrastructure_failures": 0,
+    "package_sha256": "80dcdcce22cc171e7bbe9cfc567bf80f556a46742792d3ba141dbc93091ff8d3"
+   },
+   "4": "hashsmash/judge-record"
+  },
+  "sha256:aa943f6c56f1dc06671e61de5a96164b48ef7e9d916dedc222955ea89a2ea865": {
+   "0": "agentprivacy-evidence/record/1",
+   "1": 1,
+   "2": "dossier",
+   "3": {
+    "name": "pr134",
+    "source": "other",
+    "track": "sha256-r31-exploratory",
+    "model": "gpt-5.6-sol",
+    "mode": "committee",
+    "lanes": {
+     "exploratory": {
+      "status": "plausible_not_refuted",
+      "eligible": true,
+      "reasons": [
+       "lane_cost/F-H3-historical-work-gap",
+       "lane_cost/F-preprocessing-memory-gap",
+       "lane_cost/F-success-extrapolation-gap",
+       "lane_cost/data_preprocessing_advice",
+       "lane_cost/heuristic/H1-near-uniform-chaining-value: plausible",
+       "lane_cost/heuristic/H2-completion-rate: plausible"
+      ]
+     },
+     "rigorous": {
+      "status": "not_qualified",
+      "eligible": false,
+      "reasons": [
+       "lane_cost/F-H3-historical-work-gap",
+       "lane_cost/F-preprocessing-memory-gap",
+       "lane_cost/F-success-extrapolation-gap",
+       "lane_cost/data_preprocessing_advice",
+       "lane_cost/heuristic/H1-near-uniform-chaining-value: plausible",
+       "lane_cost/heuristic/H2-completion-rate: plausible"
+      ]
+     }
+    },
+    "claim": {
+     "time_log2": 48.35,
+     "preprocessing_log2": 44.01,
+     "memory_log2_bytes": 38,
+     "success_probability": 0.39,
+     "nonuniform_advice_log2_bytes": 8
+    },
+    "heuristics": {
+     "lane_cost/heuristic/H1-near-uniform-chaining-value": "plausible",
+     "lane_cost/heuristic/H2-completion-rate": "plausible",
+     "lane_cost/heuristic/H3-advice-construction-cost": "plausible",
+     "lane_cost/heuristic/H4-preprocessing-memory-bound": "plausible",
+     "lane_cryptanalysis/heuristic/H1-near-uniform-chaining-value": "plausible",
+     "lane_cryptanalysis/heuristic/H2-completion-rate": "plausible",
+     "lane_cryptanalysis/heuristic/H3-advice-construction-cost": "plausible",
+     "lane_evaluability/heuristic/H1-near-uniform-chaining-value": "plausible",
+     "lane_evaluability/heuristic/H2-completion-rate": "plausible",
+     "lane_evaluability/heuristic/H3-advice-construction-cost": "plausible",
+     "lane_experiments/heuristic/H1-near-uniform-chaining-value": "plausible",
+     "lane_experiments/heuristic/H2-completion-rate": "plausible",
+     "lane_experiments/heuristic/H3-advice-construction-cost": "plausible"
+    },
+    "n_heuristics": 13,
+    "n_unsupported": 0,
+    "n_plausible": 13,
+    "statuses": [
+     "plausible"
+    ],
+    "infrastructure_failures": 0,
+    "package_sha256": "940ef8f82567ce559f85fe9de0973f24111f8e811512fb4b033c86e2ae25faa3"
+   },
+   "4": "hashsmash/judge-record"
+  },
+  "sha256:00a6a60108204b18f391cdc935b4466343c436246a58371a599ad8f6a76ee652": {
+   "0": "agentprivacy-evidence/record/1",
+   "1": 2,
+   "2": "dossier",
+   "3": {
+    "name": "pr224",
+    "source": "other",
+    "track": "sha256-r32-exploratory",
+    "model": "gpt-5.6-sol",
+    "mode": "committee",
+    "lanes": {
+     "exploratory": {
+      "status": "plausible_not_refuted",
+      "eligible": true,
+      "reasons": [
+       "lane_cost/F-COST-1",
+       "lane_cost/F-COST-2",
+       "lane_cost/F-COST-3",
+       "lane_cost/F-COST-4",
+       "lane_cost/data_preprocessing_advice",
+       "lane_cost/heuristic/bounded-constructor-preprocessing: plausible"
+      ]
+     },
+     "rigorous": {
+      "status": "not_qualified",
+      "eligible": false,
+      "reasons": [
+       "lane_cost/F-COST-1",
+       "lane_cost/F-COST-2",
+       "lane_cost/F-COST-3",
+       "lane_cost/F-COST-4",
+       "lane_cost/data_preprocessing_advice",
+       "lane_cost/heuristic/bounded-constructor-preprocessing: plausible"
+      ]
+     }
+    },
+    "claim": {
+     "time_log2": 64.4,
+     "preprocessing_log2": 64.1,
+     "memory_log2_bytes": 48,
+     "success_probability": 1,
+     "nonuniform_advice_log2_bytes": 33
+    },
+    "heuristics": {
+     "lane_cost/heuristic/bounded-constructor-preprocessing": "plausible",
+     "lane_cost/heuristic/deterministic-fixed-witness": "established",
+     "lane_cost/heuristic/retained-advice-inventory-completeness": "plausible",
+     "lane_cost/heuristic/source-path-operation-envelope": "plausible",
+     "lane_cost/heuristic/whole-process-memory-envelope": "plausible",
+     "lane_cryptanalysis/heuristic/bounded-constructor-preprocessing": "plausible",
+     "lane_cryptanalysis/heuristic/deterministic-fixed-witness": "established",
+     "lane_cryptanalysis/heuristic/retained-advice-inventory-completeness": "plausible",
+     "lane_cryptanalysis/heuristic/source-path-operation-envelope": "plausible",
+     "lane_cryptanalysis/heuristic/whole-process-memory-envelope": "plausible",
+     "lane_evaluability/heuristic/bounded-constructor-preprocessing": "plausible",
+     "lane_evaluability/heuristic/deterministic-fixed-witness": "established",
+     "lane_evaluability/heuristic/retained-advice-inventory-completeness": "plausible",
+     "lane_evaluability/heuristic/source-path-operation-envelope": "plausible",
+     "lane_evaluability/heuristic/whole-process-memory-envelope": "plausible",
+     "lane_experiments/heuristic/bounded-constructor-preprocessing": "plausible",
+     "lane_experiments/heuristic/deterministic-fixed-witness": "established",
+     "lane_experiments/heuristic/retained-advice-inventory-completeness": "plausible",
+     "lane_experiments/heuristic/source-path-operation-envelope": "plausible",
+     "lane_experiments/heuristic/whole-process-memory-envelope": "plausible"
+    },
+    "n_heuristics": 20,
+    "n_unsupported": 0,
+    "n_plausible": 16,
+    "statuses": [
+     "established",
+     "plausible"
+    ],
+    "infrastructure_failures": 0,
+    "package_sha256": "3788a1f6d4f3323882cb67da41429ac3897714f698967818d0374846e869ab13"
+   },
+   "4": "hashsmash/judge-record"
+  },
+  "sha256:231f328d957586375a8efe17054e7988029c24ae8d2fed0e1080100be574217a": {
+   "0": "agentprivacy-evidence/record/1",
+   "1": 3,
+   "2": "dossier",
+   "3": {
+    "name": "pr227",
+    "source": "other",
+    "track": "sha256-r32-exploratory",
+    "model": "gpt-5.6-sol",
+    "mode": "committee",
+    "lanes": {
+     "exploratory": {
+      "status": "plausible_not_refuted",
+      "eligible": true,
+      "reasons": [
+       "lane_cost/F-MEMORY-HISTORY",
+       "lane_cost/F-PREPROCESSING-HISTORY",
+       "lane_cost/data_preprocessing_advice",
+       "lane_cost/heuristic/bounded-constructor-preprocessing: plausible",
+       "lane_cost/heuristic/retained-advice-inventory-completeness: plausible",
+       "lane_cost/heuristic/source-path-operation-envelope: plausible"
+      ]
+     },
+     "rigorous": {
+      "status": "not_qualified",
+      "eligible": false,
+      "reasons": [
+       "lane_cost/F-MEMORY-HISTORY",
+       "lane_cost/F-PREPROCESSING-HISTORY",
+       "lane_cost/data_preprocessing_advice",
+       "lane_cost/heuristic/bounded-constructor-preprocessing: plausible",
+       "lane_cost/heuristic/retained-advice-inventory-completeness: plausible",
+       "lane_cost/heuristic/source-path-operation-envelope: plausible"
+      ]
+     }
+    },
+    "claim": {
+     "time_log2": 64.3,
+     "preprocessing_log2": 64.1,
+     "memory_log2_bytes": 48,
+     "success_probability": 1,
+     "nonuniform_advice_log2_bytes": 33
+    },
+    "heuristics": {
+     "lane_cost/heuristic/bounded-constructor-preprocessing": "plausible",
+     "lane_cost/heuristic/deterministic-fixed-witness": "established",
+     "lane_cost/heuristic/retained-advice-inventory-completeness": "plausible",
+     "lane_cost/heuristic/source-path-operation-envelope": "plausible",
+     "lane_cost/heuristic/whole-process-memory-envelope": "plausible",
+     "lane_cryptanalysis/heuristic/bounded-constructor-preprocessing": "plausible",
+     "lane_cryptanalysis/heuristic/deterministic-fixed-witness": "established",
+     "lane_cryptanalysis/heuristic/retained-advice-inventory-completeness": "plausible",
+     "lane_cryptanalysis/heuristic/source-path-operation-envelope": "plausible",
+     "lane_cryptanalysis/heuristic/whole-process-memory-envelope": "plausible",
+     "lane_evaluability/heuristic/bounded-constructor-preprocessing": "plausible",
+     "lane_evaluability/heuristic/deterministic-fixed-witness": "established",
+     "lane_evaluability/heuristic/retained-advice-inventory-completeness": "plausible",
+     "lane_evaluability/heuristic/source-path-operation-envelope": "plausible",
+     "lane_evaluability/heuristic/whole-process-memory-envelope": "plausible",
+     "lane_experiments/heuristic/bounded-constructor-preprocessing": "plausible",
+     "lane_experiments/heuristic/deterministic-fixed-witness": "established",
+     "lane_experiments/heuristic/retained-advice-inventory-completeness": "plausible",
+     "lane_experiments/heuristic/source-path-operation-envelope": "plausible",
+     "lane_experiments/heuristic/whole-process-memory-envelope": "plausible"
+    },
+    "n_heuristics": 20,
+    "n_unsupported": 0,
+    "n_plausible": 16,
+    "statuses": [
+     "established",
+     "plausible"
+    ],
+    "infrastructure_failures": 0,
+    "package_sha256": "9b577b1ca31400acf9327517b6fd0bf3630258a1b6970e1593cf931a55907bc4"
+   },
+   "4": "hashsmash/judge-record"
+  },
+  "sha256:49aa6c0b4a88d9e6f60b0092720dba01ceec0017f3321fdb156bf700040021f3": {
+   "0": "agentprivacy-evidence/record/1",
+   "1": 4,
+   "2": "dossier",
+   "3": {
+    "name": "pr257",
+    "source": "other",
+    "track": "sha256-r32-exploratory",
+    "model": "gpt-5.6-sol",
+    "mode": "committee",
+    "lanes": {
+     "exploratory": {
+      "status": "plausible_not_refuted",
+      "eligible": true,
+      "reasons": [
+       "lane_cost/F-ADVICE-BOUNDARY-GAP",
+       "lane_cost/F-HISTORICAL-MEMORY-GAP",
+       "lane_cost/F-PREPROCESSING-HISTORICAL-GAP",
+       "lane_cost/data_preprocessing_advice",
+       "lane_cost/heuristic/bounded-constructor-preprocessing: plausible",
+       "lane_cost/heuristic/retained-advice-inventory-completeness: plausible"
+      ]
+     },
+     "rigorous": {
+      "status": "not_qualified",
+      "eligible": false,
+      "reasons": [
+       "lane_cost/F-ADVICE-BOUNDARY-GAP",
+       "lane_cost/F-HISTORICAL-MEMORY-GAP",
+       "lane_cost/F-PREPROCESSING-HISTORICAL-GAP",
+       "lane_cost/data_preprocessing_advice",
+       "lane_cost/heuristic/bounded-constructor-preprocessing: plausible",
+       "lane_cost/heuristic/retained-advice-inventory-completeness: plausible"
+      ]
+     }
+    },
+    "claim": {
+     "time_log2": 63,
+     "preprocessing_log2": 62,
+     "memory_log2_bytes": 48,
+     "success_probability": 1,
+     "nonuniform_advice_log2_bytes": 33
+    },
+    "heuristics": {
+     "lane_cost/heuristic/bounded-constructor-preprocessing": "plausible",
+     "lane_cost/heuristic/deterministic-fixed-witness": "established",
+     "lane_cost/heuristic/retained-advice-inventory-completeness": "plausible",
+     "lane_cost/heuristic/source-path-operation-envelope": "plausible",
+     "lane_cost/heuristic/whole-process-memory-envelope": "plausible",
+     "lane_cryptanalysis/heuristic/bounded-constructor-preprocessing": "plausible",
+     "lane_cryptanalysis/heuristic/deterministic-fixed-witness": "established",
+     "lane_cryptanalysis/heuristic/retained-advice-inventory-completeness": "plausible",
+     "lane_cryptanalysis/heuristic/source-path-operation-envelope": "plausible",
+     "lane_cryptanalysis/heuristic/whole-process-memory-envelope": "plausible",
+     "lane_evaluability/heuristic/bounded-constructor-preprocessing": "plausible",
+     "lane_evaluability/heuristic/deterministic-fixed-witness": "established",
+     "lane_evaluability/heuristic/retained-advice-inventory-completeness": "plausible",
+     "lane_evaluability/heuristic/source-path-operation-envelope": "plausible",
+     "lane_evaluability/heuristic/whole-process-memory-envelope": "plausible",
+     "lane_experiments/heuristic/bounded-constructor-preprocessing": "plausible",
+     "lane_experiments/heuristic/deterministic-fixed-witness": "established",
+     "lane_experiments/heuristic/retained-advice-inventory-completeness": "plausible",
+     "lane_experiments/heuristic/source-path-operation-envelope": "plausible",
+     "lane_experiments/heuristic/whole-process-memory-envelope": "plausible"
+    },
+    "n_heuristics": 20,
+    "n_unsupported": 0,
+    "n_plausible": 16,
+    "statuses": [
+     "established",
+     "plausible"
+    ],
+    "infrastructure_failures": 0,
+    "package_sha256": "d346cf52ad85dbe3ced25c85a4ef8c7c35923314284887aa7fbf4d12ec9a2344"
+   },
+   "4": "hashsmash/judge-record"
+  },
+  "sha256:f911e281cee8cb11477dc6ffba1dc6a8554f132372907d9e871496d3623af6d6": {
+   "0": "agentprivacy-evidence/record/1",
+   "1": 5,
+   "2": "dossier",
+   "3": {
+    "name": "pr26",
+    "source": "other",
+    "track": "sha256-r32-exploratory",
+    "model": "gpt-5.6-sol",
+    "mode": "committee",
+    "lanes": {
+     "exploratory": {
+      "status": "not_evaluable",
+      "eligible": false,
+      "reasons": [
+       "lane_evaluability/heuristics_disclosed",
+       "lane_evaluability/heuristic/trail-search-budget",
+       "lane_cryptanalysis/heuristic/trail-search-budget",
+       "lane_cost/heuristic/trail-search-budget",
+       "lane_experiments/heuristic/trail-search-budget"
+      ]
+     },
+     "rigorous": {
+      "status": "not_evaluable",
+      "eligible": false,
+      "reasons": [
+       "lane_evaluability/heuristics_disclosed",
+       "lane_evaluability/heuristic/trail-search-budget",
+       "lane_cryptanalysis/heuristic/trail-search-budget",
+       "lane_cost/heuristic/trail-search-budget",
+       "lane_experiments/heuristic/trail-search-budget"
+      ]
+     }
+    },
+    "claim": {
+     "time_log2": 47.5,
+     "preprocessing_log2": 46.9,
+     "memory_log2_bytes": 35,
+     "success_probability": 0.39,
+     "nonuniform_advice_log2_bytes": 13
+    },
+    "heuristics": {
+     "lane_cost/heuristic/implicit-online-work-concentration": "plausible",
+     "lane_cost/heuristic/implicit-valid-tuple-multiplicity": "plausible",
+     "lane_cost/heuristic/q-32step-matching-rate": "plausible",
+     "lane_cost/heuristic/starting-solution-cost": "plausible",
+     "lane_cost/heuristic/step3-46-conditions": "plausible",
+     "lane_cost/heuristic/trail-search-budget": "unsupported",
+     "lane_cryptanalysis/heuristic/implicit-step3-cap-tail": "plausible",
+     "lane_cryptanalysis/heuristic/implicit-valid-tuple-pair-bound": "plausible",
+     "lane_cryptanalysis/heuristic/q-32step-matching-rate": "plausible",
+     "lane_cryptanalysis/heuristic/starting-solution-cost": "plausible",
+     "lane_cryptanalysis/heuristic/step3-46-conditions": "plausible",
+     "lane_cryptanalysis/heuristic/trail-search-budget": "unsupported",
+     "lane_evaluability/heuristic/implicit-cap-concentration": "plausible",
+     "lane_evaluability/heuristic/implicit-valid-tuple-second-moment": "plausible",
+     "lane_evaluability/heuristic/q-32step-matching-rate": "plausible",
+     "lane_evaluability/heuristic/starting-solution-cost": "plausible",
+     "lane_evaluability/heuristic/step3-46-conditions": "plausible",
+     "lane_evaluability/heuristic/trail-search-budget": "unsupported",
+     "lane_experiments/heuristic/q-32step-matching-rate": "plausible",
+     "lane_experiments/heuristic/starting-solution-cost": "plausible",
+     "lane_experiments/heuristic/step3-46-conditions": "plausible",
+     "lane_experiments/heuristic/trail-search-budget": "unsupported"
+    },
+    "n_heuristics": 22,
+    "n_unsupported": 4,
+    "n_plausible": 18,
+    "statuses": [
+     "plausible",
+     "unsupported"
+    ],
+    "infrastructure_failures": 0,
+    "package_sha256": "b0c977f6d82a00ec27254899fb60dd10ac535b59876b46362820c0865fcb4b17"
+   },
+   "4": "hashsmash/judge-record"
+  },
+  "sha256:489b4845bdf7a9821825eadf04d21474a46acf8e54c6da6f79678aa7a2e3d1c8": {
+   "0": "agentprivacy-evidence/record/1",
+   "1": 6,
+   "2": "dossier",
+   "3": {
+    "name": "pr296",
+    "source": "other",
+    "track": "sha256-r32-exploratory",
+    "model": "gpt-5.6-sol",
+    "mode": "committee",
+    "lanes": {
+     "exploratory": {
+      "status": "plausible_not_refuted",
+      "eligible": true,
+      "reasons": [
+       "lane_cost/F-COST-CPU-PRICE",
+       "lane_cost/F-COST-ROUTE-ALLOWANCE",
+       "lane_cost/F-MEMORY-HISTORICAL-SEARCH",
+       "lane_cost/F-SUCCESS-EXTRAPOLATION",
+       "lane_cost/data_preprocessing_advice",
+       "lane_cost/heuristic/cpu-second-pricing: plausible"
+      ]
+     },
+     "rigorous": {
+      "status": "not_qualified",
+      "eligible": false,
+      "reasons": [
+       "lane_cost/F-COST-CPU-PRICE",
+       "lane_cost/F-COST-ROUTE-ALLOWANCE",
+       "lane_cost/F-MEMORY-HISTORICAL-SEARCH",
+       "lane_cost/F-SUCCESS-EXTRAPOLATION",
+       "lane_cost/data_preprocessing_advice",
+       "lane_cost/heuristic/cpu-second-pricing: plausible"
+      ]
+     }
+    },
+    "claim": {
+     "time_log2": 52.1,
+     "preprocessing_log2": 52.1,
+     "memory_log2_bytes": 35,
+     "success_probability": 0.65,
+     "nonuniform_advice_log2_bytes": 13
+    },
+    "heuristics": {
+     "lane_cost/heuristic/cpu-second-pricing": "plausible",
+     "lane_cost/heuristic/q-32step-matching-rate": "plausible",
+     "lane_cost/heuristic/route-search-allowance": "plausible",
+     "lane_cost/heuristic/search-peak-memory": "plausible",
+     "lane_cost/heuristic/starting-solution-measured": "plausible",
+     "lane_cost/heuristic/step3-46-conditions": "plausible",
+     "lane_cost/heuristic/valid-tuple-pairs": "plausible",
+     "lane_cryptanalysis/heuristic/cpu-second-pricing": "plausible",
+     "lane_cryptanalysis/heuristic/implicit-work-cap-tail-bound": "plausible",
+     "lane_cryptanalysis/heuristic/q-32step-matching-rate": "plausible",
+     "lane_cryptanalysis/heuristic/route-search-allowance": "plausible",
+     "lane_cryptanalysis/heuristic/search-peak-memory": "plausible",
+     "lane_cryptanalysis/heuristic/starting-solution-measured": "plausible",
+     "lane_cryptanalysis/heuristic/step3-46-conditions": "plausible",
+     "lane_cryptanalysis/heuristic/valid-tuple-pairs": "plausible",
+     "lane_evaluability/heuristic/cpu-second-pricing": "plausible",
+     "lane_evaluability/heuristic/q-32step-matching-rate": "plausible",
+     "lane_evaluability/heuristic/route-search-allowance": "plausible",
+     "lane_evaluability/heuristic/search-peak-memory": "plausible",
+     "lane_evaluability/heuristic/starting-solution-measured": "plausible",
+     "lane_evaluability/heuristic/step3-46-conditions": "plausible",
+     "lane_evaluability/heuristic/valid-tuple-pairs": "plausible",
+     "lane_experiments/heuristic/cpu-second-pricing": "plausible",
+     "lane_experiments/heuristic/q-32step-matching-rate": "plausible",
+     "lane_experiments/heuristic/route-search-allowance": "plausible",
+     "lane_experiments/heuristic/search-peak-memory": "plausible",
+     "lane_experiments/heuristic/starting-solution-measured": "plausible",
+     "lane_experiments/heuristic/step3-46-conditions": "plausible",
+     "lane_experiments/heuristic/valid-tuple-pairs": "plausible"
+    },
+    "n_heuristics": 29,
+    "n_unsupported": 0,
+    "n_plausible": 29,
+    "statuses": [
+     "plausible"
+    ],
+    "infrastructure_failures": 0,
+    "package_sha256": "1c407aefc03363ed6a61ac60ce731f52b1266da4b4d65d51cd8f9a279a2b9476"
+   },
+   "4": "hashsmash/judge-record"
+  },
+  "sha256:7be9eafc2cb4b1335b8104f97f2dee916054bc91ca879ee04b59bff1c6440d44": {
+   "0": "agentprivacy-evidence/record/1",
+   "1": 7,
+   "2": "dossier",
+   "3": {
+    "name": "pr31",
+    "source": "other",
+    "track": "sha256-r32-exploratory",
+    "model": "gpt-5.6-sol",
+    "mode": "committee",
+    "lanes": {
+     "exploratory": {
+      "status": "refuted",
+      "eligible": false,
+      "reasons": [
+       "lane_evaluability/F-MEMORY-P0-OMITTED"
+      ]
+     },
+     "rigorous": {
+      "status": "refuted",
+      "eligible": false,
+      "reasons": [
+       "lane_evaluability/F-MEMORY-P0-OMITTED"
+      ]
+     }
+    },
+    "claim": {
+     "time_log2": 53.38,
+     "preprocessing_log2": 53.33,
+     "memory_log2_bytes": 32.78,
+     "success_probability": 0.63,
+     "nonuniform_advice_log2_bytes": 9.98
+    },
+    "heuristics": {
+     "lane_cost/heuristic/H-local-expansion-additions": "plausible",
+     "lane_cost/heuristic/instruction-pricing": "unsupported",
+     "lane_cost/heuristic/poisson-success": "plausible",
+     "lane_cost/heuristic/q-real-c32": "plausible",
+     "lane_cost/heuristic/start-point-cost": "unsupported",
+     "lane_cost/heuristic/tail-yield": "plausible",
+     "lane_cost/heuristic/trail-search-envelope": "unsupported",
+     "lane_cost/heuristic/uniform-cv-ewords": "plausible",
+     "lane_cryptanalysis/heuristic/H-local-expansion-additions": "plausible",
+     "lane_cryptanalysis/heuristic/instruction-pricing": "unsupported",
+     "lane_cryptanalysis/heuristic/poisson-success": "plausible",
+     "lane_cryptanalysis/heuristic/q-real-c32": "plausible",
+     "lane_cryptanalysis/heuristic/start-point-cost": "unsupported",
+     "lane_cryptanalysis/heuristic/tail-yield": "plausible",
+     "lane_cryptanalysis/heuristic/trail-search-envelope": "unsupported",
+     "lane_cryptanalysis/heuristic/uniform-cv-ewords": "plausible",
+     "lane_evaluability/heuristic/H-local-expansion-additions": "plausible",
+     "lane_evaluability/heuristic/instruction-pricing": "unsupported",
+     "lane_evaluability/heuristic/poisson-success": "unsupported",
+     "lane_evaluability/heuristic/q-real-c32": "plausible",
+     "lane_evaluability/heuristic/start-point-cost": "plausible",
+     "lane_evaluability/heuristic/tail-yield": "unsupported",
+     "lane_evaluability/heuristic/trail-search-envelope": "unsupported",
+     "lane_evaluability/heuristic/uniform-cv-ewords": "unsupported",
+     "lane_experiments/heuristic/H-local-expansion-additions": "plausible",
+     "lane_experiments/heuristic/instruction-pricing": "unsupported",
+     "lane_experiments/heuristic/poisson-success": "plausible",
+     "lane_experiments/heuristic/q-real-c32": "plausible",
+     "lane_experiments/heuristic/start-point-cost": "unsupported",
+     "lane_experiments/heuristic/tail-yield": "plausible",
+     "lane_experiments/heuristic/trail-search-envelope": "unsupported",
+     "lane_experiments/heuristic/uniform-cv-ewords": "plausible"
+    },
+    "n_heuristics": 32,
+    "n_unsupported": 14,
+    "n_plausible": 18,
+    "statuses": [
+     "plausible",
+     "unsupported"
+    ],
+    "infrastructure_failures": 0,
+    "package_sha256": "39502b8a7e53b41f15b71acb7abf485b22fff0560152a4409c00acf830494fb4"
+   },
+   "4": "hashsmash/judge-record"
+  },
+  "sha256:b9c0f2e3c6cdb4da3b48d0335a5adf9220a2c03337bea5b179d0229de06830e5": {
+   "0": "agentprivacy-evidence/record/1",
+   "1": 8,
+   "2": "dossier",
+   "3": {
+    "name": "pr33",
+    "source": "other",
+    "track": "sha256-r32-exploratory",
+    "model": "gpt-5.6-sol",
+    "mode": "committee",
+    "lanes": {
+     "exploratory": {
+      "status": "not_evaluable",
+      "eligible": false,
+      "reasons": [
+       "lane_evaluability/heuristic/trail-search-budget",
+       "lane_cryptanalysis/heuristic/trail-search-budget",
+       "lane_experiments/heuristic/trail-search-budget"
+      ]
+     },
+     "rigorous": {
+      "status": "not_evaluable",
+      "eligible": false,
+      "reasons": [
+       "lane_evaluability/heuristic/trail-search-budget",
+       "lane_cryptanalysis/heuristic/trail-search-budget",
+       "lane_experiments/heuristic/trail-search-budget"
+      ]
+     }
+    },
+    "claim": {
+     "time_log2": 47.5,
+     "preprocessing_log2": 46.9,
+     "memory_log2_bytes": 35,
+     "success_probability": 0.39,
+     "nonuniform_advice_log2_bytes": 13
+    },
+    "heuristics": {
+     "lane_cost/heuristic/implicit-runtime-concentration": "plausible",
+     "lane_cost/heuristic/implicit-valid-tuple-cap-tail": "plausible",
+     "lane_cost/heuristic/q-32step-matching-rate": "plausible",
+     "lane_cost/heuristic/starting-solution-cost": "plausible",
+     "lane_cost/heuristic/step3-46-conditions": "plausible",
+     "lane_cost/heuristic/trail-search-budget": "plausible",
+     "lane_cryptanalysis/heuristic/implicit-step3-cap-tail": "plausible",
+     "lane_cryptanalysis/heuristic/implicit-valid-tuple-second-moment": "plausible",
+     "lane_cryptanalysis/heuristic/q-32step-matching-rate": "plausible",
+     "lane_cryptanalysis/heuristic/starting-solution-cost": "plausible",
+     "lane_cryptanalysis/heuristic/step3-46-conditions": "plausible",
+     "lane_cryptanalysis/heuristic/trail-search-budget": "unsupported",
+     "lane_evaluability/heuristic/q-32step-matching-rate": "plausible",
+     "lane_evaluability/heuristic/starting-solution-cost": "plausible",
+     "lane_evaluability/heuristic/step3-46-conditions": "plausible",
+     "lane_evaluability/heuristic/trail-search-budget": "unsupported",
+     "lane_experiments/heuristic/implicit-valid-tuple-second-moment": "plausible",
+     "lane_experiments/heuristic/q-32step-matching-rate": "plausible",
+     "lane_experiments/heuristic/starting-solution-cost": "plausible",
+     "lane_experiments/heuristic/step3-46-conditions": "plausible",
+     "lane_experiments/heuristic/trail-search-budget": "unsupported"
+    },
+    "n_heuristics": 21,
+    "n_unsupported": 3,
+    "n_plausible": 18,
+    "statuses": [
+     "plausible",
+     "unsupported"
+    ],
+    "infrastructure_failures": 0,
+    "package_sha256": "b0c977f6d82a00ec27254899fb60dd10ac535b59876b46362820c0865fcb4b17"
+   },
+   "4": "hashsmash/judge-record"
+  },
+  "sha256:522af344104b129a8ded9800196868c01732d856457779829fe24ca6fbb834b5": {
+   "0": "agentprivacy-evidence/record/1",
+   "1": 9,
+   "2": "dossier",
+   "3": {
+    "name": "pr367",
+    "source": "other",
+    "track": "sha256-r32-exploratory",
+    "model": "gpt-5.6-sol",
+    "mode": "committee",
+    "lanes": {
+     "exploratory": {
+      "status": "plausible_not_refuted",
+      "eligible": true,
+      "reasons": [
+       "lane_cost/F-cpu-price-transfer",
+       "lane_cost/F-pair-moment-extrapolation",
+       "lane_cost/F-route-search-upper-bound",
+       "lane_cost/F-step3-extrapolation",
+       "lane_cost/data_preprocessing_advice",
+       "lane_cost/heuristic/cpu-second-pricing: plausible"
+      ]
+     },
+     "rigorous": {
+      "status": "not_qualified",
+      "eligible": false,
+      "reasons": [
+       "lane_cost/F-cpu-price-transfer",
+       "lane_cost/F-pair-moment-extrapolation",
+       "lane_cost/F-route-search-upper-bound",
+       "lane_cost/F-step3-extrapolation",
+       "lane_cost/data_preprocessing_advice",
+       "lane_cost/heuristic/cpu-second-pricing: plausible"
+      ]
+     }
+    },
+    "claim": {
+     "time_log2": 48.45,
+     "preprocessing_log2": 48.05,
+     "memory_log2_bytes": 35,
+     "success_probability": 0.65,
+     "nonuniform_advice_log2_bytes": 13
+    },
+    "heuristics": {
+     "lane_cost/heuristic/cpu-second-pricing": "plausible",
+     "lane_cost/heuristic/q-32step-matching-rate": "plausible",
+     "lane_cost/heuristic/route-search-allowance": "plausible",
+     "lane_cost/heuristic/search-peak-memory": "plausible",
+     "lane_cost/heuristic/starting-solution-measured": "plausible",
+     "lane_cost/heuristic/step3-46-conditions": "plausible",
+     "lane_cost/heuristic/valid-tuple-pairs": "plausible",
+     "lane_cryptanalysis/heuristic/cpu-second-pricing": "plausible",
+     "lane_cryptanalysis/heuristic/q-32step-matching-rate": "plausible",
+     "lane_cryptanalysis/heuristic/route-search-allowance": "plausible",
+     "lane_cryptanalysis/heuristic/search-peak-memory": "plausible",
+     "lane_cryptanalysis/heuristic/starting-solution-measured": "plausible",
+     "lane_cryptanalysis/heuristic/step3-46-conditions": "plausible",
+     "lane_cryptanalysis/heuristic/valid-tuple-pairs": "plausible",
+     "lane_evaluability/heuristic/cpu-second-pricing": "plausible",
+     "lane_evaluability/heuristic/q-32step-matching-rate": "plausible",
+     "lane_evaluability/heuristic/route-search-allowance": "plausible",
+     "lane_evaluability/heuristic/search-peak-memory": "plausible",
+     "lane_evaluability/heuristic/starting-solution-measured": "plausible",
+     "lane_evaluability/heuristic/step3-46-conditions": "plausible",
+     "lane_evaluability/heuristic/valid-tuple-pairs": "plausible",
+     "lane_experiments/heuristic/cpu-second-pricing": "plausible",
+     "lane_experiments/heuristic/q-32step-matching-rate": "plausible",
+     "lane_experiments/heuristic/route-search-allowance": "plausible",
+     "lane_experiments/heuristic/search-peak-memory": "plausible",
+     "lane_experiments/heuristic/starting-solution-measured": "plausible",
+     "lane_experiments/heuristic/step3-46-conditions": "plausible",
+     "lane_experiments/heuristic/valid-tuple-pairs": "plausible"
+    },
+    "n_heuristics": 28,
+    "n_unsupported": 0,
+    "n_plausible": 28,
+    "statuses": [
+     "plausible"
+    ],
+    "infrastructure_failures": 0,
+    "package_sha256": "8e29eefe9066e94f3b5cb90a424bce2ae51a0e2bf3dd317ff518ad3ec2282733"
+   },
+   "4": "hashsmash/judge-record"
+  },
+  "sha256:86877ba7ba6a43566a33ed7b6f086a9f3295c0e0b793d0cc733f2b214a760677": {
+   "0": "agentprivacy-evidence/record/1",
+   "1": 10,
+   "2": "dossier",
+   "3": {
+    "name": "pr377",
+    "source": "other",
+    "track": "sha256-r32-exploratory",
+    "model": "gpt-5.6-sol",
+    "mode": "committee",
+    "lanes": {
+     "exploratory": {
+      "status": "plausible_not_refuted",
+      "eligible": true,
+      "reasons": [
+       "lane_cost/LC-F1",
+       "lane_cost/LC-F2",
+       "lane_cost/LC-F3",
+       "lane_cost/LC-F4",
+       "lane_cost/data_preprocessing_advice",
+       "lane_cost/heuristic/cpu-second-pricing: plausible"
+      ]
+     },
+     "rigorous": {
+      "status": "not_qualified",
+      "eligible": false,
+      "reasons": [
+       "lane_cost/LC-F1",
+       "lane_cost/LC-F2",
+       "lane_cost/LC-F3",
+       "lane_cost/LC-F4",
+       "lane_cost/data_preprocessing_advice",
+       "lane_cost/heuristic/cpu-second-pricing: plausible"
+      ]
+     }
+    },
+    "claim": {
+     "time_log2": 48.25,
+     "preprocessing_log2": 48.05,
+     "memory_log2_bytes": 35,
+     "success_probability": 0.42,
+     "nonuniform_advice_log2_bytes": 13
+    },
+    "heuristics": {
+     "lane_cost/heuristic/cpu-second-pricing": "plausible",
+     "lane_cost/heuristic/q-32step-matching-rate": "plausible",
+     "lane_cost/heuristic/route-search-allowance": "plausible",
+     "lane_cost/heuristic/search-peak-memory": "plausible",
+     "lane_cost/heuristic/starting-solution-measured": "plausible",
+     "lane_cost/heuristic/step3-46-conditions": "plausible",
+     "lane_cost/heuristic/valid-tuple-pairs": "plausible",
+     "lane_cryptanalysis/heuristic/cpu-second-pricing": "plausible",
+     "lane_cryptanalysis/heuristic/q-32step-matching-rate": "plausible",
+     "lane_cryptanalysis/heuristic/route-search-allowance": "plausible",
+     "lane_cryptanalysis/heuristic/search-peak-memory": "plausible",
+     "lane_cryptanalysis/heuristic/starting-solution-measured": "plausible",
+     "lane_cryptanalysis/heuristic/step3-46-conditions": "plausible",
+     "lane_cryptanalysis/heuristic/valid-tuple-pairs": "plausible",
+     "lane_evaluability/heuristic/cpu-second-pricing": "plausible",
+     "lane_evaluability/heuristic/q-32step-matching-rate": "plausible",
+     "lane_evaluability/heuristic/route-search-allowance": "plausible",
+     "lane_evaluability/heuristic/search-peak-memory": "plausible",
+     "lane_evaluability/heuristic/starting-solution-measured": "plausible",
+     "lane_evaluability/heuristic/step3-46-conditions": "plausible",
+     "lane_evaluability/heuristic/valid-tuple-pairs": "plausible",
+     "lane_experiments/heuristic/cpu-second-pricing": "plausible",
+     "lane_experiments/heuristic/q-32step-matching-rate": "plausible",
+     "lane_experiments/heuristic/route-search-allowance": "plausible",
+     "lane_experiments/heuristic/search-peak-memory": "plausible",
+     "lane_experiments/heuristic/starting-solution-measured": "plausible",
+     "lane_experiments/heuristic/step3-46-conditions": "plausible",
+     "lane_experiments/heuristic/valid-tuple-pairs": "plausible"
+    },
+    "n_heuristics": 28,
+    "n_unsupported": 0,
+    "n_plausible": 28,
+    "statuses": [
+     "plausible"
+    ],
+    "infrastructure_failures": 0,
+    "package_sha256": "2491985e10ec893ef55a3e8ddd1836c435580b713c4752a23e1282a4add063ea"
+   },
+   "4": "hashsmash/judge-record"
+  },
+  "sha256:9e481f595650e9913471b455a76ac17be0c7567529002f0644c7b30827edccbf": {
+   "0": "agentprivacy-evidence/record/1",
+   "1": 11,
+   "2": "dossier",
+   "3": {
+    "name": "own:1ac3bbb5",
+    "source": "own",
+    "track": "sha256-r32-exploratory",
+    "model": "gpt-5.6-sol",
+    "mode": "committee",
+    "lanes": {
+     "exploratory": {
+      "status": "not_evaluable",
+      "eligible": false,
+      "reasons": [
+       "lane_evaluability/evidence_relevant"
+      ]
+     },
+     "rigorous": {
+      "status": "not_evaluable",
+      "eligible": false,
+      "reasons": [
+       "lane_evaluability/evidence_relevant"
+      ]
+     }
+    },
+    "claim": {
+     "time_log2": 47.6,
+     "preprocessing_log2": 47.2,
+     "memory_log2_bytes": 35,
+     "success_probability": 0.42,
+     "nonuniform_advice_log2_bytes": 13
+    },
+    "heuristics": {
+     "lane_cost/heuristic/cpu-second-pricing": "plausible",
+     "lane_cost/heuristic/q-32step-matching-rate": "plausible",
+     "lane_cost/heuristic/route-search-measured": "plausible",
+     "lane_cost/heuristic/search-peak-memory": "plausible",
+     "lane_cost/heuristic/starting-solution-measured": "plausible",
+     "lane_cost/heuristic/step3-46-conditions": "plausible",
+     "lane_cost/heuristic/valid-tuple-pairs": "plausible",
+     "lane_cryptanalysis/heuristic/cpu-second-pricing": "plausible",
+     "lane_cryptanalysis/heuristic/q-32step-matching-rate": "plausible",
+     "lane_cryptanalysis/heuristic/route-search-measured": "plausible",
+     "lane_cryptanalysis/heuristic/search-peak-memory": "plausible",
+     "lane_cryptanalysis/heuristic/starting-solution-measured": "plausible",
+     "lane_cryptanalysis/heuristic/step3-46-conditions": "plausible",
+     "lane_cryptanalysis/heuristic/valid-tuple-pairs": "plausible",
+     "lane_evaluability/heuristic/cpu-second-pricing": "plausible",
+     "lane_evaluability/heuristic/q-32step-matching-rate": "plausible",
+     "lane_evaluability/heuristic/route-search-measured": "plausible",
+     "lane_evaluability/heuristic/search-peak-memory": "plausible",
+     "lane_evaluability/heuristic/starting-solution-measured": "plausible",
+     "lane_evaluability/heuristic/step3-46-conditions": "plausible",
+     "lane_evaluability/heuristic/valid-tuple-pairs": "plausible",
+     "lane_experiments/heuristic/cpu-second-pricing": "plausible",
+     "lane_experiments/heuristic/q-32step-matching-rate": "plausible",
+     "lane_experiments/heuristic/route-search-measured": "plausible",
+     "lane_experiments/heuristic/search-peak-memory": "plausible",
+     "lane_experiments/heuristic/starting-solution-measured": "plausible",
+     "lane_experiments/heuristic/step3-46-conditions": "plausible",
+     "lane_experiments/heuristic/valid-tuple-pairs": "plausible"
+    },
+    "n_heuristics": 28,
+    "n_unsupported": 0,
+    "n_plausible": 28,
+    "statuses": [
+     "plausible"
+    ],
+    "infrastructure_failures": 0,
+    "package_sha256": "c4050596b28c230a43a08e4cc861d25a5bc4277fe59e5f3b19988956b78b60d3"
+   },
+   "4": "hashsmash/judge-record"
+  },
+  "sha256:59d30848f178e08b303fff07f8e75d912a29239a87be469c5f8d834e7345febc": {
+   "0": "agentprivacy-evidence/record/1",
+   "1": 12,
+   "2": "dossier",
+   "3": {
+    "name": "own:2899cfb0",
+    "source": "own",
+    "track": "sha3-256-r6-exploratory",
+    "model": "gpt-5.6-sol",
+    "mode": "committee",
+    "lanes": {
+     "exploratory": {
+      "status": "not_evaluable",
+      "eligible": false,
+      "reasons": [
+       "lane_experiments/heuristic/H-LAMBDA-TRANSFER"
+      ]
+     },
+     "rigorous": {
+      "status": "not_evaluable",
+      "eligible": false,
+      "reasons": [
+       "lane_experiments/heuristic/H-LAMBDA-TRANSFER"
+      ]
+     }
+    },
+    "claim": {
+     "time_log2": 125.58,
+     "preprocessing_log2": 9,
+     "memory_log2_bytes": 112,
+     "success_probability": 0.42,
+     "nonuniform_advice_log2_bytes": 0
+    },
+    "heuristics": {
+     "lane_cost/heuristic/H-RF": "plausible",
+     "lane_cryptanalysis/heuristic/H-RF": "plausible",
+     "lane_evaluability/heuristic/H-RF": "plausible",
+     "lane_experiments/heuristic/H-LAMBDA-TRANSFER": "unsupported",
+     "lane_experiments/heuristic/H-RF": "plausible"
+    },
+    "n_heuristics": 5,
+    "n_unsupported": 1,
+    "n_plausible": 4,
+    "statuses": [
+     "plausible",
+     "unsupported"
+    ],
+    "infrastructure_failures": 0,
+    "package_sha256": "fe8789f2859f6d4b2785a59d2eb69d07b1cba3ee8075250a9f626ec2aa8fd750"
+   },
+   "4": "hashsmash/judge-record"
+  },
+  "sha256:f81fea624840a3bb757b9d7592010db77e8f5bc3a34f431efcf91271bfc69df8": {
+   "0": "agentprivacy-evidence/record/1",
+   "1": 13,
+   "2": "dossier",
+   "3": {
+    "name": "own:da4895b5",
+    "source": "own",
+    "track": "sha3-256-r6-exploratory",
+    "model": "gpt-5.6-sol",
+    "mode": "committee",
+    "lanes": {
+     "exploratory": {
+      "status": "refuted",
+      "eligible": false,
+      "reasons": [
+       "lane_cost/F-PREPROCESSING-UNDERCOUNT"
+      ]
+     },
+     "rigorous": {
+      "status": "refuted",
+      "eligible": false,
+      "reasons": [
+       "lane_cost/F-PREPROCESSING-UNDERCOUNT"
+      ]
+     }
+    },
+    "claim": {
+     "time_log2": 125.58,
+     "preprocessing_log2": 0,
+     "memory_log2_bytes": 112,
+     "success_probability": 0.41,
+     "nonuniform_advice_log2_bytes": 0
+    },
+    "heuristics": {
+     "lane_cost/heuristic/H-RF": "plausible",
+     "lane_cryptanalysis/heuristic/H-RF": "plausible",
+     "lane_evaluability/heuristic/H-RF": "plausible",
+     "lane_experiments/heuristic/H-RF": "unsupported"
+    },
+    "n_heuristics": 4,
+    "n_unsupported": 1,
+    "n_plausible": 3,
+    "statuses": [
+     "plausible",
+     "unsupported"
+    ],
+    "infrastructure_failures": 0,
+    "package_sha256": "3f0692f647e20b4965e3c096addf8d40b3f03e87f7b4acf1efae1990a78db17a"
+   },
+   "4": "hashsmash/judge-record"
+  },
+  "sha256:24ec502ca91297dc31fb56dba653ebcf3d6483faf117bad5449acef53b556249": {
+   "0": "agentprivacy-evidence/ledger/1",
+   "1": "dossier-ledger",
+   "2": [
+    "sha256:e8dd057e522653e739c8216e5a1c0771e05f48e5214c216ce627e0aae426562c",
+    "sha256:aa943f6c56f1dc06671e61de5a96164b48ef7e9d916dedc222955ea89a2ea865",
+    "sha256:00a6a60108204b18f391cdc935b4466343c436246a58371a599ad8f6a76ee652",
+    "sha256:231f328d957586375a8efe17054e7988029c24ae8d2fed0e1080100be574217a",
+    "sha256:49aa6c0b4a88d9e6f60b0092720dba01ceec0017f3321fdb156bf700040021f3",
+    "sha256:f911e281cee8cb11477dc6ffba1dc6a8554f132372907d9e871496d3623af6d6",
+    "sha256:489b4845bdf7a9821825eadf04d21474a46acf8e54c6da6f79678aa7a2e3d1c8",
+    "sha256:7be9eafc2cb4b1335b8104f97f2dee916054bc91ca879ee04b59bff1c6440d44",
+    "sha256:b9c0f2e3c6cdb4da3b48d0335a5adf9220a2c03337bea5b179d0229de06830e5",
+    "sha256:522af344104b129a8ded9800196868c01732d856457779829fe24ca6fbb834b5",
+    "sha256:86877ba7ba6a43566a33ed7b6f086a9f3295c0e0b793d0cc733f2b214a760677",
+    "sha256:9e481f595650e9913471b455a76ac17be0c7567529002f0644c7b30827edccbf",
+    "sha256:59d30848f178e08b303fff07f8e75d912a29239a87be469c5f8d834e7345febc",
+    "sha256:f81fea624840a3bb757b9d7592010db77e8f5bc3a34f431efcf91271bfc69df8"
+   ],
+   "3": "hashsmash/judge-record",
+   "4": "14 dossier rows from judge_digest.json (~/agentprivacy-harness-demos/data/judge_digest.json)"
+  },
+  "sha256:0405e3681124f7d7ce17291d07d136447ed0950225146dd017fe3839e631a04b": {
+   "0": "agentprivacy-evidence/check/1",
+   "1": "sha256:24ec502ca91297dc31fb56dba653ebcf3d6483faf117bad5449acef53b556249",
+   "2": "rows/count/1",
+   "3": {
+    "n": 14
+   }
+  },
+  "sha256:1802ab211d062e076b00d43c19912e5145437d2ed4760fe36c0935a2096cf320": {
+   "0": "agentprivacy-evidence/run-root/1",
+   "1": "hashsmash/judge-record",
+   "2": "2026-10-07",
+   "3": [
+    [
+     "dossier-count",
+     "sha256:0405e3681124f7d7ce17291d07d136447ed0950225146dd017fe3839e631a04b"
+    ],
+    [
+     "dossier-ledger",
+     "sha256:24ec502ca91297dc31fb56dba653ebcf3d6483faf117bad5449acef53b556249"
+    ],
+    [
+     "source:judge_digest.json",
+     "sha256:da963c5eb0bafeaf28a53434256918c104b59abf2eceb782f4fc4abde862d0da"
+    ]
+   ],
+   "4": "0dd4bf6f45a1402b963e8a7f264e5da54159d7930259a62201682b32616cb27f",
+   "5": "kappa-compatible (unverified)",
+   "6": "unsigned:harness-demos",
+   "7": {
+    "kappa-registry": "2af8656",
+    "bc-dcbor-rust": "2e5b901 (branch feat/dcbor-derive)"
+   }
+  }
+ },
+ "blobs": {
+  "sha256:da963c5eb0bafeaf28a53434256918c104b59abf2eceb782f4fc4abde862d0da": 36542
+ },
+ "edges": [
+  {
+   "kappa": "sha256:bd86cb1377b8e0872296684df59dc26253beb9cc9ee5a6a956f7a0f74ff23d41",
+   "source": "sha256:e8dd057e522653e739c8216e5a1c0771e05f48e5214c216ce627e0aae426562c",
+   "target": "sha256:da963c5eb0bafeaf28a53434256918c104b59abf2eceb782f4fc4abde862d0da",
+   "relation": "evidence-provenance",
+   "asserter": "unsigned:harness-demos"
+  },
+  {
+   "kappa": "sha256:37ace3d6e3bc3d15bcc5c0ab106ce44d2b48c12e1b7a8e517bd3ae235a4545bd",
+   "source": "sha256:aa943f6c56f1dc06671e61de5a96164b48ef7e9d916dedc222955ea89a2ea865",
+   "target": "sha256:da963c5eb0bafeaf28a53434256918c104b59abf2eceb782f4fc4abde862d0da",
+   "relation": "evidence-provenance",
+   "asserter": "unsigned:harness-demos"
+  },
+  {
+   "kappa": "sha256:21a90e738e604a68fc02391911b5ca3fbdde3ee96d934a5a0bee06c061dddf38",
+   "source": "sha256:00a6a60108204b18f391cdc935b4466343c436246a58371a599ad8f6a76ee652",
+   "target": "sha256:da963c5eb0bafeaf28a53434256918c104b59abf2eceb782f4fc4abde862d0da",
+   "relation": "evidence-provenance",
+   "asserter": "unsigned:harness-demos"
+  },
+  {
+   "kappa": "sha256:5084bc7fc591f89320ee4b18dca2f6760a02bf51a204e20f1af5ea56d258ce3d",
+   "source": "sha256:231f328d957586375a8efe17054e7988029c24ae8d2fed0e1080100be574217a",
+   "target": "sha256:da963c5eb0bafeaf28a53434256918c104b59abf2eceb782f4fc4abde862d0da",
+   "relation": "evidence-provenance",
+   "asserter": "unsigned:harness-demos"
+  },
+  {
+   "kappa": "sha256:dfdbf802fb03196a26bd66df35479cafbc30531a14c192c48180cd2fff60f32a",
+   "source": "sha256:49aa6c0b4a88d9e6f60b0092720dba01ceec0017f3321fdb156bf700040021f3",
+   "target": "sha256:da963c5eb0bafeaf28a53434256918c104b59abf2eceb782f4fc4abde862d0da",
+   "relation": "evidence-provenance",
+   "asserter": "unsigned:harness-demos"
+  },
+  {
+   "kappa": "sha256:22d8320ccc9bcc376492bc319b9e9b03e180ad1d6a4aa657350d99b65f25b8b1",
+   "source": "sha256:f911e281cee8cb11477dc6ffba1dc6a8554f132372907d9e871496d3623af6d6",
+   "target": "sha256:da963c5eb0bafeaf28a53434256918c104b59abf2eceb782f4fc4abde862d0da",
+   "relation": "evidence-provenance",
+   "asserter": "unsigned:harness-demos"
+  },
+  {
+   "kappa": "sha256:9fc6c74b567095e8030ff19c26645fa9bdd1021693c1aa77ffd4dbe9e39a35b3",
+   "source": "sha256:489b4845bdf7a9821825eadf04d21474a46acf8e54c6da6f79678aa7a2e3d1c8",
+   "target": "sha256:da963c5eb0bafeaf28a53434256918c104b59abf2eceb782f4fc4abde862d0da",
+   "relation": "evidence-provenance",
+   "asserter": "unsigned:harness-demos"
+  },
+  {
+   "kappa": "sha256:5b651246f80e661bbab47852def264a0062e41f8106f250765df05bd8916eaaa",
+   "source": "sha256:7be9eafc2cb4b1335b8104f97f2dee916054bc91ca879ee04b59bff1c6440d44",
+   "target": "sha256:da963c5eb0bafeaf28a53434256918c104b59abf2eceb782f4fc4abde862d0da",
+   "relation": "evidence-provenance",
+   "asserter": "unsigned:harness-demos"
+  },
+  {
+   "kappa": "sha256:25c7c1eb89b6b23236371c58ea4fab9f98c1c3b397d458ed680e623fe1e15588",
+   "source": "sha256:b9c0f2e3c6cdb4da3b48d0335a5adf9220a2c03337bea5b179d0229de06830e5",
+   "target": "sha256:da963c5eb0bafeaf28a53434256918c104b59abf2eceb782f4fc4abde862d0da",
+   "relation": "evidence-provenance",
+   "asserter": "unsigned:harness-demos"
+  },
+  {
+   "kappa": "sha256:474510325faf11a504ef4739b279c90b51ea76a6187331b481ce58d00423e0c2",
+   "source": "sha256:522af344104b129a8ded9800196868c01732d856457779829fe24ca6fbb834b5",
+   "target": "sha256:da963c5eb0bafeaf28a53434256918c104b59abf2eceb782f4fc4abde862d0da",
+   "relation": "evidence-provenance",
+   "asserter": "unsigned:harness-demos"
+  },
+  {
+   "kappa": "sha256:c78f3defbace2e19e1c97cdf49c1eadef979d4a82b0ae3f9053ed0bf50d44444",
+   "source": "sha256:86877ba7ba6a43566a33ed7b6f086a9f3295c0e0b793d0cc733f2b214a760677",
+   "target": "sha256:da963c5eb0bafeaf28a53434256918c104b59abf2eceb782f4fc4abde862d0da",
+   "relation": "evidence-provenance",
+   "asserter": "unsigned:harness-demos"
+  },
+  {
+   "kappa": "sha256:a61150ac8f730441912b5e74a4437feb09b7bc21d1abd12cd9d64b363a2e0390",
+   "source": "sha256:9e481f595650e9913471b455a76ac17be0c7567529002f0644c7b30827edccbf",
+   "target": "sha256:da963c5eb0bafeaf28a53434256918c104b59abf2eceb782f4fc4abde862d0da",
+   "relation": "evidence-provenance",
+   "asserter": "unsigned:harness-demos"
+  },
+  {
+   "kappa": "sha256:8ff43cb63707b1c8624b0e9a873e8d083daf3f151f9d44eb9ccd0b32e161838c",
+   "source": "sha256:59d30848f178e08b303fff07f8e75d912a29239a87be469c5f8d834e7345febc",
+   "target": "sha256:da963c5eb0bafeaf28a53434256918c104b59abf2eceb782f4fc4abde862d0da",
+   "relation": "evidence-provenance",
+   "asserter": "unsigned:harness-demos"
+  },
+  {
+   "kappa": "sha256:e7bef1132e7ec9ab6d0454cd9bc6a29b35938c7b722f71a3debfc8b7f8662772",
+   "source": "sha256:f81fea624840a3bb757b9d7592010db77e8f5bc3a34f431efcf91271bfc69df8",
+   "target": "sha256:da963c5eb0bafeaf28a53434256918c104b59abf2eceb782f4fc4abde862d0da",
+   "relation": "evidence-provenance",
+   "asserter": "unsigned:harness-demos"
+  },
+  {
+   "kappa": "sha256:b33a19db2df9196be24bbc8308010527c69753829056330e69a875ae4409222a",
+   "source": "sha256:24ec502ca91297dc31fb56dba653ebcf3d6483faf117bad5449acef53b556249",
+   "target": "sha256:e8dd057e522653e739c8216e5a1c0771e05f48e5214c216ce627e0aae426562c",
+   "relation": "composed-of",
+   "asserter": "unsigned:harness-demos"
+  },
+  {
+   "kappa": "sha256:73e4041ef609f27dfb8d53a231d481e8fa26a7f14a03afe36d41fa73a349522c",
+   "source": "sha256:24ec502ca91297dc31fb56dba653ebcf3d6483faf117bad5449acef53b556249",
+   "target": "sha256:aa943f6c56f1dc06671e61de5a96164b48ef7e9d916dedc222955ea89a2ea865",
+   "relation": "composed-of",
+   "asserter": "unsigned:harness-demos"
+  },
+  {
+   "kappa": "sha256:9a7482543dbe2dc21add09108f8c98b54a52753509f5ff1c306941e9c88edeea",
+   "source": "sha256:24ec502ca91297dc31fb56dba653ebcf3d6483faf117bad5449acef53b556249",
+   "target": "sha256:00a6a60108204b18f391cdc935b4466343c436246a58371a599ad8f6a76ee652",
+   "relation": "composed-of",
+   "asserter": "unsigned:harness-demos"
+  },
+  {
+   "kappa": "sha256:b5da87911b7410ec0d001ad7c52f3a1a9a194b8a9c77367b7e5e71ce31d9550c",
+   "source": "sha256:24ec502ca91297dc31fb56dba653ebcf3d6483faf117bad5449acef53b556249",
+   "target": "sha256:231f328d957586375a8efe17054e7988029c24ae8d2fed0e1080100be574217a",
+   "relation": "composed-of",
+   "asserter": "unsigned:harness-demos"
+  },
+  {
+   "kappa": "sha256:29ad561ce159231d4acfd3832c2d941318ac2a33a86c16d1199aa58f76b8afc4",
+   "source": "sha256:24ec502ca91297dc31fb56dba653ebcf3d6483faf117bad5449acef53b556249",
+   "target": "sha256:49aa6c0b4a88d9e6f60b0092720dba01ceec0017f3321fdb156bf700040021f3",
+   "relation": "composed-of",
+   "asserter": "unsigned:harness-demos"
+  },
+  {
+   "kappa": "sha256:8e6c28781b7ae3ea92f82b3fef66a89c1111aea9377e90003c1abcda38d92da8",
+   "source": "sha256:24ec502ca91297dc31fb56dba653ebcf3d6483faf117bad5449acef53b556249",
+   "target": "sha256:f911e281cee8cb11477dc6ffba1dc6a8554f132372907d9e871496d3623af6d6",
+   "relation": "composed-of",
+   "asserter": "unsigned:harness-demos"
+  },
+  {
+   "kappa": "sha256:5b9cd3269535a404369e37a1de00dd4ad46ce921d68a924d924557c0fc97fb35",
+   "source": "sha256:24ec502ca91297dc31fb56dba653ebcf3d6483faf117bad5449acef53b556249",
+   "target": "sha256:489b4845bdf7a9821825eadf04d21474a46acf8e54c6da6f79678aa7a2e3d1c8",
+   "relation": "composed-of",
+   "asserter": "unsigned:harness-demos"
+  },
+  {
+   "kappa": "sha256:c29655fd25186eb2b979252eba9344be8d49ef15493045ee5a16f78b2018af0a",
+   "source": "sha256:24ec502ca91297dc31fb56dba653ebcf3d6483faf117bad5449acef53b556249",
+   "target": "sha256:7be9eafc2cb4b1335b8104f97f2dee916054bc91ca879ee04b59bff1c6440d44",
+   "relation": "composed-of",
+   "asserter": "unsigned:harness-demos"
+  },
+  {
+   "kappa": "sha256:f054c1bf04bd4c8b446785c6937240c7046b6e38c0c99fd5c8cc676b5788f9bc",
+   "source": "sha256:24ec502ca91297dc31fb56dba653ebcf3d6483faf117bad5449acef53b556249",
+   "target": "sha256:b9c0f2e3c6cdb4da3b48d0335a5adf9220a2c03337bea5b179d0229de06830e5",
+   "relation": "composed-of",
+   "asserter": "unsigned:harness-demos"
+  },
+  {
+   "kappa": "sha256:30327460cbfba2cd3535c55cdbd8d063f0f220d986bcb4fb4d59c9152f41245e",
+   "source": "sha256:24ec502ca91297dc31fb56dba653ebcf3d6483faf117bad5449acef53b556249",
+   "target": "sha256:522af344104b129a8ded9800196868c01732d856457779829fe24ca6fbb834b5",
+   "relation": "composed-of",
+   "asserter": "unsigned:harness-demos"
+  },
+  {
+   "kappa": "sha256:6add69676bf00ad0fa7f96a9394143f427b4137825c352577f8ed92cd94ad93b",
+   "source": "sha256:24ec502ca91297dc31fb56dba653ebcf3d6483faf117bad5449acef53b556249",
+   "target": "sha256:86877ba7ba6a43566a33ed7b6f086a9f3295c0e0b793d0cc733f2b214a760677",
+   "relation": "composed-of",
+   "asserter": "unsigned:harness-demos"
+  },
+  {
+   "kappa": "sha256:e0dbbe55ebca44243ee69a7b70818c8c9069ce04f85229557c9dd69ef0af43ba",
+   "source": "sha256:24ec502ca91297dc31fb56dba653ebcf3d6483faf117bad5449acef53b556249",
+   "target": "sha256:9e481f595650e9913471b455a76ac17be0c7567529002f0644c7b30827edccbf",
+   "relation": "composed-of",
+   "asserter": "unsigned:harness-demos"
+  },
+  {
+   "kappa": "sha256:a7ea4a7e6651d237d66c3845915ba210925ee1d1feef56b190d13f6cac127b4d",
+   "source": "sha256:24ec502ca91297dc31fb56dba653ebcf3d6483faf117bad5449acef53b556249",
+   "target": "sha256:59d30848f178e08b303fff07f8e75d912a29239a87be469c5f8d834e7345febc",
+   "relation": "composed-of",
+   "asserter": "unsigned:harness-demos"
+  },
+  {
+   "kappa": "sha256:97ddb4484ad2fce58f39ab60df1cc370e6639689c1e246e962d2a6605bed18cf",
+   "source": "sha256:24ec502ca91297dc31fb56dba653ebcf3d6483faf117bad5449acef53b556249",
+   "target": "sha256:f81fea624840a3bb757b9d7592010db77e8f5bc3a34f431efcf91271bfc69df8",
+   "relation": "composed-of",
+   "asserter": "unsigned:harness-demos"
+  },
+  {
+   "kappa": "sha256:7c2e471cd74f8676a3258b07518c77e0b70bf9b4c3f1bc983ff154b543e43cf8",
+   "source": "sha256:0405e3681124f7d7ce17291d07d136447ed0950225146dd017fe3839e631a04b",
+   "target": "sha256:24ec502ca91297dc31fb56dba653ebcf3d6483faf117bad5449acef53b556249",
+   "relation": "derived-from",
+   "asserter": "unsigned:harness-demos"
+  },
+  {
+   "kappa": "sha256:49ce91d4295ef2f614d2402939446448d820477b8b8837cb9cdbe2d2a52bb006",
+   "source": "sha256:1802ab211d062e076b00d43c19912e5145437d2ed4760fe36c0935a2096cf320",
+   "target": "sha256:24ec502ca91297dc31fb56dba653ebcf3d6483faf117bad5449acef53b556249",
+   "relation": "composed-of",
+   "asserter": "unsigned:harness-demos"
+  },
+  {
+   "kappa": "sha256:ccb4b76f29c276c5b8861d7072607debc7a252738da85619c58cc058e7db11b0",
+   "source": "sha256:1802ab211d062e076b00d43c19912e5145437d2ed4760fe36c0935a2096cf320",
+   "target": "sha256:0405e3681124f7d7ce17291d07d136447ed0950225146dd017fe3839e631a04b",
+   "relation": "composed-of",
+   "asserter": "unsigned:harness-demos"
+  }
+ ]
+}
