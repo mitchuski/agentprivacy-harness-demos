@@ -25,7 +25,8 @@ page can point at a run a reader re-derives rather than at a screenshot.
 | `notes/` | the written notes (`OPENSERV_NOTE_AND_RESULTS.md`, generated from the records on 2026-09-13) |
 | `bundles/` | sources bundles: prose sources (rules, ledgers, citation files) as κ'd blobs under one root, minted by `tools/mint_sources.mjs` (`--redact` strips user paths and hosts first) |
 | `pairs.json`, `pairs/` | the registry of pairs: reader κ bound to evidence root and generator κ as a `transform/1` object (`tools/pair.mjs`) |
-| `PLAN.md` | the ranked plan for the next readers and the rule that each is shown as it lands |
+| `PLAN.md` | the ranked plan; items 1-12 built on 2026-10-07/08 |
+| `tools/mint_rows.mjs`, `tools/mint_demos.mjs` | rows bundles (JSON / JSONL / TSV tables as record/1 rows); the demos root over all pairs |
 
 ## Regenerate
 
@@ -40,18 +41,34 @@ node generators/gen_note_doc.mjs        # -> notes/OPENSERV_NOTE_AND_RESULTS.md
 node generators/gen_reader.mjs          # -> readers/zk-forge-reader.html (needs SCRATCH=<dir> with that session's zk candidates; not archived here)
 ```
 
-## The κ-paired readers (2026-10-07)
+## The κ-paired readers (2026-10-07 / 08)
 
-| reader | from | evidence root |
+Start at `index.html` (the index is a reader too, paired to the demos root).
+
+| reader | lane | evidence root |
 |---|---|---|
-| `readers/r32-route-search.html` | hashsmash r32 bundle (59 calls) | `sha256:3c20049e…` |
-| `readers/sig-h2-gate.html` | sig_mage H2 gate bundle (record b96b3ca) | `sha256:8c5209a6…` |
-| `readers/arena-rules.html` | CHALLENGE_LANES.md as a blob | `sha256:7b5fcde2…` |
-| `readers/credit-provenance.html` | citations json + R32_LOG.md as blobs | `sha256:2a9fae2f…` |
-| `readers/research-ledger.html` | HANDOFF (redacted copy) + KILLED_LEVERS as blobs | `sha256:370262c4…` |
+| `readers/arena-rules.html` | harness/challenge-lanes | `sha256:7b5fcde256be…` |
+| `readers/credit-provenance.html` | credit/sig-hashsmash | `sha256:d3d1d934ee4e…` |
+| `readers/harness-aggregate-reader_openserv.html` | harness/serv-runs | `sha256:142a5807ed84…` |
+| `readers/harness-findings.html` | harness/serv-runs | `sha256:142a5807ed84…` |
+| `readers/harness-serv-fit.html` | harness/serv-runs | `sha256:142a5807ed84…` |
+| `readers/harness-serv-reader.html` | harness/serv-runs | `sha256:142a5807ed84…` |
+| `readers/harness-serv-tests.html` | harness/serv-runs | `sha256:142a5807ed84…` |
+| `readers/index.html` | harness-demos/pairs | `sha256:ad4e115f39d8…` |
+| `readers/judge-rehearsal.html` | hashsmash/judge-record | `sha256:d0a06cce9de9…` |
+| `readers/kappa-calibration.html` | hashsmash/kappa-calibration | `sha256:c7d095955f58…` |
+| `readers/precompile-census.html` | precompile/census | `sha256:acf1a56f7592…` |
+| `readers/qpcbtc-abba-screen.html` | qpcbtc/abba-screen | `sha256:6ded2ec26eb4…` |
+| `readers/r32-route-search.html` | hashsmash/sha256-r32 | `sha256:3c20049e5510…` |
+| `readers/research-ledger.html` | ledger/sig-better_codes | `sha256:370262c4ab6b…` |
+| `readers/sig-h2-gate.html` | sig-golf/h2-b96b3ca | `sha256:8c5209a6fb73…` |
+| `readers/zk-forge-reader.html` | harness/serv-runs | `sha256:142a5807ed84…` |
 
-Full κ in `pairs.json`. Every κ is "kappa-compatible (unverified)" until the registry cross-check.
-Generators read the κ'd blobs inside the bundle, never a loose copy of the source.
+16 pairs in `pairs.json`; the demos root over all of them is in `bundles/demos/root.json`.
+Every κ is "kappa-compatible (unverified)" until the registry cross-check. Generators read the
+κ'd blobs inside a bundle, never a loose copy of the source. Bundles: `bundles/` (sources and
+rows minted here) plus the run bundles in kappa_evidence_mage (r32, sig H2) and the 34 harness
+run bundles (`examples/*/runs/*/evidence/` in the harness, roots listed in `data/run_roots.json`).
 
 ## Provenance
 

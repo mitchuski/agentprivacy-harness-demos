@@ -42,6 +42,17 @@ evidence root (κ of a run's bundle)  ──transform/1──►  reader (κ of 
 | 11 | **precompile anti-fingerprint census** | pinning ratios across fresh seeds and same-size siblings; the MIRAGE line at 1.10 | `precompile_mage/census.py` outputs | mint census rows first | medium |
 | 12 | **The κ graph of the demos** | pairs.json minted: every reader, its root, its generator, one root over the demos | this repo | the demos root | after 2-3 pairs exist |
 
+## Status 2026-10-08
+
+All twelve built, each shown as it landed: 16 readers (including the index), 7 bundles minted here
+(arena-rules, credit-provenance, research-ledger, serv-runs, kcal, judge, qpcbtc, precompile, demos),
+34 harness runs minted in the harness, 16 pairs. Two fixes found on the way and kept: bundle bytes
+marked binary in git, and the minters LF-normalise text before hashing, so κ survive a clone.
+Next candidates, not yet built: the r32 q / Step-3 measurement (analyze.txt), the sig_mage
+witness-trim gates (t3wt9 cover), the hashsmash evidence-class table as data, and a reader per
+harness run from its evidence bundle (the explorer already renders them; only the pairing is
+missing). After P1 passes, every label flips and the roots can be quoted in notes and tomes.
+
 ## Build order and the showing rule
 
 1 then 2 and 3 (today: the data is already κ-addressed), then the pair tool
