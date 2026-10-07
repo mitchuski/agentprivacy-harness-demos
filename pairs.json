@@ -1,0 +1,33 @@
+{
+ "status": "kappa-compatible (unverified)",
+ "upstream": {
+  "kappa-registry": "2af8656",
+  "bc-dcbor-rust": "2e5b901 (branch feat/dcbor-derive)"
+ },
+ "pairs": [
+  {
+   "reader": "readers/r32-route-search.html",
+   "reader_kappa": "sha256:40d957c8391b97a7cef1132be6c1ac9c6d14f4f2223fc79e6f8b1f2aff914cf3",
+   "evidence_root": "sha256:3c20049e55109c2940161747b48dff5318f25c6ea74fc7f9283b6ef5b0c0f825",
+   "lane": "hashsmash/sha256-r32",
+   "bundle_lane": "hashsmash/sha256-r32",
+   "generator": "generators/gen_evidence_graph.mjs",
+   "generator_kappa": "sha256:d1c4b8e2145188dcb28a30b021030826ce6a24703ae03ee28b41e7763c61ab22",
+   "transform_kappa": "sha256:37d8702da04f08f7cae91e7dcc1942359bf8359d3ac89183bcb64c980ba63100",
+   "date": "2026-10-07",
+   "status": "kappa-compatible (unverified)"
+  },
+  {
+   "reader": "readers/sig-h2-gate.html",
+   "reader_kappa": "sha256:3a982cfdc47aab3c61ca6a5a312412caddc603295626a9cd2fa86ab03970a599",
+   "evidence_root": "sha256:8c5209a6fb733b8951e1f4269c8857fcae5137a1a795a5a438f03b7b781abe2d",
+   "lane": "sig-golf/h2-b96b3ca",
+   "bundle_lane": "sig-golf/h2-b96b3ca",
+   "generator": "generators/gen_evidence_graph.mjs",
+   "generator_kappa": "sha256:d1c4b8e2145188dcb28a30b021030826ce6a24703ae03ee28b41e7763c61ab22",
+   "transform_kappa": "sha256:d7ea719cb8373f999692dadef80ebaec7ebd89394d1f6947d7458cc63fd9ff24",
+   "date": "2026-10-07",
+   "status": "kappa-compatible (unverified)"
+  }
+ ]
+}
