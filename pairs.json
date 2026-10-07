@@ -114,6 +114,30 @@
    "status": "kappa-compatible (unverified)"
   },
   {
+   "reader": "readers/precompile-census.html",
+   "reader_kappa": "sha256:3ca175836edc76dbb677be26891f91ca2ef1faf051533cbcec8dd6ba4ee7e1eb",
+   "evidence_root": "sha256:127fcf82cc17db59040421acdbae33d5ce7debb1485221a2c449629db50b2e9f",
+   "lane": "precompile/census",
+   "bundle_lane": "precompile/census",
+   "generator": "generators/gen_precompile.mjs",
+   "generator_kappa": "sha256:4c103e4b501854841c1e04b3e01ca3e1ed38d500f75c0f89097579a7a837f609",
+   "transform_kappa": "sha256:ccb468baec91740cf4fbf13a89a98b864b29f69bc2093b2d6a75a564f8b51a9e",
+   "date": "2026-10-07",
+   "status": "kappa-compatible (unverified)"
+  },
+  {
+   "reader": "readers/qpcbtc-abba-screen.html",
+   "reader_kappa": "sha256:c9a6997fa20d0ec742e0d75eea4a06518675ea8114302573e20736b52269e2b5",
+   "evidence_root": "sha256:6ded2ec26eb433ef321fa3e2a5c3ae644c9fff1eb6d6aad5dedcde3dd8fda383",
+   "lane": "qpcbtc/abba-screen",
+   "bundle_lane": "qpcbtc/abba-screen",
+   "generator": "generators/gen_qpcbtc.mjs",
+   "generator_kappa": "sha256:6126019bc4f2741140a93f58187c1b289d4465396e48aae03e374071900f4bdf",
+   "transform_kappa": "sha256:905e438df47b7786795ded11404e22a03c1752e81bf860c0feb703a20c14f0ab",
+   "date": "2026-10-07",
+   "status": "kappa-compatible (unverified)"
+  },
+  {
    "reader": "readers/r32-route-search.html",
    "reader_kappa": "sha256:40d957c8391b97a7cef1132be6c1ac9c6d14f4f2223fc79e6f8b1f2aff914cf3",
    "evidence_root": "sha256:3c20049e55109c2940161747b48dff5318f25c6ea74fc7f9283b6ef5b0c0f825",

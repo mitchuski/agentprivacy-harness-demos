@@ -1,0 +1,22 @@
+{
+ "root_kappa": "sha256:127fcf82cc17db59040421acdbae33d5ce7debb1485221a2c449629db50b2e9f",
+ "status": "kappa-compatible (unverified)",
+ "lane": "precompile/census",
+ "minted_on": "2026-10-07",
+ "merkle_root_sha256": "b2304e7f2fa048b376db68df6c367f29a70c2685de03bd557a9e7c5bfbf6aec0",
+ "merkle_leaves": 61,
+ "counts": {
+  "objects": 22,
+  "blobs": 1,
+  "edges": 41
+ },
+ "names": {
+  "source:precompile_census.json": "sha256:923968ecfb9a9b9fc54af98300b0d99a3375f55e1e1b4df698eb44feb3226bff",
+  "artifact-ledger": "sha256:7f13b8854ba0d4f503f4ab3e9fada9d3dc5c8f047cb1dafd5ffdd7920e803385",
+  "artifact-count": "sha256:04b0678024a18470bb2ad9cbd1298f9ed63fab1f1e0f3b1f85cdced260ef5e4b"
+ },
+ "upstream": {
+  "kappa-registry": "2af8656",
+  "bc-dcbor-rust": "2e5b901 (branch feat/dcbor-derive)"
+ }
+}

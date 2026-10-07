@@ -1,0 +1,22 @@
+{
+ "root_kappa": "sha256:6ded2ec26eb433ef321fa3e2a5c3ae644c9fff1eb6d6aad5dedcde3dd8fda383",
+ "status": "kappa-compatible (unverified)",
+ "lane": "qpcbtc/abba-screen",
+ "minted_on": "2026-10-07",
+ "merkle_root_sha256": "aa13b5d8100f0aefa360b009ab9b3b3ce2498a624c9834ee9b94ef78f144fd20",
+ "merkle_leaves": 70,
+ "counts": {
+  "objects": 25,
+  "blobs": 1,
+  "edges": 47
+ },
+ "names": {
+  "source:qpcbtc_abba.json": "sha256:b4da900447afc4a041bb1332e2944d8fd0e690926d9bcd7b3ba1dd482ceb0ef9",
+  "session-ledger": "sha256:eeef6aa2278ea181dd2aafcd401af2c32e1706e2a92a8690bc2701990575a500",
+  "session-count": "sha256:c2e3e5f5a61177b39ccbcbb9fb4883520d4c95139b536a9ade197819aa86821d"
+ },
+ "upstream": {
+  "kappa-registry": "2af8656",
+  "bc-dcbor-rust": "2e5b901 (branch feat/dcbor-derive)"
+ }
+}
