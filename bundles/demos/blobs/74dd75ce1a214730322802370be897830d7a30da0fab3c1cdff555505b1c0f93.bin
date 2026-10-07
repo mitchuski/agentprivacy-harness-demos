@@ -1,0 +1,189 @@
+{
+ "status": "kappa-compatible (unverified)",
+ "upstream": {
+  "kappa-registry": "2af8656",
+  "bc-dcbor-rust": "2e5b901 (branch feat/dcbor-derive)"
+ },
+ "pairs": [
+  {
+   "reader": "readers/arena-rules.html",
+   "reader_kappa": "sha256:3acedd7ba5cf6a6923cc207c0e7e22297fa69895bd86bab0016ca8c8d50f50a0",
+   "evidence_root": "sha256:7b5fcde256be4c1666170a4300e13d237d734f0d440fbc9b0507634501bee82e",
+   "lane": "harness/challenge-lanes",
+   "bundle_lane": "harness/challenge-lanes",
+   "generator": "generators/gen_arena_rules.mjs",
+   "generator_kappa": "sha256:f7602e6230cb7208d0da62466de0590bc3173f84dca6469f32c745533695493c",
+   "transform_kappa": "sha256:6e9f86ae0ce9513b3d568d3db8d437444f511dfdc95eab800469fa53faf53eac",
+   "date": "2026-10-07",
+   "status": "kappa-compatible (unverified)"
+  },
+  {
+   "reader": "readers/credit-provenance.html",
+   "reader_kappa": "sha256:8d9933a5a0ff08afa085b80248f36705974b3fecb428effe83ab513672e7a3fe",
+   "evidence_root": "sha256:d3d1d934ee4e4afe5d208567a57d2fa41a3282687e7c11abca6c6fc3a782c69b",
+   "lane": "credit/sig-hashsmash",
+   "bundle_lane": "credit/sig-hashsmash",
+   "generator": "generators/gen_credit_graph.mjs",
+   "generator_kappa": "sha256:24a569c22d4909fa5accb5ef13ddcd64027897cba02c45258a7df1fd02e61d66",
+   "transform_kappa": "sha256:98ac26cab3c519765d03fe95996abb1de8e5d31a3cb8082e27f9b30997a30945",
+   "date": "2026-10-07",
+   "status": "kappa-compatible (unverified)"
+  },
+  {
+   "reader": "readers/harness-aggregate-reader_openserv.html",
+   "reader_kappa": "sha256:de210568337f207d128761d8e1e31e5624dce17c1fde85a345d294f159dfceeb",
+   "evidence_root": "sha256:142a5807ed844fde759d8bcd4702cc27651eb975523c56155a7490ed193e2fd1",
+   "lane": "harness/serv-runs",
+   "bundle_lane": "harness/serv-runs",
+   "generator": "generators/gen_aggregate.mjs",
+   "generator_kappa": "sha256:caa8cb913ee05245017789f0b59b5861d7bead40acdacf74974c33e79ebe4584",
+   "transform_kappa": "sha256:c64df9e7bdb9bcb1603084420a32079d0dbf1f69fd34cc6112a64edd6c6799bc",
+   "date": "2026-10-07",
+   "status": "kappa-compatible (unverified)"
+  },
+  {
+   "reader": "readers/harness-findings.html",
+   "reader_kappa": "sha256:e1940446e869a3d8afab8bc3bf8319eb06033f5b9f7af45482f9540e884b8fe4",
+   "evidence_root": "sha256:142a5807ed844fde759d8bcd4702cc27651eb975523c56155a7490ed193e2fd1",
+   "lane": "harness/serv-runs",
+   "bundle_lane": "harness/serv-runs",
+   "generator": "generators/gen_onepager.mjs",
+   "generator_kappa": "sha256:76c518cbfe6740fba7129e9f9d3c39edf8a0d0e7001808075778d2df523dea18",
+   "transform_kappa": "sha256:96e254d66826929a68b745358dbe991c8bdd1ec3f7a99d813e5dabeda724a969",
+   "date": "2026-10-07",
+   "status": "kappa-compatible (unverified)"
+  },
+  {
+   "reader": "readers/harness-serv-fit.html",
+   "reader_kappa": "sha256:7a5568ac7438c914e6a110bc26f27cf31feede17283aebeb25a50931697ea9df",
+   "evidence_root": "sha256:142a5807ed844fde759d8bcd4702cc27651eb975523c56155a7490ed193e2fd1",
+   "lane": "harness/serv-runs",
+   "bundle_lane": "harness/serv-runs",
+   "generator": "generators/gen_fit.mjs",
+   "generator_kappa": "sha256:b8e3d948ee25dcfb6d3b5a477142bc9cee39fd800df0b6b407aa321e6bfa39ac",
+   "transform_kappa": "sha256:96cacd1ab865e99d882579b4fe161518db3d080215448dd12560abcb83ea069f",
+   "date": "2026-10-07",
+   "status": "kappa-compatible (unverified)"
+  },
+  {
+   "reader": "readers/harness-serv-reader.html",
+   "reader_kappa": "sha256:9901ad4470abfedde03fec1dd1a0a8e7920d7c39035f521a795f39619ce082ef",
+   "evidence_root": "sha256:142a5807ed844fde759d8bcd4702cc27651eb975523c56155a7490ed193e2fd1",
+   "lane": "harness/serv-runs",
+   "bundle_lane": "harness/serv-runs",
+   "generator": "generators/gen_aggregate.mjs",
+   "generator_kappa": "sha256:caa8cb913ee05245017789f0b59b5861d7bead40acdacf74974c33e79ebe4584",
+   "transform_kappa": "sha256:6b9d8323cbe64f221c84082047066a317ab25e35b0ebd26adf618edf5bb53288",
+   "date": "2026-10-07",
+   "status": "kappa-compatible (unverified)"
+  },
+  {
+   "reader": "readers/harness-serv-tests.html",
+   "reader_kappa": "sha256:719cf239ef714a16917363bab991fa5f9619b930c64b1c03fb2c1f0897908f25",
+   "evidence_root": "sha256:142a5807ed844fde759d8bcd4702cc27651eb975523c56155a7490ed193e2fd1",
+   "lane": "harness/serv-runs",
+   "bundle_lane": "harness/serv-runs",
+   "generator": "generators/gen_page.mjs",
+   "generator_kappa": "sha256:921393403d6d68b13c08ad44e1b76ae7f63c149dd526059e37b465b1d4f285bd",
+   "transform_kappa": "sha256:792a83a467d0945ad8635c599ef5f5f4fb35cea39320cb500560f8d87e74c467",
+   "date": "2026-10-07",
+   "status": "kappa-compatible (unverified)"
+  },
+  {
+   "reader": "readers/judge-rehearsal.html",
+   "reader_kappa": "sha256:afd37586dacadfa71cf47f497501dd4255b9ea242584a889aad4f83adf592ce3",
+   "evidence_root": "sha256:d0a06cce9de9d3e5879902b567514aa3928ba01d4e732b20264028c9eeb3e1c7",
+   "lane": "hashsmash/judge-record",
+   "bundle_lane": "hashsmash/judge-record",
+   "generator": "generators/gen_judge.mjs",
+   "generator_kappa": "sha256:b8d360c9f56e9bdbf96f76f09edb126609210873a0d20ee091a5d93b27c1a267",
+   "transform_kappa": "sha256:6e392f5e5bbfa16b999e426f346f5560005d37500f5b50e8a7502d997a67840e",
+   "date": "2026-10-07",
+   "status": "kappa-compatible (unverified)"
+  },
+  {
+   "reader": "readers/kappa-calibration.html",
+   "reader_kappa": "sha256:d57b6ff36a0983a4738d7accd11471ece8c0edffc349e9a52aacccbd2fc7197c",
+   "evidence_root": "sha256:c7d095955f5833b87d72f44ab1d07066e93ab2427943dc84d1da5fe88c690652",
+   "lane": "hashsmash/kappa-calibration",
+   "bundle_lane": "hashsmash/kappa-calibration",
+   "generator": "generators/gen_calibration.mjs",
+   "generator_kappa": "sha256:1f5798f08f3d8710c1374ff4e66f4aaea0875751fcd149cd40c25bad5799cb6f",
+   "transform_kappa": "sha256:89de427e0db409c6a921a6bf6730d38d5a03ff959b621dbf1e6a1b2063071eae",
+   "date": "2026-10-07",
+   "status": "kappa-compatible (unverified)"
+  },
+  {
+   "reader": "readers/precompile-census.html",
+   "reader_kappa": "sha256:8207e2c7340829ccbeb3718f54c83a0fdf03bbc102657f94f19573b68f1e1692",
+   "evidence_root": "sha256:acf1a56f759223e3e7af6396371a31773536b80c499f3d496ca93ee77b682ff8",
+   "lane": "precompile/census",
+   "bundle_lane": "precompile/census",
+   "generator": "generators/gen_precompile.mjs",
+   "generator_kappa": "sha256:4c103e4b501854841c1e04b3e01ca3e1ed38d500f75c0f89097579a7a837f609",
+   "transform_kappa": "sha256:8bf6d03122876eced248540d3285b9f14e4368038cfa77819b3c173d9b7d094e",
+   "date": "2026-10-07",
+   "status": "kappa-compatible (unverified)"
+  },
+  {
+   "reader": "readers/qpcbtc-abba-screen.html",
+   "reader_kappa": "sha256:c9a6997fa20d0ec742e0d75eea4a06518675ea8114302573e20736b52269e2b5",
+   "evidence_root": "sha256:6ded2ec26eb433ef321fa3e2a5c3ae644c9fff1eb6d6aad5dedcde3dd8fda383",
+   "lane": "qpcbtc/abba-screen",
+   "bundle_lane": "qpcbtc/abba-screen",
+   "generator": "generators/gen_qpcbtc.mjs",
+   "generator_kappa": "sha256:6126019bc4f2741140a93f58187c1b289d4465396e48aae03e374071900f4bdf",
+   "transform_kappa": "sha256:905e438df47b7786795ded11404e22a03c1752e81bf860c0feb703a20c14f0ab",
+   "date": "2026-10-07",
+   "status": "kappa-compatible (unverified)"
+  },
+  {
+   "reader": "readers/r32-route-search.html",
+   "reader_kappa": "sha256:40d957c8391b97a7cef1132be6c1ac9c6d14f4f2223fc79e6f8b1f2aff914cf3",
+   "evidence_root": "sha256:3c20049e55109c2940161747b48dff5318f25c6ea74fc7f9283b6ef5b0c0f825",
+   "lane": "hashsmash/sha256-r32",
+   "bundle_lane": "hashsmash/sha256-r32",
+   "generator": "generators/gen_evidence_graph.mjs",
+   "generator_kappa": "sha256:d1c4b8e2145188dcb28a30b021030826ce6a24703ae03ee28b41e7763c61ab22",
+   "transform_kappa": "sha256:37d8702da04f08f7cae91e7dcc1942359bf8359d3ac89183bcb64c980ba63100",
+   "date": "2026-10-07",
+   "status": "kappa-compatible (unverified)"
+  },
+  {
+   "reader": "readers/research-ledger.html",
+   "reader_kappa": "sha256:06eb60f1ceafd95a7207a2d5f14e289abddf9d61bbdeb672250e9ab24cc08a96",
+   "evidence_root": "sha256:370262c4ab6b347dcc9b9589920f179e84514cafdd4a8633f9dbc6d32c5a575c",
+   "lane": "ledger/sig-better_codes",
+   "bundle_lane": "ledger/sig-better_codes",
+   "generator": "generators/gen_research_ledger.mjs",
+   "generator_kappa": "sha256:132883dc6086986b81ed9b1106ff4532928ed87f217e34105f5d535417238024",
+   "transform_kappa": "sha256:caa33ae3887f56e653b7483d403cc008751975bacc8720ce72d7c789a7cc72fd",
+   "date": "2026-10-07",
+   "status": "kappa-compatible (unverified)"
+  },
+  {
+   "reader": "readers/sig-h2-gate.html",
+   "reader_kappa": "sha256:3a982cfdc47aab3c61ca6a5a312412caddc603295626a9cd2fa86ab03970a599",
+   "evidence_root": "sha256:8c5209a6fb733b8951e1f4269c8857fcae5137a1a795a5a438f03b7b781abe2d",
+   "lane": "sig-golf/h2-b96b3ca",
+   "bundle_lane": "sig-golf/h2-b96b3ca",
+   "generator": "generators/gen_evidence_graph.mjs",
+   "generator_kappa": "sha256:d1c4b8e2145188dcb28a30b021030826ce6a24703ae03ee28b41e7763c61ab22",
+   "transform_kappa": "sha256:d7ea719cb8373f999692dadef80ebaec7ebd89394d1f6947d7458cc63fd9ff24",
+   "date": "2026-10-07",
+   "status": "kappa-compatible (unverified)"
+  },
+  {
+   "reader": "readers/zk-forge-reader.html",
+   "reader_kappa": "sha256:88724a8eaf989682ac564d3bf83cdc4f2ed123e9bc0ac1cf7fa69c5c9c48da17",
+   "evidence_root": "sha256:142a5807ed844fde759d8bcd4702cc27651eb975523c56155a7490ed193e2fd1",
+   "lane": "harness/serv-runs",
+   "bundle_lane": "harness/serv-runs",
+   "generator": "generators/gen_reader.mjs",
+   "generator_kappa": "sha256:f63cec37748286616a16c24b552c97fb8b9a7c48f54f5f67a7725d44d42ac18c",
+   "transform_kappa": "sha256:67fcfb98fe753d4c3c664493da88abf0f9a2e284ad55248926780fa2a5d266c6",
+   "date": "2026-10-07",
+   "status": "kappa-compatible (unverified)"
+  }
+ ]
+}

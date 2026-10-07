@@ -1,0 +1,363 @@
+[
+ {
+  "name": "fios-k10",
+  "file": "fios-k10.hex",
+  "bytes": 11880,
+  "ours": true,
+  "seedHex": "04ecabf979ac0de20fd7538703b10c1d8cc8b8f809e157c611de25d6efd50960",
+  "secretHex": "82e0edc0c9589811505a4740f1b08c5f",
+  "publicTotal": 859429,
+  "correctness": {
+   "n": 26,
+   "fail": [],
+   "public_fail": []
+  },
+  "pinning": {
+   "worstRatio": 1.0,
+   "fail": []
+  },
+  "status": "VALIDATED"
+ },
+ {
+  "name": "fios-k11",
+  "file": "fios-k11.hex",
+  "bytes": 11838,
+  "ours": true,
+  "seedHex": "597c992ed7d8f30fede7569efc1571d2ca7ffe1ea4bff4d95d16c8bb11bb9695",
+  "secretHex": "82e0edc0c9589811505a4740f1b08c5f",
+  "publicTotal": 824737,
+  "correctness": {
+   "n": 26,
+   "fail": [],
+   "public_fail": []
+  },
+  "pinning": {
+   "worstRatio": 1.0236,
+   "fail": []
+  },
+  "status": "VALIDATED"
+ },
+ {
+  "name": "fios-k12",
+  "file": "fios-k12.hex",
+  "bytes": 11978,
+  "ours": true,
+  "seedHex": "cf5f4945084b0822e50cad2454c8abae07acb8d52a257f481e0934e1b2c57fa8",
+  "secretHex": "82e0edc0c9589811505a4740f1b08c5f",
+  "publicTotal": 834027,
+  "correctness": {
+   "n": 26,
+   "fail": [],
+   "public_fail": []
+  },
+  "pinning": {
+   "worstRatio": 1.0,
+   "fail": []
+  },
+  "status": "VALIDATED"
+ },
+ {
+  "name": "fios-k9",
+  "file": "fios-k9.hex",
+  "bytes": 10656,
+  "ours": true,
+  "seedHex": "01c50c977522cb5720cd480714194b4e439f7bbb292524f4702984b430aa471e",
+  "secretHex": "82e0edc0c9589811505a4740f1b08c5f",
+  "publicTotal": 1272238,
+  "correctness": {
+   "n": 26,
+   "fail": [],
+   "public_fail": []
+  },
+  "pinning": {
+   "worstRatio": 1.0,
+   "fail": []
+  },
+  "status": "VALIDATED"
+ },
+ {
+  "name": "frontier-live",
+  "file": "frontier-live.hex",
+  "bytes": 9520,
+  "ours": false,
+  "seedHex": "5f2be2cf147e4e7c7f24ce8d765ad55571695e34f8ab0da0b096748a01cda6c1",
+  "secretHex": "82e0edc0c9589811505a4740f1b08c5f",
+  "publicTotal": 1414478,
+  "correctness": {
+   "n": 26,
+   "fail": [],
+   "public_fail": []
+  },
+  "pinning": {
+   "worstRatio": 1.0,
+   "fail": []
+  },
+  "status": "VALIDATED"
+ },
+ {
+  "name": "frontier-live2",
+  "file": "frontier-live2.hex",
+  "bytes": 10292,
+  "ours": false,
+  "seedHex": "fa4e3e19bad24c0fb5df827389ca7e2ca1f4f14de9b70483dc965b8798a19cf7",
+  "secretHex": "82e0edc0c9589811505a4740f1b08c5f",
+  "publicTotal": 1371008,
+  "correctness": {
+   "n": 26,
+   "fail": [],
+   "public_fail": []
+  },
+  "pinning": {
+   "worstRatio": 1.0,
+   "fail": []
+  },
+  "status": "VALIDATED"
+ },
+ {
+  "name": "frontier-live3",
+  "file": "frontier-live3.hex",
+  "bytes": 10744,
+  "ours": false,
+  "seedHex": "3240ec629043961c9dc7b4a073e98eb2c868162973d215bcce07660b8d41251e",
+  "secretHex": "82e0edc0c9589811505a4740f1b08c5f",
+  "publicTotal": 936645,
+  "correctness": {
+   "n": 26,
+   "fail": [],
+   "public_fail": []
+  },
+  "pinning": {
+   "worstRatio": 1.0212,
+   "fail": []
+  },
+  "status": "VALIDATED"
+ },
+ {
+  "name": "frontier-live4",
+  "file": "frontier-live4.hex",
+  "bytes": 10703,
+  "ours": false,
+  "seedHex": "c08106b806cfb5d43390ac6d70037b11bb7623556e197d029a5b2f4a049cea00",
+  "secretHex": "82e0edc0c9589811505a4740f1b08c5f",
+  "publicTotal": 858177,
+  "correctness": {
+   "n": 26,
+   "fail": [],
+   "public_fail": []
+  },
+  "pinning": {
+   "worstRatio": 1.0,
+   "fail": []
+  },
+  "status": "VALIDATED"
+ },
+ {
+  "name": "frontier-live5",
+  "file": "frontier-live5.hex",
+  "bytes": 10843,
+  "ours": false,
+  "seedHex": "0aa2e292f487830b03e15ba10012256230f70e8c2833ece8370ea9678c3eaf91",
+  "secretHex": "82e0edc0c9589811505a4740f1b08c5f",
+  "publicTotal": 834027,
+  "correctness": {
+   "n": 26,
+   "fail": [],
+   "public_fail": []
+  },
+  "pinning": {
+   "worstRatio": 1.0,
+   "fail": []
+  },
+  "status": "VALIDATED"
+ },
+ {
+  "name": "m2a-only",
+  "file": "m2a-only.hex",
+  "bytes": 7882,
+  "ours": true,
+  "seedHex": "5b759a6fe657d6ae9b578427436f6ff78bac654f1bdc28316f42e97c5968f5ad",
+  "secretHex": "82e0edc0c9589811505a4740f1b08c5f",
+  "publicTotal": 1559481,
+  "correctness": {
+   "n": 26,
+   "fail": [],
+   "public_fail": []
+  },
+  "pinning": {
+   "worstRatio": 1.0,
+   "fail": []
+  },
+  "status": "VALIDATED"
+ },
+ {
+  "name": "r2-v1",
+  "file": "r2-v1.hex",
+  "bytes": 8120,
+  "ours": true,
+  "seedHex": "c05bac4167e08d02d7b5e8e92a3d6330d241db0abf01de23dfaaa86e99f29ce5",
+  "secretHex": "82e0edc0c9589811505a4740f1b08c5f",
+  "publicTotal": 1502281,
+  "correctness": {
+   "n": 26,
+   "fail": [],
+   "public_fail": []
+  },
+  "pinning": {
+   "worstRatio": 1.0,
+   "fail": []
+  },
+  "status": "VALIDATED"
+ },
+ {
+  "name": "frontier-1bdb4d2/bytecode",
+  "file": "frontier-1bdb4d2/bytecode.hex",
+  "bytes": 7455,
+  "ours": false,
+  "seedHex": "e3624133b0a5ac18dd8550d3c85d547a5f1c8b834820c2a3a4eb290d91294510",
+  "secretHex": "82e0edc0c9589811505a4740f1b08c5f",
+  "publicTotal": 1833415,
+  "correctness": {
+   "n": 26,
+   "fail": [],
+   "public_fail": []
+  },
+  "pinning": {
+   "worstRatio": 1.0,
+   "fail": []
+  },
+  "status": "VALIDATED"
+ },
+ {
+  "name": "frontier-2874af6/bytecode",
+  "file": "frontier-2874af6/bytecode.hex",
+  "bytes": 7143,
+  "ours": false,
+  "seedHex": "a522acdb4c0bdfd7dff2fbe4d67d5ce98d876f5f6f9d7aa83273b57e843b97f9",
+  "secretHex": "82e0edc0c9589811505a4740f1b08c5f",
+  "publicTotal": 2471033,
+  "correctness": {
+   "n": 26,
+   "fail": [],
+   "public_fail": []
+  },
+  "pinning": {
+   "worstRatio": 1.0,
+   "fail": []
+  },
+  "status": "VALIDATED"
+ },
+ {
+  "name": "frontier-3363cd3/bytecode",
+  "file": "frontier-3363cd3/bytecode.hex",
+  "bytes": 7785,
+  "ours": false,
+  "seedHex": "4810ee81b53afe470ffd1787abf762af9f8a784740c224b6932bdec8e222afcb",
+  "secretHex": "82e0edc0c9589811505a4740f1b08c5f",
+  "publicTotal": 1690425,
+  "correctness": {
+   "n": 26,
+   "fail": [],
+   "public_fail": []
+  },
+  "pinning": {
+   "worstRatio": 1.0,
+   "fail": []
+  },
+  "status": "VALIDATED"
+ },
+ {
+  "name": "frontier-46d607e/bytecode",
+  "file": "frontier-46d607e/bytecode.hex",
+  "bytes": 6497,
+  "ours": false,
+  "seedHex": "25bca91c75b9d0dcd1bfaf307975a80d1b61bf8ef32e2d05380ea399bd50884e",
+  "secretHex": "82e0edc0c9589811505a4740f1b08c5f",
+  "publicTotal": 2936211,
+  "correctness": {
+   "n": 26,
+   "fail": [],
+   "public_fail": []
+  },
+  "pinning": {
+   "worstRatio": 1.0,
+   "fail": []
+  },
+  "status": "VALIDATED"
+ },
+ {
+  "name": "frontier-4fb4afb/bytecode",
+  "file": "frontier-4fb4afb/bytecode.hex",
+  "bytes": 6497,
+  "ours": false,
+  "seedHex": "21b2211276496a72556c114d6fe191014fe9a54906b096826b462c37498ec26d",
+  "secretHex": "82e0edc0c9589811505a4740f1b08c5f",
+  "publicTotal": 2960187,
+  "correctness": {
+   "n": 26,
+   "fail": [],
+   "public_fail": []
+  },
+  "pinning": {
+   "worstRatio": 1.0,
+   "fail": []
+  },
+  "status": "VALIDATED"
+ },
+ {
+  "name": "frontier-6e48fdc/bytecode",
+  "file": "frontier-6e48fdc/bytecode.hex",
+  "bytes": 7391,
+  "ours": false,
+  "seedHex": "b93ba94e923087315ecfee3c77f3fcd6f562dae18076a4b33f484b36232376ff",
+  "secretHex": "82e0edc0c9589811505a4740f1b08c5f",
+  "publicTotal": 1840067,
+  "correctness": {
+   "n": 26,
+   "fail": [],
+   "public_fail": []
+  },
+  "pinning": {
+   "worstRatio": 1.0,
+   "fail": []
+  },
+  "status": "VALIDATED"
+ },
+ {
+  "name": "frontier-75d02e9/bytecode",
+  "file": "frontier-75d02e9/bytecode.hex",
+  "bytes": 6577,
+  "ours": false,
+  "seedHex": "4562bc2a72240c8a6514a1ed4c25e0398399687f0e60a2e8b23126033e66e793",
+  "secretHex": "82e0edc0c9589811505a4740f1b08c5f",
+  "publicTotal": 3067899,
+  "correctness": {
+   "n": 26,
+   "fail": [],
+   "public_fail": []
+  },
+  "pinning": {
+   "worstRatio": 1.0,
+   "fail": []
+  },
+  "status": "VALIDATED"
+ },
+ {
+  "name": "frontier-current/bytecode",
+  "file": "frontier-current/bytecode.hex",
+  "bytes": 7848,
+  "ours": false,
+  "seedHex": "38e9de39f6700eafca31077088b42f55a5ea62541f710e4b48d80e3fa144dcc1",
+  "secretHex": "82e0edc0c9589811505a4740f1b08c5f",
+  "publicTotal": 1659254,
+  "correctness": {
+   "n": 26,
+   "fail": [],
+   "public_fail": []
+  },
+  "pinning": {
+   "worstRatio": 1.0,
+   "fail": []
+  },
+  "status": "VALIDATED"
+ }
+]

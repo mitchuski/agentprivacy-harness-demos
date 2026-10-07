@@ -1,0 +1,37 @@
+{
+ "root_kappa": "sha256:ad4e115f39d8c968787e68cc030af69443f73f7fc6dbab8aac580e39f5a33e0c",
+ "status": "kappa-compatible (unverified)",
+ "lane": "harness-demos/pairs",
+ "minted_on": "2026-10-07",
+ "merkle_root_sha256": "23945f5cbde3fed9f2341bc586b5fd9a199ff87f5cb02ed447b177d25ef2bcee",
+ "merkle_leaves": 64,
+ "counts": {
+  "objects": 18,
+  "blobs": 1,
+  "edges": 48
+ },
+ "names": {
+  "source:pairs.json": "sha256:74dd75ce1a214730322802370be897830d7a30da0fab3c1cdff555505b1c0f93",
+  "pair:r32-route-search.html": "sha256:37d8702da04f08f7cae91e7dcc1942359bf8359d3ac89183bcb64c980ba63100",
+  "pair:zk-forge-reader.html": "sha256:67fcfb98fe753d4c3c664493da88abf0f9a2e284ad55248926780fa2a5d266c6",
+  "pair:harness-serv-reader.html": "sha256:6b9d8323cbe64f221c84082047066a317ab25e35b0ebd26adf618edf5bb53288",
+  "pair:judge-rehearsal.html": "sha256:6e392f5e5bbfa16b999e426f346f5560005d37500f5b50e8a7502d997a67840e",
+  "pair:arena-rules.html": "sha256:6e9f86ae0ce9513b3d568d3db8d437444f511dfdc95eab800469fa53faf53eac",
+  "pair:harness-serv-tests.html": "sha256:792a83a467d0945ad8635c599ef5f5f4fb35cea39320cb500560f8d87e74c467",
+  "pair:kappa-calibration.html": "sha256:89de427e0db409c6a921a6bf6730d38d5a03ff959b621dbf1e6a1b2063071eae",
+  "pair:precompile-census.html": "sha256:8bf6d03122876eced248540d3285b9f14e4368038cfa77819b3c173d9b7d094e",
+  "pair:qpcbtc-abba-screen.html": "sha256:905e438df47b7786795ded11404e22a03c1752e81bf860c0feb703a20c14f0ab",
+  "pair:harness-serv-fit.html": "sha256:96cacd1ab865e99d882579b4fe161518db3d080215448dd12560abcb83ea069f",
+  "pair:harness-findings.html": "sha256:96e254d66826929a68b745358dbe991c8bdd1ec3f7a99d813e5dabeda724a969",
+  "pair:credit-provenance.html": "sha256:98ac26cab3c519765d03fe95996abb1de8e5d31a3cb8082e27f9b30997a30945",
+  "pair:harness-aggregate-reader_openserv.html": "sha256:c64df9e7bdb9bcb1603084420a32079d0dbf1f69fd34cc6112a64edd6c6799bc",
+  "pair:research-ledger.html": "sha256:caa33ae3887f56e653b7483d403cc008751975bacc8720ce72d7c789a7cc72fd",
+  "pair:sig-h2-gate.html": "sha256:d7ea719cb8373f999692dadef80ebaec7ebd89394d1f6947d7458cc63fd9ff24",
+  "pairs-ledger": "sha256:0b5ca4004a8b57bc4b40a74fea8c3015851bd1cea158ecfa065c1bec9c32de13",
+  "pairs-count": "sha256:f4376d7b09355c00a753ddaaac8485149e9a3a4b8412bf3b91ad18ef4db9f427"
+ },
+ "upstream": {
+  "kappa-registry": "2af8656",
+  "bc-dcbor-rust": "2e5b901 (branch feat/dcbor-derive)"
+ }
+}

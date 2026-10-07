@@ -90,6 +90,18 @@
    "status": "kappa-compatible (unverified)"
   },
   {
+   "reader": "readers/index.html",
+   "reader_kappa": "sha256:1b0e96e1a48c6ef614412582108b26917a67a46b1d439015a72377f4b303d5a8",
+   "evidence_root": "sha256:ad4e115f39d8c968787e68cc030af69443f73f7fc6dbab8aac580e39f5a33e0c",
+   "lane": "harness-demos/pairs",
+   "bundle_lane": "harness-demos/pairs",
+   "generator": "generators/gen_index.mjs",
+   "generator_kappa": "sha256:01ff31b7c3d9e5ff2cd4fcbed0538b95910717595ca5f0e5e6f1b38e052e8713",
+   "transform_kappa": "sha256:cd05020384c88224794380b35cb03213fda86b7fa2b18f34d0a7b009684633cc",
+   "date": "2026-10-07",
+   "status": "kappa-compatible (unverified)"
+  },
+  {
    "reader": "readers/judge-rehearsal.html",
    "reader_kappa": "sha256:afd37586dacadfa71cf47f497501dd4255b9ea242584a889aad4f83adf592ce3",
    "evidence_root": "sha256:d0a06cce9de9d3e5879902b567514aa3928ba01d4e732b20264028c9eeb3e1c7",
@@ -115,13 +127,13 @@
   },
   {
    "reader": "readers/precompile-census.html",
-   "reader_kappa": "sha256:3ca175836edc76dbb677be26891f91ca2ef1faf051533cbcec8dd6ba4ee7e1eb",
-   "evidence_root": "sha256:127fcf82cc17db59040421acdbae33d5ce7debb1485221a2c449629db50b2e9f",
+   "reader_kappa": "sha256:8207e2c7340829ccbeb3718f54c83a0fdf03bbc102657f94f19573b68f1e1692",
+   "evidence_root": "sha256:acf1a56f759223e3e7af6396371a31773536b80c499f3d496ca93ee77b682ff8",
    "lane": "precompile/census",
    "bundle_lane": "precompile/census",
    "generator": "generators/gen_precompile.mjs",
    "generator_kappa": "sha256:4c103e4b501854841c1e04b3e01ca3e1ed38d500f75c0f89097579a7a837f609",
-   "transform_kappa": "sha256:ccb468baec91740cf4fbf13a89a98b864b29f69bc2093b2d6a75a564f8b51a9e",
+   "transform_kappa": "sha256:8bf6d03122876eced248540d3285b9f14e4368038cfa77819b3c173d9b7d094e",
    "date": "2026-10-07",
    "status": "kappa-compatible (unverified)"
   },
