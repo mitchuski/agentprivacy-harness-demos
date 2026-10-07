@@ -1,0 +1,9 @@
+# kappa-addressed bytes must never be newline-converted
+bundles/** -text
+pairs/** -text
+*.cbor -text
+*.bin -text
+*.mjs text eol=lf
+*.md text eol=lf
+*.json text eol=lf
+*.html text eol=lf
