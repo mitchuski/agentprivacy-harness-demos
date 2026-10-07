@@ -28,9 +28,7 @@ const [outArg, lane, ...files] = argv.filter(a => a !== '--redact')
 const PRIVATE = new RegExp(String.raw`(?:/mnt/)?[a-z]:?[\\/]users[\\/][^\\/\s"'\x60)]+|/c/users/[^/\s"'\x60)]+|/home/[^/\s"'\x60)]+|/root/|desktop-[a-z0-9]+|\\\\wsl[^\s]*|@[a-z0-9.-]+\.(?:local|lan)`, 'gi')
 const redact = (b) => Buffer.from(b.toString('utf8').replace(PRIVATE, '[redacted]'), 'utf8')
 const isText = (b) => !b.subarray(0, 4096).includes(0)
-const lf = (b) => isText(b) ? Buffer.from(b.toString('utf8').replace(/
-/g, '
-'), 'utf8') : b
+const lf = (b) => isText(b) ? Buffer.from(b.toString('utf8').replace(/\r\n/g, '\n'), 'utf8') : b
 if (!outArg || !lane || !files.length) { console.error('usage: node tools/mint_sources.mjs <bundleOutDir> <lane> <file>...'); process.exit(2) }
 const out = resolve(outArg)
 const home = homedir().replace(/\\/g, '/')

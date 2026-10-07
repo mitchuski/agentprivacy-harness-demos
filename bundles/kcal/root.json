@@ -1,9 +1,9 @@
 {
- "root_kappa": "sha256:ab3171d3f1e5beaf85e49e6f47af9300392ea24800008a9be74a0fafbfa6cb8f",
+ "root_kappa": "sha256:c7d095955f5833b87d72f44ab1d07066e93ab2427943dc84d1da5fe88c690652",
  "status": "kappa-compatible (unverified)",
  "lane": "hashsmash/kappa-calibration",
  "minted_on": "2026-10-07",
- "merkle_root_sha256": "126c409e3b3ca8e89e6e0c49658ce2b0ee8d9a9269087ce45eeb16c146675a26",
+ "merkle_root_sha256": "616d6af9b994af425800640eedda272ff314658c8b83c46df70d5124aba5ec45",
  "merkle_leaves": 525,
  "counts": {
   "objects": 178,
@@ -11,7 +11,7 @@
   "edges": 351
  },
  "names": {
-  "source:kcal_callgrind.json": "sha256:6f4993d7102043a98464df97ea2021da003943e6a080dddd2470c16f9d972dd1",
+  "source:kcal_callgrind.json": "sha256:50f7b814a7e90ff7f8ba30ac718b5f172f857babcf0924c8c1a0115b70c82749",
   "callgrind-ledger": "sha256:06b961405dd31f9fd1d346b6abdf43608189e0a7ff98441d975f2de87dd2783f",
   "callgrind-count": "sha256:fa4315eb3ec4976203879d95030b463f4a64903e01621f1f93f5164cab60ee30",
   "source:kcal_native.tsv": "sha256:4a6d4d855ae2fb66c1dc706a0e0fe4c169c8bf20460e61fd72f648c6e870eb5d",

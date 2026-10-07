@@ -1,6 +1,6 @@
 # hashsmash/judge-record rows - minted 2026-10-07 - status: kappa-compatible (unverified)
 
-Evidence root: sha256:1802ab211d062e076b00d43c19912e5145437d2ed4760fe36c0935a2096cf320
+Evidence root: sha256:d0a06cce9de9d3e5879902b567514aa3928ba01d4e732b20264028c9eeb3e1c7
 
 | ledger | kappa |
 |---|---|

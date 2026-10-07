@@ -1,6 +1,6 @@
 {
  "status": "kappa-compatible (unverified)",
- "root": "sha256:ab3171d3f1e5beaf85e49e6f47af9300392ea24800008a9be74a0fafbfa6cb8f",
+ "root": "sha256:c7d095955f5833b87d72f44ab1d07066e93ab2427943dc84d1da5fe88c690652",
  "objects": {
   "sha256:d8896affe337d20fa0068fe389e7d24cabdb8836c4b8203e19bbe3517805dca5": {
    "0": "agentprivacy-evidence/record/1",
@@ -2444,7 +2444,7 @@
     "n": 144
    }
   },
-  "sha256:ab3171d3f1e5beaf85e49e6f47af9300392ea24800008a9be74a0fafbfa6cb8f": {
+  "sha256:c7d095955f5833b87d72f44ab1d07066e93ab2427943dc84d1da5fe88c690652": {
    "0": "agentprivacy-evidence/run-root/1",
    "1": "hashsmash/kappa-calibration",
    "2": "2026-10-07",
@@ -2475,7 +2475,7 @@
     ],
     [
      "source:kcal_callgrind.json",
-     "sha256:6f4993d7102043a98464df97ea2021da003943e6a080dddd2470c16f9d972dd1"
+     "sha256:50f7b814a7e90ff7f8ba30ac718b5f172f857babcf0924c8c1a0115b70c82749"
     ],
     [
      "source:kcal_native.tsv",
@@ -2486,7 +2486,7 @@
      "sha256:b9bcb8c0bfd59e5c32f59a998ce006a8a3596b569dccd09c14ed9de4fdcd0153"
     ]
    ],
-   "4": "126c409e3b3ca8e89e6e0c49658ce2b0ee8d9a9269087ce45eeb16c146675a26",
+   "4": "616d6af9b994af425800640eedda272ff314658c8b83c46df70d5124aba5ec45",
    "5": "kappa-compatible (unverified)",
    "6": "unsigned:harness-demos",
    "7": {
@@ -2496,36 +2496,36 @@
   }
  },
  "blobs": {
-  "sha256:6f4993d7102043a98464df97ea2021da003943e6a080dddd2470c16f9d972dd1": 594,
+  "sha256:50f7b814a7e90ff7f8ba30ac718b5f172f857babcf0924c8c1a0115b70c82749": 565,
   "sha256:4a6d4d855ae2fb66c1dc706a0e0fe4c169c8bf20460e61fd72f648c6e870eb5d": 824,
   "sha256:b9bcb8c0bfd59e5c32f59a998ce006a8a3596b569dccd09c14ed9de4fdcd0153": 5439
  },
  "edges": [
   {
-   "kappa": "sha256:c0dd6a2cff2e147308ba923129c4ff412587da54d2df7a910bf9ad333bdcd5ba",
+   "kappa": "sha256:175c424ffac4f53f7a15a78508e5eb231e1d3733096bd90c5a1f57bc681e4a75",
    "source": "sha256:d8896affe337d20fa0068fe389e7d24cabdb8836c4b8203e19bbe3517805dca5",
-   "target": "sha256:6f4993d7102043a98464df97ea2021da003943e6a080dddd2470c16f9d972dd1",
+   "target": "sha256:50f7b814a7e90ff7f8ba30ac718b5f172f857babcf0924c8c1a0115b70c82749",
    "relation": "evidence-provenance",
    "asserter": "unsigned:harness-demos"
   },
   {
-   "kappa": "sha256:f9e9f57cb81171b91601bd14b4f97322edf32c47059cbef34e0b953b7f5e357a",
+   "kappa": "sha256:4e35cd03b0c83b0c8f8aafb4b1844d8d6ddcda738278883bcaa284a150cbf16d",
    "source": "sha256:149bbedcc795090874224f6c9170bb5af7191d5d7882f619ec3b1e6d0033b10c",
-   "target": "sha256:6f4993d7102043a98464df97ea2021da003943e6a080dddd2470c16f9d972dd1",
+   "target": "sha256:50f7b814a7e90ff7f8ba30ac718b5f172f857babcf0924c8c1a0115b70c82749",
    "relation": "evidence-provenance",
    "asserter": "unsigned:harness-demos"
   },
   {
-   "kappa": "sha256:db5845c6632dfbd785701dc6d1c2c0466a0e54b71737d8c06b288037411a49f3",
+   "kappa": "sha256:1e79ff408f3f01b6ffc046fb74fb7c3f764132a30ac233c8a4d0d2d09a51daa3",
    "source": "sha256:ab25e7a8986ff7825d1ea0a19f237b3b9bc5dd1b9467d49d5a161f2580962112",
-   "target": "sha256:6f4993d7102043a98464df97ea2021da003943e6a080dddd2470c16f9d972dd1",
+   "target": "sha256:50f7b814a7e90ff7f8ba30ac718b5f172f857babcf0924c8c1a0115b70c82749",
    "relation": "evidence-provenance",
    "asserter": "unsigned:harness-demos"
   },
   {
-   "kappa": "sha256:ec40104a29a9c1231de0f70ba8c07d46630346afd1b82126f9980263d5668255",
+   "kappa": "sha256:90eeee3a06aafdf96ee838b6783fa3d0d11d04bb3c4976ab2d013fc29cc4d875",
    "source": "sha256:187cadb328da450acd4cb6a079f234da47ac95507bddecb087917c9dc3790ce8",
-   "target": "sha256:6f4993d7102043a98464df97ea2021da003943e6a080dddd2470c16f9d972dd1",
+   "target": "sha256:50f7b814a7e90ff7f8ba30ac718b5f172f857babcf0924c8c1a0115b70c82749",
    "relation": "evidence-provenance",
    "asserter": "unsigned:harness-demos"
   },
@@ -4917,43 +4917,43 @@
    "asserter": "unsigned:harness-demos"
   },
   {
-   "kappa": "sha256:7f8220d5fa9c500babc2b7e17b99dba593622ec16cdcb69207cfc3f2da745f27",
-   "source": "sha256:ab3171d3f1e5beaf85e49e6f47af9300392ea24800008a9be74a0fafbfa6cb8f",
+   "kappa": "sha256:a185c5a36161e6b5124432df9d4b83d7a97423a35fd0a6ef7a13c816c663b823",
+   "source": "sha256:c7d095955f5833b87d72f44ab1d07066e93ab2427943dc84d1da5fe88c690652",
    "target": "sha256:06b961405dd31f9fd1d346b6abdf43608189e0a7ff98441d975f2de87dd2783f",
    "relation": "composed-of",
    "asserter": "unsigned:harness-demos"
   },
   {
-   "kappa": "sha256:d3a21f914330fe8ddca5afd121cebb33a60c6e05ac38ef8f3244e2697efcbd0d",
-   "source": "sha256:ab3171d3f1e5beaf85e49e6f47af9300392ea24800008a9be74a0fafbfa6cb8f",
+   "kappa": "sha256:7454311766496f01329f68f4cd8d9d5bedce9fc0975ab676dee295ed1556f28f",
+   "source": "sha256:c7d095955f5833b87d72f44ab1d07066e93ab2427943dc84d1da5fe88c690652",
    "target": "sha256:351ed3d9f28a46c84f5396940cc7041f993a42b2925139e4ddfd1dc5f71e0b43",
    "relation": "composed-of",
    "asserter": "unsigned:harness-demos"
   },
   {
-   "kappa": "sha256:198922bb1f3754e16c09b359f389eb736e030d23bf72cd6573d728e44e05bb3f",
-   "source": "sha256:ab3171d3f1e5beaf85e49e6f47af9300392ea24800008a9be74a0fafbfa6cb8f",
+   "kappa": "sha256:9721413e3089fe3c112d05f3ea6a79c6bc39af98eb3a3f67aada00b27bddd6fe",
+   "source": "sha256:c7d095955f5833b87d72f44ab1d07066e93ab2427943dc84d1da5fe88c690652",
    "target": "sha256:2b302ebf1a3a6306bb88f2becf94672c7dc6348eba84db18488e1421c363b6f1",
    "relation": "composed-of",
    "asserter": "unsigned:harness-demos"
   },
   {
-   "kappa": "sha256:8e33804160b163992fe93cbaa2bc7a407e961a0bb7c1672b82c5a45c0e813ed0",
-   "source": "sha256:ab3171d3f1e5beaf85e49e6f47af9300392ea24800008a9be74a0fafbfa6cb8f",
+   "kappa": "sha256:e96d57d7c8cb22516e9539516928a3684c5384de8d48e2c4044d725edb747a37",
+   "source": "sha256:c7d095955f5833b87d72f44ab1d07066e93ab2427943dc84d1da5fe88c690652",
    "target": "sha256:fa4315eb3ec4976203879d95030b463f4a64903e01621f1f93f5164cab60ee30",
    "relation": "composed-of",
    "asserter": "unsigned:harness-demos"
   },
   {
-   "kappa": "sha256:2bf59b70af5f818af5c3653c79607287b88a75a92dc7e8f85e787852ea527474",
-   "source": "sha256:ab3171d3f1e5beaf85e49e6f47af9300392ea24800008a9be74a0fafbfa6cb8f",
+   "kappa": "sha256:4a8be389ea6b8e82bdfd112ffb44ef217be6901ce3cbfbf24571b193235b8aea",
+   "source": "sha256:c7d095955f5833b87d72f44ab1d07066e93ab2427943dc84d1da5fe88c690652",
    "target": "sha256:7ae54ed9a4ff4620bcd1ef034f223af6fb21460d7c6b53fd6dd734995887af64",
    "relation": "composed-of",
    "asserter": "unsigned:harness-demos"
   },
   {
-   "kappa": "sha256:03b055a79a6aee52b150f9db0d83ef1a9a06ae40ed1d46f4b4ab9b93f2bb583e",
-   "source": "sha256:ab3171d3f1e5beaf85e49e6f47af9300392ea24800008a9be74a0fafbfa6cb8f",
+   "kappa": "sha256:7421bc3f7b40dc76c04e6990dad3bbb6a3faa92a69da504b0e8dbdebd5f3c561",
+   "source": "sha256:c7d095955f5833b87d72f44ab1d07066e93ab2427943dc84d1da5fe88c690652",
    "target": "sha256:8a1af7a7581d828e910f076f7a7c2b5add59dd1a1513fa4a4217e7dd5e9fa356",
    "relation": "composed-of",
    "asserter": "unsigned:harness-demos"

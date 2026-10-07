@@ -1,6 +1,6 @@
 # hashsmash/kappa-calibration rows - minted 2026-10-07 - status: kappa-compatible (unverified)
 
-Evidence root: sha256:ab3171d3f1e5beaf85e49e6f47af9300392ea24800008a9be74a0fafbfa6cb8f
+Evidence root: sha256:c7d095955f5833b87d72f44ab1d07066e93ab2427943dc84d1da5fe88c690652
 
 | ledger | kappa |
 |---|---|

@@ -1,9 +1,9 @@
 {
- "root_kappa": "sha256:1802ab211d062e076b00d43c19912e5145437d2ed4760fe36c0935a2096cf320",
+ "root_kappa": "sha256:d0a06cce9de9d3e5879902b567514aa3928ba01d4e732b20264028c9eeb3e1c7",
  "status": "kappa-compatible (unverified)",
  "lane": "hashsmash/judge-record",
  "minted_on": "2026-10-07",
- "merkle_root_sha256": "0dd4bf6f45a1402b963e8a7f264e5da54159d7930259a62201682b32616cb27f",
+ "merkle_root_sha256": "1df5015887792b79eaf8cce9b883914662ed2332791741d97e719b6144cf39f4",
  "merkle_leaves": 46,
  "counts": {
   "objects": 17,
@@ -11,7 +11,7 @@
   "edges": 31
  },
  "names": {
-  "source:judge_digest.json": "sha256:da963c5eb0bafeaf28a53434256918c104b59abf2eceb782f4fc4abde862d0da",
+  "source:judge_digest.json": "sha256:30bf10d555b634b41bd5281fec91e2d5a26575582a3b3f0c7f7aef77188b8d94",
   "dossier-ledger": "sha256:24ec502ca91297dc31fb56dba653ebcf3d6483faf117bad5449acef53b556249",
   "dossier-count": "sha256:0405e3681124f7d7ce17291d07d136447ed0950225146dd017fe3839e631a04b"
  },
