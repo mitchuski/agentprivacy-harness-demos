@@ -57,7 +57,9 @@ for (const spec of specs) {
   const m = spec.match(/^([\w.-]+)=(.+?)(?::(tsv|jsonl|json))?$/); if (!m) { console.error('bad spec', spec); process.exit(2) }
   const [, kind, file, fmtArg] = m
   const fmt = fmtArg || (file.endsWith('.tsv') || file.endsWith('.txt') ? 'tsv' : file.endsWith('.jsonl') ? 'jsonl' : 'json')
-  const raw = readFileSync(file, 'utf8'); const red = redact(raw)
+  const raw = readFileSync(file, 'utf8').replace(/
+/g, '
+'); const red = redact(raw)
   const blobK = D.kappaFromBytes(Buffer.from(red, 'utf8')); blobs.set(blobK, Buffer.from(red, 'utf8'))
   names.set(`source:${basename(file)}`, blobK)
   const rows = parseRows(red, fmt)
